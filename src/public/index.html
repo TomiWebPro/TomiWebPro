@@ -1,0 +1,46 @@
+<!-- page {"title": "Projects — Tomi Yang (TomiWebPro)", "description": "All open-source projects, system architectures, and tools built by Tomi Yang (TomiWebPro).", "nav": "projects", "header_container": "container-wide", "footer_container": "container-wide", "footer_extra": ""} -->
+
+  <main class="container-wide" style="padding-top: 3.5rem; padding-bottom: 5rem;">
+    <div class="editorial-eyebrow">Open-Source Registry • %%N%% Projects</div>
+    <h1 style="margin-bottom: 0.5rem;">Projects &amp; Architectures</h1>
+    <p class="lead" style="max-width: 44rem;">
+      A comprehensive index of open-source software, agent frameworks, networking protocols, and developer utilities. Each project functions as a standalone head repository.
+    </p>
+
+    <!-- Filter Buttons -->
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All (%%N%%)</button>
+      <button class="filter-btn" data-filter="ai">AI &amp; Agents (%%N_AI%%)</button>
+      <button class="filter-btn" data-filter="systems">Systems &amp; Networking (%%N_SYS%%)</button>
+      <button class="filter-btn" data-filter="tools">Applied Software &amp; Tools (%%N_TOOLS%%)</button>
+    </div>
+
+    <!-- 15 Projects Grid (newest first) -->
+    <div class="cards-grid">
+      <!-- %%PROJECT_CARDS%% -->
+    </div>
+  </main>
+<!-- page-tail -->
+
+  <script>
+    // Client-side filtering
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const items = document.querySelectorAll('.project-item');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.getAttribute('data-filter');
+        items.forEach(card => {
+          if (filter === 'all' || card.getAttribute('data-category') === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+<!-- /page-tail -->

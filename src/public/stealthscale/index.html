@@ -1,0 +1,95 @@
+<!-- page {"title": "Stealthscale — Undetectable Mesh Networking — tomiweb.pro", "description": "Stealthscale: Self-hosted undetectable mesh networking system based on Tailscale and Headscale primitives, disguised against Deep Packet Inspection.", "nav": "projects", "header_container": "container-wide", "footer_container": "container", "footer_extra": "", "card": {"title": "Stealthscale", "tag": "Mesh Networking", "date": "Oct 2026", "sort": "2026-10", "seq": 1, "category": "systems", "desc": "Undetectable self-hosted mesh networking based on Tailscale and Headscale primitives, disguising encrypted peer-to-peer tunnels as legitimate HTTPS web traffic against DPI.", "tech": ["WireGuard", "Headscale", "TLS 1.3", "DPI Obfuscation"], "origin": "#stealthscale-origin"}} -->
+
+  <main class="container">
+    <div class="project-head-hero">
+      <div style="margin-bottom: 0.75rem;">
+        <a href="/public/" style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--ink-secondary);">← Back to Projects</a>
+      </div>
+
+      <div class="origin-callout">
+        <span>📖 Context &amp; Origin:</span>
+        <a href="/private/about/#stealthscale-origin">Read biographical origin in About Wiki →</a>
+      </div>
+
+      <div class="card-meta" style="margin-top: 0.5rem;">
+        <span class="card-tag">Mesh Networking &amp; Security</span>
+        <span class="card-date">Released Oct 2026</span>
+      </div>
+
+      <h1 style="margin: 0.5rem 0 0.75rem; font-size: 2.75rem;">Stealthscale</h1>
+      <p class="lead" style="margin-bottom: 1.5rem;">
+        An undetectable, self-hosted mesh networking system inspired by Tailscale and Headscale. Blends encrypted peer-to-peer WireGuard tunnels directly into legitimate HTTPS/TLS traffic to bypass strict Deep Packet Inspection (DPI) and firewall restrictions.
+      </p>
+
+      <div class="project-links-bar">
+        <a class="btn btn-primary" href="https://github.com/TomiWebPro/stealthscale" target="_blank" rel="noopener noreferrer">GitHub: TomiWebPro/stealthscale ↗</a>
+        <a class="btn btn-secondary" href="/private/blog/stealthscale-mesh-networking/">Engineering Notes →</a>
+      </div>
+    </div>
+
+    <!-- Key Metrics Grid -->
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2.5rem;">
+      <div class="card" style="padding: 1.25rem; text-align: center;">
+        <div style="font-family: var(--font-mono); font-size: 1.85rem; font-weight: 800; color: var(--gold-hover);">0%</div>
+        <div class="small muted">WireGuard Detectability</div>
+      </div>
+      <div class="card" style="padding: 1.25rem; text-align: center;">
+        <div style="font-family: var(--font-mono); font-size: 1.85rem; font-weight: 800; color: var(--gold-hover);">P2P</div>
+        <div class="small muted">Direct NAT Traversal + Relay</div>
+      </div>
+      <div class="card" style="padding: 1.25rem; text-align: center;">
+        <div style="font-family: var(--font-mono); font-size: 1.85rem; font-weight: 800; color: var(--gold-hover);">100%</div>
+        <div class="small muted">Self-Hosted &amp; Independent</div>
+      </div>
+    </div>
+
+    <!-- Motivation -->
+    <section>
+      <h2>Problem &amp; Motivation</h2>
+      <p>
+        During travels to China following graduation from high school, accessing international computational resources, academic databases, and personal home servers was severely impaired by state-level firewall filters and Deep Packet Inspection (DPI).
+      </p>
+      <p>
+        While tools like Tailscale and WireGuard provide incredible peer-to-peer connectivity under normal network conditions, their handshake signatures, UDP packet sizes, and unpadded crypto headers are trivial for modern DPI systems to detect and selectively drop or throttle.
+      </p>
+      <p>
+        Rather than relying on closed, commercial, or easily blockable consumer VPNs, Tomi engineered <strong>Stealthscale</strong>: combining the decentralized mesh topology of Tailscale/Headscale with custom transport obfuscation layers that masquerade as standard web traffic.
+      </p>
+    </section>
+
+    <!-- Protocol Architecture -->
+    <section>
+      <h2>Protocol Architecture</h2>
+      <div class="card" style="background: var(--canvas-subtle); font-family: var(--font-mono); font-size: 0.84rem; padding: 1.25rem; overflow-x: auto; margin: 1.5rem 0;">
+<pre style="margin: 0; line-height: 1.5;">
+[CLIENT NODE A] (e.g., Laptop behind restrictive firewall)
+       |
+       |  1. Encapsulates WireGuard packet with randomized padding
+       |  2. Wraps in standard TLS 1.3 ALPN h2 / WebSocket transport
+       v
+[INTERNET DPI GATEWAY] (Inspects packet: sees standard HTTPS to valid domain)
+       |
+       v
+[STEALTH RELAY / PEER NODE B] (e.g., Home Proxmox Server)
+       |
+       |  3. Strips TLS envelope &amp; decodes WireGuard payload
+       |  4. Injects into virtual TUN interface
+       v
+[INTERNAL MESH NETWORK (100.64.0.0/10)]
+</pre>
+      </div>
+
+      <div class="card" style="border-left: 3px solid var(--gold); margin: 1.75rem 0;">
+        <h3 style="margin-top: 0; font-size: 1.15rem;">Key Architectural Features</h3>
+        <p class="small" style="margin-bottom: 0.5rem;">
+          <strong>• True TLS 1.3 Handshake Mimicry:</strong> Sessions negotiate valid cryptographic handshakes mimicking modern browser TLS fingerprints (JA3/JA4 and cipher suite ordering), eliminating synthetic handshake anomalies.
+        </p>
+        <p class="small" style="margin-bottom: 0.5rem;">
+          <strong>• Entropy &amp; Padding Shaping:</strong> Injects variable padding and randomized timing jitter to match real web browsing traffic distributions, bypassing statistical entropy analyzers.
+        </p>
+        <p class="small" style="margin-bottom: 0;">
+          <strong>• Self-Hosted Coordination Server:</strong> Engineered around Headscale primitives, ensuring zero reliance on third-party SaaS control planes.
+        </p>
+      </div>
+    </section>
+  </main>

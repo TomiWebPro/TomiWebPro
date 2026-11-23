@@ -1,0 +1,337 @@
+<!-- page {"title": "Tomi Yang (TomiWebPro) — Systems &amp; AI Developer", "description": "Personal site of Tomi Yang (TomiWebPro). Information Engineering student at TUM, creator of Cognithor, OpenBMCUI, and Stealthscale.", "nav": "home", "header_container": "container-wide", "footer_container": "container-wide", "footer_extra": ""} -->
+
+  <main>
+    <!-- Hero Stage: Full Viewport with Interactive 3D Spatial Canvas -->
+    <section class="hero-stage">
+      <div class="hero-canvas-container">
+        <canvas id="spatial-canvas"></canvas>
+      </div>
+
+      <div class="container-wide hero-content">
+        <div class="editorial-eyebrow">
+          <span>TUM '29</span>
+          <span>•</span>
+          <span>B.Sc. Information Engineering</span>
+          <span>•</span>
+          <span>Heilbronn, Germany</span>
+        </div>
+
+        <h1 class="hero-title">
+          Tomi Yang<br>
+          <em>Building resilient systems &amp; agentic infrastructure.</em>
+        </h1>
+
+        <p class="hero-lead">
+          Undergraduate student at the Technical University of Munich (TUM Campus Heilbronn). Focused on multi-agent LLM harnesses, baseboard BMC server automation, traffic-obfuscated mesh networks, and bare-metal virtualization.
+        </p>
+
+        <!-- Interactive Domain Anchors -->
+        <div class="domain-anchors">
+          <a class="domain-pill" href="/public/openbmcui/" data-target="systems">Systems &amp; BMC</a>
+          <a class="domain-pill" href="/public/cognithor/" data-target="ai">Agentic AI</a>
+          <a class="domain-pill" href="/public/stealthscale/" data-target="networking">Mesh Networking</a>
+          <a class="domain-pill" href="/private/about/#homelab" data-target="infra">Hardware &amp; Homelab</a>
+          <a class="domain-pill" href="/compatibility/" title="Status: Single • Compatibility Quiz">Status: Single 💛</a>
+        </div>
+
+        <div class="action-row">
+          <a class="btn btn-primary" href="/public/">Explore Projects →</a>
+          <a class="btn btn-secondary" href="/private/about/">Biography &amp; Wiki</a>
+          <a class="btn btn-secondary" href="/private/contact/">Get in Touch</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bento Grid Below the Fold -->
+    <div class="container-wide" style="padding-top: 3.5rem; padding-bottom: 5rem;">
+      <!-- 1. Bio Lead + Mini Wikipedia Infobox Preview -->
+      <section style="display: grid; grid-template-columns: 1fr 340px; gap: 2.25rem; align-items: start; margin-bottom: 4.5rem;">
+        <div>
+          <h2>About the Builder</h2>
+          <p class="lead" style="margin-top: 1rem;">
+            Zixuan "Tomi" Yang is an 18-year-old software engineer and systems tinkerer. Before joining TUM for Information Engineering, he completed his International Baccalaureate at BISB (37/45) and Malvern College Chengdu with top marks in physics, mathematics, and computing.
+          </p>
+          <p>
+            His work spans autonomous LLM orchestrators that solve benchmark reasoning tasks (Cognithor), stealth mesh overlays that blend into standard web traffic (Stealthscale), and out-of-band server hardware management (OpenBMCUI).
+          </p>
+          <p style="margin-top: 1.5rem;">
+            <a class="btn btn-secondary" href="/private/about/">Read Full Biography &amp; Living Wiki →</a>
+          </p>
+        </div>
+
+        <!-- Mini Wikipedia Infobox Card -->
+        <div class="wiki-infobox" style="position: static; margin-top: 0.5rem;">
+          <div class="infobox-header">
+            <div class="infobox-title">Tomi Yang</div>
+            <div class="infobox-handle">@TomiWebPro</div>
+          </div>
+          <table class="infobox-table">
+            <tbody>
+              <tr>
+                <th>Based</th>
+                <td>Heilbronn, Germany</td>
+              </tr>
+              <tr>
+                <th>University</th>
+                <td>TUM (Info Engineering)</td>
+              </tr>
+              <tr>
+                <th>Status</th>
+                <td>Single • 18 y/o</td>
+              </tr>
+              <tr>
+                <th>Honors</th>
+                <td>IPhO Bronze, NASA 2nd</td>
+              </tr>
+              <tr>
+                <th>Email</th>
+                <td><code>tomiwebpro@gmail.com</code></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="infobox-actions">
+            <a class="btn btn-secondary" href="/private/about/#cv-builder" style="font-size: 0.85rem; padding: 0.5rem 1rem;">Modular CV Builder 📄</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Selected Systems & Builds (All 8 Repositories) -->
+      <section>
+        <div class="section-header">
+          <h2>Selected Systems &amp; Builds</h2>
+          <a class="small" href="/public/">View all %%N%% projects index →</a>
+        </div>
+        <p class="muted">
+          All repositories are standalone open-source projects with dedicated technical architecture documentation.
+        </p>
+
+        <div class="cards-grid">
+          <!-- 1. Cognithor -->
+          <a class="card project-item" data-category="ai" href="/public/cognithor/">
+            <div class="card-top">
+              <div class="card-meta">
+                <span class="card-tag">Autonomous Agents</span>
+                <span class="card-date">2026.01</span>
+              </div>
+              <div class="card-title">
+                <span>Cognithor</span>
+                <span class="card-arrow">→</span>
+              </div>
+              <p class="card-desc">
+                Modular multi-autonomous LLM agent harness (100k+ LoC). Solved ~30% on ARC-AGI-3 with Qwen 30B, surpassing Claude Opus 4.7 baselines. 150★ on GitHub.
+              </p>
+            </div>
+            <div class="card-bottom">
+              <span class="tech-chip">Python</span>
+              <span class="tech-chip">Multi-Agent</span>
+              <span class="tech-chip">ARC-AGI-3</span>
+              <span class="tech-chip">Computer-Use</span>
+            </div>
+          </a>
+
+          <!-- 2. OpenBMCUI -->
+          <a class="card project-item" data-category="systems" href="/public/openbmcui/">
+            <div class="card-top">
+              <div class="card-meta">
+                <span class="card-tag">Datacenter Hardware</span>
+                <span class="card-date">2026.09</span>
+              </div>
+              <div class="card-title">
+                <span>OpenBMCUI</span>
+                <span class="card-arrow">→</span>
+              </div>
+              <p class="card-desc">
+                Next-gen Baseboard Management Controller interface with Redfish APIs and LLM automation. Validated against GPU server racks at Compal hardware testing labs.
+              </p>
+            </div>
+            <div class="card-bottom">
+              <span class="tech-chip">Redfish</span>
+              <span class="tech-chip">OpenBMC</span>
+              <span class="tech-chip">InfiniBand</span>
+              <span class="tech-chip">Hardware Automation</span>
+            </div>
+          </a>
+
+          <!-- 3. Stealthscale -->
+          <a class="card project-item" data-category="networking" href="/public/stealthscale/">
+            <div class="card-top">
+              <div class="card-meta">
+                <span class="card-tag">Mesh Networking</span>
+                <span class="card-date">2026.10</span>
+              </div>
+              <div class="card-title">
+                <span>Stealthscale</span>
+                <span class="card-arrow">→</span>
+              </div>
+              <p class="card-desc">
+                Undetectable self-hosted mesh networking based on Tailscale and Headscale primitives, disguising encrypted peer-to-peer traffic as standard HTTPS web traffic against DPI.
+              </p>
+            </div>
+            <div class="card-bottom">
+              <span class="tech-chip">WireGuard</span>
+              <span class="tech-chip">Headscale</span>
+              <span class="tech-chip">TLS 1.3</span>
+              <span class="tech-chip">DPI Bypass</span>
+            </div>
+          </a>
+
+          <!-- 4. StudyKing -->
+          <a class="card project-item" data-category="ai" href="/public/studyking/">
+            <div class="card-top">
+              <div class="card-meta">
+                <span class="card-tag">Adaptive Learning</span>
+                <span class="card-date">2026.06</span>
+              </div>
+              <div class="card-title">
+                <span>StudyKing</span>
+                <span class="card-arrow">→</span>
+              </div>
+              <p class="card-desc">
+                AI-powered adaptive learning assistant generating customized study plans, structured lessons, and practice problem sets tailored to university coursework.
+              </p>
+            </div>
+            <div class="card-bottom">
+              <span class="tech-chip">Python</span>
+              <span class="tech-chip">LLM Tutoring</span>
+              <span class="tech-chip">Adaptive Curriculum</span>
+            </div>
+          </a>
+
+          <!-- 5. ECTS Tracker -->
+          <a class="card project-item" data-category="tools" href="/public/ects-tracker/">
+            <div class="card-top">
+              <div class="card-meta">
+                <span class="card-tag">Productivity &amp; Flutter</span>
+                <span class="card-date">2026.11</span>
+              </div>
+              <div class="card-title">
+                <span>ECTS Tracker</span>
+                <span class="card-arrow">→</span>
+              </div>
+              <p class="card-desc">
+                Local-first Flutter application (Riverpod + Drift/SQLite) converting university ECTS credits into daily and weekly study-hour pacing targets.
+              </p>
+            </div>
+            <div class="card-bottom">
+              <span class="tech-chip">Flutter</span>
+              <span class="tech-chip">Dart</span>
+              <span class="tech-chip">Drift / SQLite</span>
+              <span class="tech-chip">Riverpod</span>
+            </div>
+          </a>
+
+          <!-- 6. PChess -->
+          <a class="card project-item" data-category="ai" href="/public/pchess/">
+            <div class="card-top">
+              <div class="card-meta">
+                <span class="card-tag">Chess Engine &amp; AI</span>
+                <span class="card-date">2025.09</span>
+              </div>
+              <div class="card-title">
+                <span>PChess</span>
+                <span class="card-arrow">→</span>
+              </div>
+              <p class="card-desc">
+                Chess training engine using Stockfish to extract tactical puzzles from real game positions, paired with conversational LLM explanations of strategic motifs. (IB CS IA).
+              </p>
+            </div>
+            <div class="card-bottom">
+              <span class="tech-chip">Stockfish</span>
+              <span class="tech-chip">Python</span>
+              <span class="tech-chip">LLM Coach</span>
+              <span class="tech-chip">Grade 7 IA</span>
+            </div>
+          </a>
+
+          <!-- 7. NIQE Fork -->
+          <a class="card project-item" data-category="tools" href="/public/niqe/">
+            <div class="card-top">
+              <div class="card-meta">
+                <span class="card-tag">Vision Research</span>
+                <span class="card-date">2025.03</span>
+              </div>
+              <div class="card-title">
+                <span>NIQE Fork</span>
+                <span class="card-arrow">→</span>
+              </div>
+              <p class="card-desc">
+                Modernized implementation of the Natural Image Quality Evaluator (NIQE) in Python 3.11+, used in an IB Extended Essay benchmarking NVIDIA DLSS vs AMD FSR upscaling.
+              </p>
+            </div>
+            <div class="card-bottom">
+              <span class="tech-chip">Python 3.11</span>
+              <span class="tech-chip">OpenCV</span>
+              <span class="tech-chip">Image Quality (IQA)</span>
+              <span class="tech-chip">DLSS vs FSR</span>
+            </div>
+          </a>
+
+          <!-- 8. ActiveLearnBypass -->
+          <a class="card project-item" data-category="tools" href="/public/activelearn-bypass/">
+            <div class="card-top">
+              <div class="card-meta">
+                <span class="card-tag">Scraping &amp; Tooling</span>
+                <span class="card-date">2024.06</span>
+              </div>
+              <div class="card-title">
+                <span>ActiveLearnBypass</span>
+                <span class="card-arrow">→</span>
+              </div>
+              <p class="card-desc">
+                Parallel Python image-retrieval and PDF-assembly pipeline built for offline access to digital IGCSE textbooks via unauthenticated asset endpoints.
+              </p>
+            </div>
+            <div class="card-bottom">
+              <span class="tech-chip">Python</span>
+              <span class="tech-chip">Concurrent IO</span>
+              <span class="tech-chip">Pillow</span>
+              <span class="tech-chip">PyPDF</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- 3. Recent Logs & Diary Notes -->
+      <section style="margin-top: 4.5rem;">
+        <div class="section-header">
+          <h2>Recent Logs &amp; Writing</h2>
+          <a class="small" href="/private/blog/">All blog logs →</a>
+        </div>
+        <p class="muted">Casual dev logs, architectural postmortems, and occasional playful notes.</p>
+
+        <div class="cards-grid cards-grid-single">
+          <a class="card" href="/private/blog/building-cognithor/">
+            <div class="card-meta">
+              <span class="card-tag">AI Systems</span>
+              <span class="card-date">Jan 2026 • 8 min read</span>
+            </div>
+            <div class="card-title">
+              <span>Building Cognithor: Lessons from a 100k-Line Agent Framework &amp; ARC-AGI-3</span>
+              <span class="card-arrow">→</span>
+            </div>
+            <p class="card-desc">
+              How collaborating on a massive Python codebase with automated coding agents led to solving ~30% of ARC-AGI-3 tasks with Qwen 30B, surpassing Opus 4.7 baselines.
+            </p>
+          </a>
+
+          <a class="card" href="/private/blog/stealthscale-mesh-networking/">
+            <div class="card-meta">
+              <span class="card-tag">Mesh Networking</span>
+              <span class="card-date">Oct 2026 • 6 min read</span>
+            </div>
+            <div class="card-title">
+              <span>Designing Stealthscale: Obfuscating Mesh Network Traffic Against DPI</span>
+              <span class="card-arrow">→</span>
+            </div>
+            <p class="card-desc">
+              Why standard WireGuard and Tailscale fail under state-level Deep Packet Inspection, and how wrapping packets in TLS 1.3 frames with randomized padding achieves total stealth.
+            </p>
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+<!-- page-tail -->
+
+  <script src="/assets/js/spatial-3d.js"></script>
+<!-- /page-tail -->

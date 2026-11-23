@@ -1,0 +1,75 @@
+<!-- page {"title": "NIQE Modernized Fork — Neural Image Quality Evaluator — tomiweb.pro", "description": "Modernized Python implementation of the Natural Image Quality Evaluator (NIQE). Used in IB Extended Essay comparing NVIDIA DLSS and AMD FSR.", "nav": "projects", "header_container": "container-wide", "footer_container": "container", "footer_extra": "", "card": {"title": "NIQE Fork", "tag": "Computer Vision", "date": "Mar 2025", "sort": "2025-03", "seq": 1, "category": "tools", "desc": "Modernized Python 3.11+ implementation of the Natural Image Quality Evaluator (NIQE), used in research comparing visual fidelity in NVIDIA DLSS vs AMD FSR.", "tech": ["Python 3.11", "OpenCV", "No-Reference IQA", "DLSS vs FSR"], "origin": "#niqe-origin"}} -->
+
+  <main class="container">
+    <div class="project-head-hero">
+      <div style="margin-bottom: 0.75rem;">
+        <a href="/public/" style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--ink-secondary);">← Back to Projects</a>
+      </div>
+
+      <div class="origin-callout">
+        <span>📖 Context &amp; Origin:</span>
+        <a href="/private/about/#niqe-origin">Read biographical origin in About Wiki →</a>
+      </div>
+
+      <div class="card-meta" style="margin-top: 0.5rem;">
+        <span class="card-tag">Computer Vision &amp; Research</span>
+        <span class="card-date">Mar 2025 • IB Extended Essay</span>
+      </div>
+
+      <h1 style="margin: 0.5rem 0 0.75rem; font-size: 2.75rem;">NIQE Modernized Fork</h1>
+      <p class="lead" style="margin-bottom: 1.5rem;">
+        A modernized Python 3.11+ implementation of the Natural Image Quality Evaluator (NIQE) algorithm. Used to evaluate visual fidelity and temporal reconstruction artifacts in real-time super-resolution upscalers (NVIDIA DLSS vs. AMD FSR).
+      </p>
+
+      <div class="project-links-bar">
+        <a class="btn btn-primary" href="https://github.com/TomiWebPro/niqe" target="_blank" rel="noopener noreferrer">GitHub: TomiWebPro/niqe ↗</a>
+      </div>
+    </div>
+
+    <!-- Key Metrics Grid -->
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2.5rem;">
+      <div class="card" style="padding: 1.25rem; text-align: center;">
+        <div style="font-family: var(--font-mono); font-size: 1.85rem; font-weight: 800; color: var(--gold-hover);">Python 3.11+</div>
+        <div class="small muted">Modernized Dependencies</div>
+      </div>
+      <div class="card" style="padding: 1.25rem; text-align: center;">
+        <div style="font-family: var(--font-mono); font-size: 1.85rem; font-weight: 800; color: var(--gold-hover);">No-Reference</div>
+        <div class="small muted">Natural Scene Statistics</div>
+      </div>
+      <div class="card" style="padding: 1.25rem; text-align: center;">
+        <div style="font-family: var(--font-mono); font-size: 1.85rem; font-weight: 800; color: var(--gold-hover);">DLSS vs FSR</div>
+        <div class="small muted">Empirical Thesis Study</div>
+      </div>
+    </div>
+
+    <!-- Research Motivation -->
+    <section>
+      <h2>Research Motivation: Evaluating Upscaling Fidelity</h2>
+      <p>
+        For his International Baccalaureate Extended Essay (EE), Tomi conducted an empirical investigation into real-time neural upscaling technologies, contrasting the temporal feedback networks of <strong>NVIDIA DLSS</strong> against the spatial/temporal filters of <strong>AMD FSR</strong>.
+      </p>
+      <p>
+        Evaluating upscaled gaming frames requires a no-reference image quality metric. NIQE is an established academic benchmark for assessing perceptual naturalness using generalized Gaussian distributions of spatial domain features.
+      </p>
+      <p>
+        However, the original 2014 MATLAB and Python implementations were abandoned, incompatible with modern NumPy/SciPy, and lacked batch execution support. Tomi modernized the entire library to support automated benchmark suites.
+      </p>
+    </section>
+
+    <!-- Engineering Modernizations -->
+    <section>
+      <h2>Engineering Modernizations</h2>
+      <div class="card" style="border-left: 3px solid var(--gold); margin: 1.75rem 0;">
+        <h3 style="margin-top: 0; font-size: 1.15rem;">Key Codebase Upgrades</h3>
+        <p class="small" style="margin-bottom: 0.5rem;">
+          <strong>• Contemporary NumPy Compatibility:</strong> Refactored deprecated matrix manipulation functions and resolved floating-point precision issues.
+        </p>
+        <p class="small" style="margin-bottom: 0.5rem;">
+          <strong>• Accelerated MSCN Coefficient Extraction:</strong> Reimplemented Mean Subtracted Contrast Normalized coefficient computations using modern OpenCV kernels for 5x faster batch evaluations.
+        </p>
+        <p class="small" style="margin-bottom: 0;">
+          <strong>• Clean Modular CLI:</strong> Packaged as a clean CLI tool and importable Python module for continuous integration and large-scale dataset benchmarking.
+        </p>
+      </div>
+    </section>
+  </main>

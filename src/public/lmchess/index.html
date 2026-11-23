@@ -1,0 +1,53 @@
+<!-- page {"title": "LMChess — LLM Chess Arena — tomiweb.pro", "description": "LMChess: offline-first arena where humans and LLM agents play standard and chaotic chess.", "nav": "projects", "header_container": "container-wide", "footer_container": "container", "footer_extra": "", "card": {"title": "LMChess", "tag": "Chess & AI", "date": "Nov 2026", "sort": "2026-11", "seq": 1, "category": "ai", "desc": "Offline-first arena where humans and LLM agents play standard and chaotic chess, with live commentary, tournaments, and post-game review.", "tech": ["Flutter", "Stockfish", "LLM Agents"], "origin": null}} -->
+
+  <main class="container">
+    <div class="project-head-hero">
+      <div style="margin-bottom: 0.75rem;">
+        <a href="/public/" style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--ink-secondary);">← Back to Projects</a>
+      </div>
+
+      <div class="card-meta" style="margin-top: 0.5rem;">
+        <span class="card-tag">Chess &amp; AI</span>
+        <span class="card-date">Nov 2026 • Flutter / Dart</span>
+      </div>
+
+      <h1 style="margin: 0.5rem 0 0.75rem; font-size: 2.75rem;">LMChess</h1>
+      <p class="lead" style="margin-bottom: 1.5rem;">
+        Offline-first arena where humans and LLM agents play standard and chaotic chess, with live commentary, tournaments, and post-game review.
+      </p>
+
+      <div class="project-links-bar">
+        <a class="btn btn-primary" href="https://github.com/TomiWebPro/LMChess" target="_blank" rel="noopener noreferrer">GitHub: TomiWebPro/LMChess ↗</a>
+      </div>
+    </div>
+
+    <!-- Key Metrics Grid -->
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2.5rem;">
+      <div class="card" style="padding: 1.25rem; text-align: center;">
+        <div style="font-family: var(--font-mono); font-size: 1.85rem; font-weight: 800; color: var(--gold-hover);">2</div>
+        <div class="small muted">Rulesets: Standard + Chaotic</div>
+      </div>
+      <div class="card" style="padding: 1.25rem; text-align: center;">
+        <div style="font-family: var(--font-mono); font-size: 1.85rem; font-weight: 800; color: var(--gold-hover);">sf_19</div>
+        <div class="small muted">Embedded Stockfish Engine</div>
+      </div>
+      <div class="card" style="padding: 1.25rem; text-align: center;">
+        <div style="font-family: var(--font-mono); font-size: 1.85rem; font-weight: 800; color: var(--gold-hover);">140</div>
+        <div class="small muted">Commits on Main</div>
+      </div>
+    </div>
+
+    <section>
+      <h2>What it is</h2>
+      <p>
+        LLM Chess Arena is a standalone, offline-first Flutter app for games between humans and LLM agents in two rulesets — standard chess and chaotic chess that permits illegal moves under a separate interpretation layer. It is built for comparison and inspection rather than just play, bundling arena tournaments, per-mode Elo statistics, and post-game review alongside single games.
+      </p>
+    </section>
+
+    <section>
+      <h2>How it works</h2>
+      <p>
+        Agents play through validated <code>make_chess_move</code> tool calls with retry and timeout handling; on failure, a seeded random legal move is substituted and recorded as fallback. Every turn emits persisted, idempotent events consumed by stats, arena, and review. A <code>MockProvider</code> plays scripted demo games with no keys, while OpenAI, Anthropic, Gemini, or Ollama keys can be added in the Agents screen and stay in secure storage.
+      </p>
+    </section>
+  </main>

@@ -1,0 +1,53 @@
+<!-- page {"title": "German Noun Chooser — Daily Vocab Tool — tomiweb.pro", "description": "German Noun Chooser: daily German noun picker with a graphical interface.", "nav": "projects", "header_container": "container-wide", "footer_container": "container", "footer_extra": "", "card": {"title": "German Noun Chooser", "tag": "Language Tool", "date": "Aug 2023", "sort": "2023-08", "seq": 1, "category": "tools", "desc": "Daily German noun picker with a graphical interface — learn vocabulary the easy way.", "tech": ["Python", "GUI", "Vocab"], "origin": null}} -->
+
+  <main class="container">
+    <div class="project-head-hero">
+      <div style="margin-bottom: 0.75rem;">
+        <a href="/public/" style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--ink-secondary);">← Back to Projects</a>
+      </div>
+
+      <div class="card-meta" style="margin-top: 0.5rem;">
+        <span class="card-tag">Language Tool</span>
+        <span class="card-date">Aug 2023 • Python / tkinter</span>
+      </div>
+
+      <h1 style="margin: 0.5rem 0 0.75rem; font-size: 2.75rem;">German Noun Chooser</h1>
+      <p class="lead" style="margin-bottom: 1.5rem;">
+        Daily German noun picker with a graphical interface — learn vocabulary the easy way.
+      </p>
+
+      <div class="project-links-bar">
+        <a class="btn btn-primary" href="https://github.com/TomiWebPro/german_noun_chooser_v3" target="_blank" rel="noopener noreferrer">GitHub: german_noun_chooser_v3 ↗</a>
+      </div>
+    </div>
+
+    <!-- Key Metrics Grid -->
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2.5rem;">
+      <div class="card" style="padding: 1.25rem; text-align: center;">
+        <div style="font-family: var(--font-mono); font-size: 1.85rem; font-weight: 800; color: var(--gold-hover);">500+</div>
+        <div class="small muted">Seeded Vocab Words</div>
+      </div>
+      <div class="card" style="padding: 1.25rem; text-align: center;">
+        <div style="font-family: var(--font-mono); font-size: 1.85rem; font-weight: 800; color: var(--gold-hover);">v1→v3</div>
+        <div class="small muted">Shipped in Five Weeks</div>
+      </div>
+      <div class="card" style="padding: 1.25rem; text-align: center;">
+        <div style="font-family: var(--font-mono); font-size: 1.85rem; font-weight: 800; color: var(--gold-hover);">0</div>
+        <div class="small muted">Overlap With Learned Words</div>
+      </div>
+    </div>
+
+    <section>
+      <h2>What it is</h2>
+      <p>
+        A local-first vocabulary drill tool: a master word list feeds a daily queue, and mastered items get archived to a learned list. Request N words, get N unique picks excluding what you already know; mark batches memorized to move them over, add words manually, and de-duplicate the master list.
+      </p>
+    </section>
+
+    <section>
+      <h2>How it evolved</h2>
+      <p>
+        Version 1 was a single CLI script picking random words from flat files. Version 2 split into a CLI toolkit with parallel TXT and JSON stores plus translators. Version 3 rebuilt the same workflow as a tkinter GUI hub — seven buttons launching pick, review, update, import, de-duplicate, and search windows.
+      </p>
+    </section>
+  </main>

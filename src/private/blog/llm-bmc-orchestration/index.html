@@ -1,0 +1,63 @@
+<!-- page {"title": "Autonomous Datacenters: Bringing LLM Orchestration to Server BMCs — tomiweb.pro", "description": "Notes from visiting Compal's testing lab and Computex 2026: how LLMs and Redfish APIs can automate server BMC operations and InfiniBand bandwidth testing.", "nav": "blog", "header_container": "container-wide", "footer_container": "container", "footer_extra": ""} -->
+
+  <main class="container" style="padding-top: 3.5rem; padding-bottom: 5rem;">
+    <div style="margin-bottom: 1rem;">
+      <a href="/private/blog/" style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--ink-secondary);">← Back to Blog</a>
+    </div>
+
+    <article>
+      <div class="card-meta" style="margin-bottom: 0.5rem;">
+        <span class="card-tag">Datacenter &amp; Hardware</span>
+        <span class="card-date">Sep 2026 • By Tomi Yang</span>
+      </div>
+
+      <h1 style="margin: 0.5rem 0 1rem; font-size: 2.5rem;">Autonomous Datacenters: Bringing LLM Orchestration to Server BMCs</h1>
+
+      <p class="lead">
+        In June 2026, while attending Computex in Taipei and the NVIDIA Global Developer Conference, I had the privilege of visiting Compal’s enterprise server testing facility. Walking through aisles of high-density AI servers running racks of GPUs connected by optical InfiniBand backplanes was awe-inspiring.
+      </p>
+
+      <p>
+        Yet, as I watched engineers perform qualification runs, a stark contrast emerged. While physical actions like seating accelerator cards and plugging cables must be done by humans, the vast majority of software validation procedures were manual, repetitive, and error-prone.
+      </p>
+
+      <h2>The Validation Bottleneck</h2>
+      <p>
+        Validating a cluster for InfiniBand bandwidth throughput requires several sequential stages:
+      </p>
+      <ul>
+        <li>Booting the machine into PXE network installers or live environments.</li>
+        <li>Mounting virtual ISO media via out-of-band management controllers.</li>
+        <li>Installing OS kernels, matching NVIDIA Open Kernel modules, and compiling Mellanox OFED drivers.</li>
+        <li>Running <code>ib_write_bw</code> and latency benchmarks across network fabrics.</li>
+        <li>Troubleshooting kernel panics or PCIe negotiation faults by reading Serial-over-LAN (SOL) consoles.</li>
+      </ul>
+
+      <p>
+        Every time a driver version changes or a BIOS parameter is tweaked, engineers repeat these steps manually across dozens of machines.
+      </p>
+
+      <h2>The Redfish + LLM Paradigm</h2>
+      <p>
+        Baseboard Management Controllers (BMCs) run specialized embedded Linux distributions (such as OpenBMC) independent of the host CPU and OS. Through standard DMTF Redfish REST APIs, nearly every hardware parameter — power cycling, virtual media mounting, thermal fan curves, and BIOS configuration registries — can be manipulated programmatically.
+      </p>
+
+      <p>
+        By connecting an LLM agent harness (similar to what we built in Cognithor) directly to Redfish endpoints and the Serial-over-LAN terminal stream, we can create an autonomous hardware technician:
+      </p>
+
+      <ol>
+        <li>The agent receives a target test goal: <em>"Validate HDR 200Gb/s InfiniBand throughput on Node 4 with Ubuntu 24.04 and kernel 6.8."</em></li>
+        <li>The agent commands the BMC to mount the appropriate boot image, powers on the host, and monitors the boot console.</li>
+        <li>If an initial driver compile fails due to a missing kernel header, the agent reads the compiler error trace from the SOL console, runs the fix in the remote shell, and resumes the benchmark script.</li>
+      </ol>
+
+      <h2>Open Innovation Over Closed Internships</h2>
+      <p>
+        When I demonstrated this concept to the Vice President of Compal during our lab discussion, he was immediately enthusiastic and offered me a paid internship to implement the system internally.
+      </p>
+      <p>
+        While tempting, I decided that the modern server ecosystem desperately needs open, standardized tooling rather than proprietary vendor silos. By maintaining this as an open-source project (<a href="/public/openbmcui/">OpenBMCUI</a>), we can help data center operators and homelab enthusiasts worldwide automate their hardware lifecycle without vendor lock-in.
+      </p>
+    </article>
+  </main>

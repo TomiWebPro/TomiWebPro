@@ -1,0 +1,58 @@
+<!-- page {"title": "ActiveLearnBypass — Concurrent Asset Scraper &amp; PDF Compiler — tomiweb.pro", "description": "ActiveLearnBypass: High-throughput concurrent Python script to retrieve and assemble digital textbook images into complete offline PDF documents.", "nav": "projects", "header_container": "container-wide", "footer_container": "container", "footer_extra": "", "card": {"title": "ActiveLearnBypass", "tag": "Scraping & Tooling", "date": "Jun 2024", "sort": "2024-06", "seq": 1, "category": "tools", "desc": "Concurrent Python image-retrieval pipeline and PDF compiler created to download offline copies of digital IGCSE textbooks from unauthenticated endpoints.", "tech": ["Python", "Async IO", "Pillow", "PyPDF"], "origin": "#activelearn-origin"}} -->
+
+  <main class="container">
+    <div class="project-head-hero">
+      <div style="margin-bottom: 0.75rem;">
+        <a href="/public/" style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--ink-secondary);">← Back to Projects</a>
+      </div>
+
+      <div class="origin-callout">
+        <span>📖 Context &amp; Origin:</span>
+        <a href="/private/about/#activelearn-origin">Read biographical origin in About Wiki →</a>
+      </div>
+
+      <div class="card-meta" style="margin-top: 0.5rem;">
+        <span class="card-tag">Automation &amp; Tooling</span>
+        <span class="card-date">Jun 2024</span>
+      </div>
+
+      <h1 style="margin: 0.5rem 0 0.75rem; font-size: 2.75rem;">ActiveLearnBypass</h1>
+      <p class="lead" style="margin-bottom: 1.5rem;">
+        Automated concurrent scraping pipeline and PDF compilation utility for Pearson ActiveLearn educational textbooks. Retrieves high-resolution textbook pages in parallel and synthesizes standardized offline PDF documents.
+      </p>
+
+      <div class="project-links-bar">
+        <a class="btn btn-primary" href="https://github.com/TomiWebPro/ActiveLearn_bypass" target="_blank" rel="noopener noreferrer">GitHub: TomiWebPro/ActiveLearn_bypass ↗</a>
+      </div>
+    </div>
+
+    <!-- Key Metrics Grid -->
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2.5rem;">
+      <div class="card" style="padding: 1.25rem; text-align: center;">
+        <div style="font-family: var(--font-mono); font-size: 1.85rem; font-weight: 800; color: var(--gold-hover);">Async</div>
+        <div class="small muted">Parallel Concurrent Workers</div>
+      </div>
+      <div class="card" style="padding: 1.25rem; text-align: center;">
+        <div style="font-family: var(--font-mono); font-size: 1.85rem; font-weight: 800; color: var(--gold-hover);">100%</div>
+        <div class="small muted">Lossless PDF Assembly</div>
+      </div>
+      <div class="card" style="padding: 1.25rem; text-align: center;">
+        <div style="font-family: var(--font-mono); font-size: 1.85rem; font-weight: 800; color: var(--gold-hover);">Offline</div>
+        <div class="small muted">Digital Access Everywhere</div>
+      </div>
+    </div>
+
+    <!-- Discovery & Solution -->
+    <section>
+      <h2>Problem &amp; Discovery</h2>
+      <p>
+        While preparing for IGCSE examinations, students were provided Pearson ActiveLearn digital textbooks locked behind a web viewer with no native option to export or download offline copies for tablet note-taking or offline study.
+      </p>
+      <p>
+        Inspecting browser network traffic during page flipping revealed that individual high-resolution textbook pages were served directly from static CDN URLs using predictable naming patterns without authentication barriers or encryption.
+      </p>
+      <p>
+        Tomi engineered a multi-threaded Python pipeline that parses book manifests, downloads pages concurrently, verifies byte integrity, and compiles them directly into a losslessly compressed PDF using Pillow and PyPDF.
+      </p>
+    </section>
+  </main>

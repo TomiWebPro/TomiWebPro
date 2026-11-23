@@ -1,0 +1,6 @@
+- 👋 Hi, I’m TomiWebPro
+- 👀 I’m interested in any kind of computing challenge as long as it's within my skill level.
+- 🌱 I’m currently learning Python, Blender and UE5
+- 📫 You can reach me by the E-mail: TomiWebPro@gmail.com
+- Please do not reach me on financial proposes, I only do stuff like this for fun.
+- TomiWebPro

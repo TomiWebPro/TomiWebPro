@@ -1,0 +1,59 @@
+<!-- page {"title": "Building Cognithor: Lessons from a 100k-Line Agent Framework &amp; ARC-AGI-3 — tomiweb.pro", "description": "Technical deep-dive on Cognithor: 100k+ LoC agent harness, achieving 30% on ARC-AGI-3 with Qwen 30B, multi-agent coordination, and sandboxing.", "nav": "blog", "header_container": "container-wide", "footer_container": "container", "footer_extra": ""} -->
+
+  <main class="container" style="padding-top: 3.5rem; padding-bottom: 5rem;">
+    <div style="margin-bottom: 1rem;">
+      <a href="/private/blog/" style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--ink-secondary);">← Back to Blog</a>
+    </div>
+
+    <article>
+      <div class="card-meta" style="margin-bottom: 0.5rem;">
+        <span class="card-tag">AI Systems</span>
+        <span class="card-date">Jan 2026 • By Tomi Yang</span>
+      </div>
+
+      <h1 style="margin: 0.5rem 0 1rem; font-size: 2.5rem;">Building Cognithor: Lessons from a 100k-Line Agent Framework &amp; ARC-AGI-3</h1>
+
+      <p class="lead">
+        In January 2026, inspired by early agent frameworks like OpenClaw, my collaborator (a fellow developer based in Germany) and I asked a straightforward question: <em>What does an agent architecture need to look like to autonomously solve reasoning problems that trip up frontier closed models?</em>
+      </p>
+
+      <p>
+        With our International Baccalaureate exams looming in May, we didn't have years to write every single line manually. Instead, we heavily leveraged Claude 3.5 Sonnet to scaffold, test, and refactor our codebase. Within weeks, we shipped a production-ready harness that quickly exceeded <strong>100,000 lines of modular Python code</strong>.
+      </p>
+
+      <h2>The Benchmark Challenge: ARC-AGI-3</h2>
+      <p>
+        The ARC (Abstraction and Reasoning Corpus) benchmark is designed specifically to test general reasoning without relying on memorization. Each task consists of input/output 2D color grids demonstrating an unknown transformation rule (e.g., gravity, occlusion, raycasting, topological filling). The agent must deduce the rule and transform a novel test input grid.
+      </p>
+      <p>
+        When evaluating frontier models zero-shot, even massive models struggle because the output space is combinatorial and unforgiving — a single misplaced pixel marks the entire task as failed.
+      </p>
+
+      <h2>Our Solution: The Code Synthesis &amp; Verification Loop</h2>
+      <p>
+        Instead of prompting the LLM to directly output a matrix of numbers, Cognithor employs a hierarchical agent pipeline:
+      </p>
+      <ol>
+        <li><strong>Decomposer:</strong> Analyzes the train pairs and verbalizes visual transformation hypotheses in natural language.</li>
+        <li><strong>Programmer Agent:</strong> Translates those hypotheses into standalone Python functions that transform <code>numpy.ndarray</code> inputs to outputs.</li>
+        <li><strong>Sandbox Runner:</strong> Executes the candidate function against all provided training examples in an isolated Docker container.</li>
+        <li><strong>Verifier &amp; Critic:</strong> If the code fails on even one example, diffs are computed, error traces are formatted into visual ASCII grids, and the programmer agent is guided to self-correct.</li>
+      </ol>
+
+      <h2>Results &amp; Impact</h2>
+      <p>
+        Equipped with this harness, open-weights <strong>Qwen 30B</strong> achieved approximately <strong>30% accuracy on ARC-AGI-3</strong>. Crucially, this outperformed published benchmark baselines achieved by Claude with Opus 4.7 operating under standard agent harnesses. It demonstrated a core truth of modern AI engineering: <em>deterministic verification and feedback loops matter as much as base model size</em>.
+      </p>
+
+      <p>
+        The project gained organic traction, crossing <strong>150 GitHub stars</strong> without marketing, and its architectural lessons now form the foundation of our work on autonomous tool execution.
+      </p>
+
+      <div class="card" style="border-left: 3px solid var(--gold); margin: 2rem 0;">
+        <h3 style="margin-top: 0; font-size: 1.15rem;">Explore the Project</h3>
+        <p class="small" style="margin-bottom: 0;">
+          Check out the full repository on GitHub: <a href="https://github.com/Alex8791-cyber/cognithor" target="_blank" rel="noopener noreferrer">Alex8791-cyber/cognithor</a> or read the dedicated project overview at <a href="/public/cognithor/">Cognithor Project Head →</a>.
+        </p>
+      </div>
+    </article>
+  </main>

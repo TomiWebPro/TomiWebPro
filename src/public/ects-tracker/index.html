@@ -1,0 +1,78 @@
+<!-- page {"title": "ECTS Tracker — Study Pace &amp; Credit Pacing App — tomiweb.pro", "description": "ECTS Tracker: Local-first Flutter application (Riverpod + Drift/SQLite) converting university course ECTS credits into daily and weekly study-hour pacing targets.", "nav": "projects", "header_container": "container-wide", "footer_container": "container", "footer_extra": "", "card": {"title": "ECTS Tracker", "tag": "Productivity & Flutter", "date": "Nov 2026", "sort": "2026-11", "seq": 3, "category": "tools", "desc": "Local-first Flutter application (Riverpod + Drift/SQLite) converting university course ECTS credits into weekly and daily study-hour pacing targets.", "tech": ["Flutter", "Dart", "Drift / SQLite", "Riverpod"], "origin": "#ects-origin"}} -->
+
+  <main class="container">
+    <div class="project-head-hero">
+      <div style="margin-bottom: 0.75rem;">
+        <a href="/public/" style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--ink-secondary);">← Back to Projects</a>
+      </div>
+
+      <div class="origin-callout">
+        <span>📖 Context &amp; Origin:</span>
+        <a href="/private/about/#ects-origin">Read biographical origin in About Wiki →</a>
+      </div>
+
+      <div class="card-meta" style="margin-top: 0.5rem;">
+        <span class="card-tag">Productivity &amp; Flutter</span>
+        <span class="card-date">Released Nov 2026</span>
+      </div>
+
+      <h1 style="margin: 0.5rem 0 0.75rem; font-size: 2.75rem;">ECTS Tracker</h1>
+      <p class="lead" style="margin-bottom: 1.5rem;">
+        A local-first Flutter application engineered with Riverpod and Drift (SQLite) to translate university course ECTS credits into actionable daily and weekly study pacing benchmarks.
+      </p>
+
+      <div class="project-links-bar">
+        <a class="btn btn-primary" href="https://github.com/TomiWebPro/ECTS-Tracker" target="_blank" rel="noopener noreferrer">GitHub: TomiWebPro/ECTS-Tracker ↗</a>
+      </div>
+    </div>
+
+    <!-- Key Metrics Grid -->
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2.5rem;">
+      <div class="card" style="padding: 1.25rem; text-align: center;">
+        <div style="font-family: var(--font-mono); font-size: 1.85rem; font-weight: 800; color: var(--gold-hover);">Flutter</div>
+        <div class="small muted">Cross-Platform UI</div>
+      </div>
+      <div class="card" style="padding: 1.25rem; text-align: center;">
+        <div style="font-family: var(--font-mono); font-size: 1.85rem; font-weight: 800; color: var(--gold-hover);">Drift</div>
+        <div class="small muted">Local-First SQLite Persistence</div>
+      </div>
+      <div class="card" style="padding: 1.25rem; text-align: center;">
+        <div style="font-family: var(--font-mono); font-size: 1.85rem; font-weight: 800; color: var(--gold-hover);">Riverpod</div>
+        <div class="small muted">Reactive State Architecture</div>
+      </div>
+    </div>
+
+    <!-- Motivation & Concept -->
+    <section>
+      <h2>Problem &amp; Student Workflow</h2>
+      <p>
+        In European universities operating under the European Credit Transfer and Accumulation System (ECTS), one ECTS credit officially represents 25 to 30 hours of academic workload. For an undergraduate taking 30 ECTS per semester at TUM, this translates to approximately 900 hours across lectures, exercises, lab practicals, and independent exam preparation.
+      </p>
+      <p>
+        ECTS Tracker was built in Budapest in November 2026 to pace remote TUM study hours during German student visa processing delays. Most student calendar tools fail to connect abstract credit requirements to daily time investment. ECTS Tracker bridges this gap: students input their enrolled modules, exam dates, and lecture times, and the app computes rolling daily pacing targets to prevent last-minute cramming. It has been shared with TUM classmates facing the same remote-study constraints.
+      </p>
+    </section>
+
+    <!-- Technical Architecture -->
+    <section>
+      <h2>Local-First Architecture</h2>
+      <p>
+        ECTS Tracker is built with strict privacy and local-first principles:
+      </p>
+      <ul>
+        <li><strong>Reactive State with Riverpod:</strong> State providers reactively propagate study session logs, course progress metrics, and target adjustments across desktop and mobile screens.</li>
+        <li><strong>Type-Safe Persistence with Drift:</strong> Built on SQLite using Drift (formerly Moor), offering reactive streams, compile-time query verification, and instant startup times without cloud latency.</li>
+        <li><strong>Zero Account Requirement:</strong> All student schedules, notes, and study timestamps remain on the user's local device filesystem.</li>
+      </ul>
+
+      <div class="card" style="border-left: 3px solid var(--gold); margin: 1.75rem 0;">
+        <h3 style="margin-top: 0; font-size: 1.15rem;">Technical Stack</h3>
+        <p class="small" style="margin-bottom: 0;">
+          <strong>Framework:</strong> Flutter 3.x &amp; Dart<br>
+          <strong>State Management:</strong> Flutter Riverpod 2.x<br>
+          <strong>Database:</strong> Drift ORM / SQLite<br>
+          <strong>Target Platforms:</strong> macOS, Windows, Linux, Android, iOS
+        </p>
+      </div>
+    </section>
+  </main>

@@ -1,0 +1,53 @@
+<!-- page {"title": "TaskManager Image — Pixel Art in Task Manager — tomiweb.pro", "description": "TaskManager Image: turns CPU load into pixel art in your task manager.", "nav": "projects", "header_container": "container-wide", "footer_container": "container", "footer_extra": "", "card": {"title": "TaskManager Image", "tag": "Just for Fun", "date": "Oct 2023", "sort": "2023-10", "seq": 1, "category": "tools", "desc": "Turns CPU load into pixel art inside your task manager.", "tech": ["Python", "C", "Pixel Art"], "origin": null}} -->
+
+  <main class="container">
+    <div class="project-head-hero">
+      <div style="margin-bottom: 0.75rem;">
+        <a href="/public/" style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--ink-secondary);">← Back to Projects</a>
+      </div>
+
+      <div class="card-meta" style="margin-top: 0.5rem;">
+        <span class="card-tag">Just for Fun</span>
+        <span class="card-date">Oct 2023 • Python + C</span>
+      </div>
+
+      <h1 style="margin: 0.5rem 0 0.75rem; font-size: 2.75rem;">TaskManager Image</h1>
+      <p class="lead" style="margin-bottom: 1.5rem;">
+        Turns CPU load into pixel art inside your task manager.
+      </p>
+
+      <div class="project-links-bar">
+        <a class="btn btn-primary" href="https://github.com/TomiWebPro/TaskManager_Image" target="_blank" rel="noopener noreferrer">GitHub: TomiWebPro/TaskManager_Image ↗</a>
+      </div>
+    </div>
+
+    <!-- Key Metrics Grid -->
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2.5rem;">
+      <div class="card" style="padding: 1.25rem; text-align: center;">
+        <div style="font-family: var(--font-mono); font-size: 1.85rem; font-weight: 800; color: var(--gold-hover);">56</div>
+        <div class="small muted">Threads, One Per Core</div>
+      </div>
+      <div class="card" style="padding: 1.25rem; text-align: center;">
+        <div style="font-family: var(--font-mono); font-size: 1.85rem; font-weight: 800; color: var(--gold-hover);">2</div>
+        <div class="small muted">Code Files</div>
+      </div>
+      <div class="card" style="padding: 1.25rem; text-align: center;">
+        <div style="font-family: var(--font-mono); font-size: 1.85rem; font-weight: 800; color: var(--gold-hover);">100%</div>
+        <div class="small muted">Busy Load = Dark Pixel</div>
+      </div>
+    </div>
+
+    <section>
+      <h2>The idea</h2>
+      <p>
+        If you just bought a many-core monster, why stare at boring flat CPU graphs? This project treats the task manager's per-core load grid as a pixel canvas — idle cores draw white, pegged cores draw dark — so it renders letters and pixel art as live CPU load.
+      </p>
+    </section>
+
+    <section>
+      <h2>How it works</h2>
+      <p>
+        A Python script binarizes any image to pure black and white at the exact core-grid resolution and prints a brightness map. A small C program then launches one thread per logical core, pins each with an affinity mask, and either idles it or spins it in a busy loop — so the task manager paints the picture.
+      </p>
+    </section>
+  </main>

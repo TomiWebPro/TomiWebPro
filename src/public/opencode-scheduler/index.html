@@ -1,0 +1,53 @@
+<!-- page {"title": "opencode-scheduler — Scheduled AI Tasks — tomiweb.pro", "description": "opencode-scheduler: headless task scheduler with automatic agent quality reports and journaling.", "nav": "projects", "header_container": "container-wide", "footer_container": "container", "footer_extra": "", "card": {"title": "opencode-scheduler", "tag": "Agent Ops", "date": "Oct 2026", "sort": "2026-10", "seq": 2, "category": "ai", "desc": "Schedules prompts as headless coding-agent tasks with automatic quality reports, scoring, and a full journal of every run.", "tech": ["Python", "opencode", "Automation"], "origin": null}} -->
+
+  <main class="container">
+    <div class="project-head-hero">
+      <div style="margin-bottom: 0.75rem;">
+        <a href="/public/" style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--ink-secondary);">← Back to Projects</a>
+      </div>
+
+      <div class="card-meta" style="margin-top: 0.5rem;">
+        <span class="card-tag">Agent Ops</span>
+        <span class="card-date">Oct 2026 • Python / SQLite</span>
+      </div>
+
+      <h1 style="margin: 0.5rem 0 0.75rem; font-size: 2.75rem;">opencode-scheduler</h1>
+      <p class="lead" style="margin-bottom: 1.5rem;">
+        Headless task scheduler that runs prompts as coding-agent jobs, with automatic quality reports, scoring, and a full journal of every run.
+      </p>
+
+      <div class="project-links-bar">
+        <a class="btn btn-primary" href="https://github.com/TomiWebPro/opencode-scheduler" target="_blank" rel="noopener noreferrer">GitHub: TomiWebPro/opencode-scheduler ↗</a>
+      </div>
+    </div>
+
+    <!-- Key Metrics Grid -->
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2.5rem;">
+      <div class="card" style="padding: 1.25rem; text-align: center;">
+        <div style="font-family: var(--font-mono); font-size: 1.85rem; font-weight: 800; color: var(--gold-hover);">3</div>
+        <div class="small muted">Schedule Modes</div>
+      </div>
+      <div class="card" style="padding: 1.25rem; text-align: center;">
+        <div style="font-family: var(--font-mono); font-size: 1.85rem; font-weight: 800; color: var(--gold-hover);">n/10</div>
+        <div class="small muted">Agent Quality Scoring</div>
+      </div>
+      <div class="card" style="padding: 1.25rem; text-align: center;">
+        <div style="font-family: var(--font-mono); font-size: 1.85rem; font-weight: 800; color: var(--gold-hover);">600s</div>
+        <div class="small muted">Default Job Timeout</div>
+      </div>
+    </div>
+
+    <section>
+      <h2>What it is</h2>
+      <p>
+        opencode-scheduler runs natural-language prompts as headless agent tasks on cron, interval, or one-shot schedules, with state in SQLite. Every run is verified, graded with a quality report ending in a score and verdict, and logged to a searchable journal — plus Gmail notifications and an email-to-task bridge that turns a self-sent email into a real scheduled job.
+      </p>
+    </section>
+
+    <section>
+      <h2>How a run works</h2>
+      <p>
+        Each job spawns <code>opencode run</code> under its timeout, then chains up to two more agent calls: a verifier that answers CHECK PASS or FAIL, and a reporter that writes the quality summary. Outputs land in per-run logs, the journal, and an activity stream, so everything the agents did, when, and how well is always traceable.
+      </p>
+    </section>
+  </main>

@@ -1,0 +1,71 @@
+<!-- page {"title": "Blog &amp; Engineering Logs — Tomi Yang (TomiWebPro)", "description": "Engineering notes, system architecture teardowns, and research writeups by Tomi Yang (TomiWebPro).", "nav": "blog", "header_container": "container-wide", "footer_container": "container", "footer_extra": ""} -->
+
+  <main class="container" style="padding-top: 3.5rem; padding-bottom: 5rem;">
+    <div class="editorial-eyebrow">Engineering Logs • Notes &amp; Musings</div>
+    <h1 style="margin-bottom: 0.5rem;">Blog &amp; Field Notes</h1>
+    <p class="lead">
+      Real-time logs on software architecture, agent benchmarking, datacenter automation, homelab virtualization, and occasional larp posts.
+    </p>
+
+    <div class="cards-grid cards-grid-single" style="margin-top: 2rem;">
+      <!-- Post 1 -->
+      <a class="card" href="/private/blog/building-cognithor/">
+        <div class="card-meta">
+          <span class="card-tag">AI Systems</span>
+          <span class="card-date">Jan 2026 • 8 min read</span>
+        </div>
+        <div class="card-title">
+          <span>Building Cognithor: Lessons from a 100k-Line Agent Framework &amp; ARC-AGI-3</span>
+          <span class="card-arrow">→</span>
+        </div>
+        <p class="card-desc">
+          How building a 100,000+ line Python agent harness enabled Qwen 30B to solve ~30% of ARC-AGI-3 tasks, outperforming Claude Opus 4.7 baselines, and what we learned about tool sandboxing and code synthesis.
+        </p>
+      </a>
+
+      <!-- Post 2 -->
+      <a class="card" href="/private/blog/stealthscale-mesh-networking/">
+        <div class="card-meta">
+          <span class="card-tag">Mesh Networking</span>
+          <span class="card-date">Oct 2026 • 6 min read</span>
+        </div>
+        <div class="card-title">
+          <span>Designing Stealthscale: Obfuscating Mesh Network Traffic Against DPI</span>
+          <span class="card-arrow">→</span>
+        </div>
+        <p class="card-desc">
+          Why standard WireGuard and Tailscale fail under state-level Deep Packet Inspection (DPI), and how wrapping encrypted mesh packets in real TLS 1.3 frames and randomized padding achieves total stealth.
+        </p>
+      </a>
+
+      <!-- Post 3 -->
+      <a class="card" href="/private/blog/llm-bmc-orchestration/">
+        <div class="card-meta">
+          <span class="card-tag">Datacenter &amp; Hardware</span>
+          <span class="card-date">Sep 2026 • 5 min read</span>
+        </div>
+        <div class="card-title">
+          <span>Autonomous Datacenters: Bringing LLM Orchestration to Server BMCs</span>
+          <span class="card-arrow">→</span>
+        </div>
+        <p class="card-desc">
+          Observations from Compal's server testing labs in Taiwan and Computex 2026. How integrating Redfish APIs with LLM agent harnesses automates InfiniBand validation, OS provisioning, and BIOS maintenance.
+        </p>
+      </a>
+
+      <!-- Post 4 -->
+      <a class="card" href="/private/blog/homelab-proxmox-k8s/">
+        <div class="card-meta">
+          <span class="card-tag">Virtualization &amp; Infra</span>
+          <span class="card-date">Jun 2026 • 7 min read</span>
+        </div>
+        <div class="card-title">
+          <span>My Homelab Blueprint: Virtualization with Proxmox, K8s, and Local LLM Inference</span>
+          <span class="card-arrow">→</span>
+        </div>
+        <p class="card-desc">
+          Architecture overview of my self-hosted home infrastructure: Proxmox VE hypervisors, k3s container clusters, internal mesh routing, and contributing compute resources to the Silcia parameter-efficient AI architecture.
+        </p>
+      </a>
+    </div>
+  </main>

@@ -1,0 +1,59 @@
+<!-- page {"title": "Contact — Tomi Yang (TomiWebPro)", "description": "Get in touch with Tomi Yang (TomiWebPro). Email, location, and communication guidelines.", "nav": "contact", "header_container": "container", "footer_container": "container", "footer_extra": ""} -->
+
+  <main class="container" style="padding-top: 3.5rem; padding-bottom: 5rem;">
+    <div class="editorial-eyebrow">Communication • Direct Inquiries</div>
+    <h1 style="margin-bottom: 0.5rem;">Get in Touch</h1>
+    <p class="lead">
+      I maintain zero social media sprawl. If you want to reach me regarding software collaboration, systems research, TUM coursework, or hardware experiments, email is the single best path.
+    </p>
+
+    <!-- Contact Details Card -->
+    <div class="card" style="margin-top: 2rem; margin-bottom: 2rem;">
+      <h2 style="margin-top: 0; font-size: 1.45rem;">Direct Inbox</h2>
+      <p>
+        Click to copy my email address or launch your mail client:
+      </p>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin: 1.25rem 0;">
+        <button class="copy-pill" id="copy-email-btn" title="Click to copy email">
+          <span>📬</span>
+          <strong id="email-text">tomiwebpro@gmail.com</strong>
+          <span id="copy-status" style="font-size: 0.78rem; color: var(--gold-hover); margin-left: 4px;">(Copy)</span>
+        </button>
+        <a class="btn btn-primary" href="mailto:tomiwebpro@gmail.com">Open Email App →</a>
+      </div>
+
+      <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border); font-size: 0.92rem; color: var(--ink-secondary);">
+        <strong>Location:</strong> Heilbronn, Baden-Württemberg, Germany (TUM Campus Heilbronn)<br>
+        <strong>GitHub:</strong> <a href="https://github.com/TomiWebPro" target="_blank" rel="noopener noreferrer">github.com/TomiWebPro ↗</a><br>
+        <strong>Status:</strong> Single (Unmarried) • <a href="/compatibility/">Compatibility Journey Quiz 🌸</a>
+      </div>
+    </div>
+
+    <!-- Communication Guidelines -->
+    <section>
+      <h2>What I Welcome</h2>
+      <ul>
+        <li><strong>Systems &amp; Agent Engineering:</strong> Inquiries about Cognithor, ARC-AGI-3 benchmarking, and multi-agent harnesses.</li>
+        <li><strong>Datacenter &amp; Hardware:</strong> Discussions on OpenBMC, Redfish APIs, server validation, and home lab setups.</li>
+        <li><strong>TUM Collaboration:</strong> Fellow Technical University of Munich students interested in study partnerships, hacking, or badminton.</li>
+      </ul>
+
+      <p class="muted small" style="margin-top: 1.5rem;">
+        Note: Please avoid financial promotion, unsolicited marketing spam, or commercial SaaS pitches. I build software for technical curiosity, systems leverage, and genuine problem solving.
+      </p>
+    </section>
+  </main>
+<!-- page-tail -->
+
+  <script>
+    document.getElementById('copy-email-btn').addEventListener('click', () => {
+      const email = document.getElementById('email-text').textContent;
+      navigator.clipboard.writeText(email).then(() => {
+        const status = document.getElementById('copy-status');
+        status.textContent = '✓ Copied!';
+        setTimeout(() => { status.textContent = '(Copy)'; }, 2500);
+      });
+    });
+  </script>
+<!-- /page-tail -->

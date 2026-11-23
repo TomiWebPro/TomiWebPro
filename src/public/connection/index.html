@@ -1,0 +1,45 @@
+<!-- page {"title": "Connections — People Registry — tomiweb.pro", "description": "People Tomi Yang builds with and learns from. Each person has a dedicated page at /public/connection/<name>/ linked from the wiki.", "nav": "none", "header_container": "container-wide", "footer_container": "container-wide", "footer_extra": "connections"} -->
+
+  <main class="container-wide" style="padding-top: 3.5rem; padding-bottom: 5rem;">
+    <div class="editorial-eyebrow">Connections • People Registry</div>
+    <h1 style="margin-bottom: 0.5rem;">Connections</h1>
+    <p class="lead" style="max-width: 44rem;">
+      People Tomi builds with and learns from. Each person gets a dedicated page the wiki can point to.
+    </p>
+
+    <div class="cards-grid">
+      <a class="card" href="/public/connection/alex8791-cyber/">
+        <div class="card-top">
+          <div class="card-meta">
+            <span class="card-tag">Collaborator</span>
+            <span class="card-date">Since Jan 2026</span>
+          </div>
+          <div class="card-title">
+            <span>Alex8791-cyber</span>
+            <span class="card-arrow">→</span>
+          </div>
+          <p class="card-desc">
+            German software engineer. Co-developed Cognithor — the 100k+ LoC multi-agent harness behind the ARC-AGI-3 result.
+          </p>
+        </div>
+        <div class="card-bottom">
+          <span class="tech-chip">Cognithor</span>
+          <span class="tech-chip">Agent Harnesses</span>
+        </div>
+      </a>
+    </div>
+
+    <section id="convention" style="margin-top: 3rem;">
+      <h2>Convention: adding a person</h2>
+      <p class="small muted" style="margin-bottom: 0.75rem;">
+        URL shape is <code>/public/connection/&lt;slug&gt;/</code> where <code>&lt;slug&gt;</code> is lowercase kebab-case
+        (handle or <code>first-last</code>, e.g. <code>alex8791-cyber</code>).
+      </p>
+      <div class="card" style="background: var(--canvas-subtle); font-family: var(--font-mono); font-size: 0.84rem; padding: 1.25rem; overflow-x: auto;">
+<pre style="margin: 0; line-height: 1.5;">site/public/connection/&lt;slug&gt;/index.html   →   /public/connection/&lt;slug&gt;/
+1. Copy the alex8791-cyber page as a template.
+2. Keep: backlink to index, wiki-mention link, related build(s).
+3. Link it from the wiki: &lt;a href="/public/connection/&lt;slug&gt;/"&gt;Name →&lt;/a&gt;</pre>
+      </div>
+    </section>
+  </main>

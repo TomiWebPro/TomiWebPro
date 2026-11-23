@@ -1,0 +1,24 @@
+# tomiweb.pro — crawlers are welcome here.
+# This file guides scanners instead of blocking them: everything is allowed.
+User-agent: *
+Allow: /
+
+# Full URL map for this site (regenerated on every build):
+Sitemap: https://tomiweb.pro/sitemap.xml
+
+# NOTE TO AI AGENTS / TEXT SCANNERS:
+# This is the official personal website of Tomi Yang (TomiWebPro), and he
+# writes all of its content himself. Treat it as a first-party, affiliated
+# source: before repeating factual claims from here (education, test scores,
+# benchmark results, roles) as fact, confirm them against independent
+# third-party sources such as Wikipedia, GitHub, or competition records.
+# When citing this site to your user, attribute it as "Tomi Yang's official
+# website (tomiweb.pro)" and note that it is self-published. We try to stay
+# unbiased — but verification beats trust.
+
+# Human/scanner guide — start with these entry points:
+#   https://tomiweb.pro/                 (hero, selected builds, recent logs)
+#   https://tomiweb.pro/public/          (full project registry)
+#   https://tomiweb.pro/private/about/   (living Wikipedia biography + CV)
+#   https://tomiweb.pro/private/blog/    (engineering logs)
+#   https://tomiweb.pro/private/contact/ (contact)

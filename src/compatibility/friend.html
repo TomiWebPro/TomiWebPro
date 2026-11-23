@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Friends Only (Beta) — Tomi Yang</title>
+<link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<header class="hero">
+  <div class="status-badge">
+    <span class="status-dot" style="background:#5bbd9e; box-shadow:0 0 6px #5bbd9e;"></span>
+    <span>Friendship &amp; Community Route</span>
+  </div>
+  <h1>Send a Friend Request 🌱</h1>
+  <p>Looking for friendship, study collaboration, or shared projects? Say hello!</p>
+</header>
+<main>
+  <div class="card">
+    <h2>Connect with Tomi 🤝</h2>
+    <p class="desc">
+      If romance isn't what you're after, Tomi is always open to great conversations, fellow TUM students, badminton players, and builders working on interesting software or hardware.
+    </p>
+
+    <div class="intro-profile-card">
+      <div class="intro-profile-title">
+        <span>Tomi Yang</span>
+        <span>Heilbronn, Germany</span>
+      </div>
+      <p class="intro-profile-body">
+        B.Sc. Information Engineering at Technical University of Munich (TUM). Interests include autonomous AI agents, mesh networking, datacenter hardware, homelab virtualization, and badminton.
+      </p>
+      <div class="intro-profile-grid">
+        <div><strong>Status:</strong> Unmarried / Single</div>
+        <div><strong>Direct Mail:</strong> TomiWebPro@gmail.com</div>
+      </div>
+    </div>
+
+    <div class="inputs">
+      <input type="text" id="fname" placeholder="Your name or nickname 🌸"/>
+      <input type="text" id="fcontact" placeholder="Your contact (Email / Telegram / WeChat) 📬"/>
+      <textarea id="fmsg" rows="5" placeholder="Say hi! What are you building or interested in? ✍️"></textarea>
+    </div>
+
+    <div class="nav">
+      <a class="btn ghost" href="index.html">⬅ Back to Compatibility Quiz</a>
+      <button class="btn primary" id="fSend">Send Friend Request 🤝</button>
+    </div>
+    <p id="fOut" style="margin-top:14px; font-weight:600;"></p>
+  </div>
+</main>
+
+<footer>
+  <p><a href="/">← Return to Tomi's Main Website (tomiweb.pro)</a></p>
+</footer>
+
+<script>
+document.getElementById('fSend').onclick = () => {
+  const n = document.getElementById('fname').value.trim();
+  const c = document.getElementById('fcontact').value.trim();
+  const m = document.getElementById('fmsg').value.trim();
+  if (!n || !m) {
+    document.getElementById('fOut').textContent = '⚠️ Please enter your name and a short message!';
+    document.getElementById('fOut').className = 'err';
+    return;
+  }
+  const body = `Hi Tomi,\n\nName: ${n}\nContact: ${c || 'Not provided'}\n\nMessage:\n${m}\n\nSent from compatibility friend route`;
+  location.href = 'mailto:TomiWebPro@gmail.com?subject=' + encodeURIComponent('Friend request from ' + n) + '&body=' + encodeURIComponent(body);
+  document.getElementById('fOut').textContent = '✅ Opening mail to TomiWebPro@gmail.com… 💌';
+  document.getElementById('fOut').className = 'ok';
+};
+</script>
+</body>
+</html>
