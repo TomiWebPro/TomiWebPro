@@ -8,58 +8,64 @@
   <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 <body>
+  <!-- Navigation (Natural labels only) -->
   <header class="site-nav">
-    <div class="container nav-inner">
-      <div class="brand-wrapper">
-        <a class="brand" href="/">
-          <span>tomiweb.pro</span>
-        </a>
-        <div class="brand-status">
-          <span class="status-dot"></span>
-          <span>TUM • Heilbronn</span>
-        </div>
-      </div>
+    <div class="container-wide nav-inner">
+      <a class="brand" href="/">
+        <span class="brand-dot"></span>
+        <span>tomiweb.pro</span>
+      </a>
       <nav class="nav-links">
+        <a href="/">Home</a>
         <a href="/public/" aria-current="page">Projects</a>
         <a href="/private/about/">About</a>
         <a href="/private/blog/">Blog</a>
+        <a href="/private/contact/">Contact</a>
         <a href="https://github.com/TomiWebPro" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">☀️</button>
       </nav>
     </div>
   </header>
 
   <main class="container">
-    <a class="back-link" href="/public/">← Back to Projects (/public)</a>
+    <div class="project-head-hero">
+      <div style="margin-bottom: 0.75rem;">
+        <a href="/public/" style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--ink-secondary);">← Back to Projects</a>
+      </div>
 
-    <div class="project-header">
-      <div class="card-meta">
-        <span class="tag-badge tag-sys">Mesh Networking &amp; Security</span>
+      <div class="origin-callout">
+        <span>📖 Context &amp; Origin:</span>
+        <a href="/private/about/#stealthscale-origin">Read biographical origin in About Wiki →</a>
+      </div>
+
+      <div class="card-meta" style="margin-top: 0.5rem;">
+        <span class="card-tag">Mesh Networking &amp; Security</span>
         <span class="card-date">Released Oct 2026</span>
       </div>
-      <h1 class="project-title">Stealthscale</h1>
-      <p class="project-tagline">
+
+      <h1 style="margin: 0.5rem 0 0.75rem; font-size: 2.75rem;">Stealthscale</h1>
+      <p class="lead" style="margin-bottom: 1.5rem;">
         An undetectable, self-hosted mesh networking system inspired by Tailscale and Headscale. Blends encrypted peer-to-peer WireGuard tunnels directly into legitimate HTTPS/TLS traffic to bypass strict Deep Packet Inspection (DPI) and firewall restrictions.
       </p>
 
-      <ul class="links-bar">
-        <li><a href="https://github.com/TomiWebPro/stealthscale" target="_blank" rel="noopener noreferrer">GitHub: TomiWebPro/stealthscale ↗</a></li>
-        <li><a href="/private/blog/stealthscale-mesh-networking/">Engineering Notes →</a></li>
-      </ul>
+      <div class="project-links-bar">
+        <a class="btn btn-primary" href="https://github.com/TomiWebPro/stealthscale" target="_blank" rel="noopener noreferrer">GitHub: TomiWebPro/stealthscale ↗</a>
+        <a class="btn btn-secondary" href="/private/blog/stealthscale-mesh-networking/">Engineering Notes →</a>
+      </div>
     </div>
 
-    <div class="metrics-row">
-      <div class="metric-item">
-        <div class="metric-number">0%</div>
-        <div class="metric-label">WireGuard Fingerprint Detectability</div>
+    <!-- Key Metrics Grid -->
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2.5rem;">
+      <div class="card" style="padding: 1.25rem; text-align: center;">
+        <div style="font-family: var(--font-mono); font-size: 1.85rem; font-weight: 800; color: var(--gold-hover);">0%</div>
+        <div class="small muted">WireGuard Detectability</div>
       </div>
-      <div class="metric-item">
-        <div class="metric-number">P2P</div>
-        <div class="metric-label">Direct NAT Traversal + Relay</div>
+      <div class="card" style="padding: 1.25rem; text-align: center;">
+        <div style="font-family: var(--font-mono); font-size: 1.85rem; font-weight: 800; color: var(--gold-hover);">P2P</div>
+        <div class="small muted">Direct NAT Traversal + Relay</div>
       </div>
-      <div class="metric-item">
-        <div class="metric-number">100%</div>
-        <div class="metric-label">Self-Hosted &amp; Private</div>
+      <div class="card" style="padding: 1.25rem; text-align: center;">
+        <div style="font-family: var(--font-mono); font-size: 1.85rem; font-weight: 800; color: var(--gold-hover);">100%</div>
+        <div class="small muted">Self-Hosted &amp; Independent</div>
       </div>
     </div>
 
@@ -73,24 +79,15 @@
         While tools like Tailscale and WireGuard provide incredible peer-to-peer connectivity under normal network conditions, their handshake signatures, UDP packet sizes, and unpadded crypto headers are trivial for modern DPI systems to detect and selectively drop or throttle.
       </p>
       <p>
-        Rather than relying on closed, commercial, or easily blockable consumer VPNs, I decided to engineer <strong>Stealthscale</strong>: combining the decentralized mesh topology of Tailscale/Headscale with custom transport obfuscation layers that masquerade as standard web traffic.
+        Rather than relying on closed, commercial, or easily blockable consumer VPNs, Yang engineered <strong>Stealthscale</strong>: combining the decentralized mesh topology of Tailscale/Headscale with custom transport obfuscation layers that masquerade as standard web traffic.
       </p>
     </section>
 
-    <!-- Architecture -->
+    <!-- Protocol Architecture -->
     <section>
       <h2>Protocol Architecture</h2>
-
-      <div class="terminal-card">
-        <div class="terminal-header">
-          <div class="terminal-dots">
-            <span class="terminal-dot dot-red"></span>
-            <span class="terminal-dot dot-yellow"></span>
-            <span class="terminal-dot dot-green"></span>
-          </div>
-          <span>stealthscale-traffic-flow.txt</span>
-        </div>
-        <pre class="terminal-body">
+      <div class="card" style="background: var(--canvas-subtle); font-family: var(--font-mono); font-size: 0.84rem; padding: 1.25rem; overflow-x: auto; margin: 1.5rem 0;">
+<pre style="margin: 0; line-height: 1.5;">
 [CLIENT NODE A] (e.g., Laptop behind restrictive firewall)
        |
        |  1. Encapsulates WireGuard packet with randomized padding
@@ -101,62 +98,44 @@
        v
 [STEALTH RELAY / PEER NODE B] (e.g., Home Proxmox Server)
        |
-       |  3. Strips TLS envelope & decodes WireGuard payload
+       |  3. Strips TLS envelope &amp; decodes WireGuard payload
        |  4. Injects into virtual TUN interface
        v
 [INTERNAL MESH NETWORK (100.64.0.0/10)]
-        </pre>
+</pre>
       </div>
 
-      <div class="highlight-box">
-        <div class="highlight-title">Key Architectural Features</div>
-        <p>
-          <strong>• Real TLS 1.3 Handshake Mimicry:</strong> Sessions negotiate valid cryptographic handshakes mimicking modern browser TLS fingerprints (JA3/JA4 and cipher suite ordering), eliminating synthetic handshake anomalies.<br><br>
-          <strong>• Entropy &amp; Padding Shaping:</strong> WireGuard packets typically have high uniform entropy and deterministic packet size increments. Stealthscale inserts variable padding and randomized timing jitter to match real web browsing traffic distributions.<br><br>
+      <div class="card" style="border-left: 3px solid var(--gold); margin: 1.75rem 0;">
+        <h3 style="margin-top: 0; font-size: 1.15rem;">Key Architectural Features</h3>
+        <p class="small" style="margin-bottom: 0.5rem;">
+          <strong>• True TLS 1.3 Handshake Mimicry:</strong> Sessions negotiate valid cryptographic handshakes mimicking modern browser TLS fingerprints (JA3/JA4 and cipher suite ordering), eliminating synthetic handshake anomalies.
+        </p>
+        <p class="small" style="margin-bottom: 0.5rem;">
+          <strong>• Entropy &amp; Padding Shaping:</strong> Injects variable padding and randomized timing jitter to match real web browsing traffic distributions, bypassing statistical entropy analyzers.
+        </p>
+        <p class="small" style="margin-bottom: 0;">
           <strong>• Self-Hosted Coordination Server:</strong> Engineered around Headscale primitives, ensuring zero reliance on third-party SaaS control planes.
         </p>
       </div>
     </section>
-
-    <!-- Technologies -->
-    <section>
-      <h2>Technologies Used</h2>
-      <div class="skills-grid">
-        <div class="skill-category">
-          <h4>Networking &amp; Protocols</h4>
-          <div class="skill-pills">
-            <span class="skill-pill">WireGuard Protocol</span>
-            <span class="skill-pill">Tailscale / Headscale</span>
-            <span class="skill-pill">TLS 1.3 / HTTP/2</span>
-            <span class="skill-pill">STUN / DERP Relay</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h4>Systems Implementation</h4>
-          <div class="skill-pills">
-            <span class="skill-pill">Go</span>
-            <span class="skill-pill">Linux TUN/TAP</span>
-            <span class="skill-pill">Docker &amp; systemd</span>
-            <span class="skill-pill">NAT Traversal</span>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
+  <!-- Global Footer -->
   <footer>
     <div class="container footer-inner">
       <div>
-        <strong>tomiweb.pro</strong> — Zixuan (Tomi) Yang • Heilbronn, Germany
+        <strong>tomiweb.pro</strong> — Tomi Yang (TomiWebPro) • Heilbronn, Germany
       </div>
       <div class="footer-links">
+        <a href="mailto:tomiwebpro@gmail.com">tomiwebpro@gmail.com</a>
+        <a href="https://github.com/TomiWebPro" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="/public/">Projects</a>
         <a href="/private/about/">About</a>
-        <a href="https://github.com/TomiWebPro/stealthscale" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="/private/blog/">Blog</a>
+        <a href="/private/contact/">Contact</a>
+        <a href="/compatibility/">Compatibility Journey</a>
       </div>
     </div>
   </footer>
-
-  <script src="/assets/js/main.js"></script>
 </body>
 </html>

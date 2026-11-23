@@ -3,59 +3,51 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Projects (/public) — Tomi Yang (TomiWebPro)</title>
-  <meta name="description" content="All open-source projects and research by Tomi Yang (TomiWebPro). AI agents, mesh networking, datacenter orchestration, and tooling.">
+  <title>Projects — Tomi Yang (TomiWebPro)</title>
+  <meta name="description" content="All open-source projects, system architectures, and tools built by Tomi Yang (TomiWebPro).">
   <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 <body>
+  <!-- Navigation (Natural labels only) -->
   <header class="site-nav">
-    <div class="container nav-inner">
-      <div class="brand-wrapper">
-        <a class="brand" href="/">
-          <span>tomiweb.pro</span>
-        </a>
-        <div class="brand-status">
-          <span class="status-dot"></span>
-          <span>TUM • Heilbronn</span>
-        </div>
-      </div>
+    <div class="container-wide nav-inner">
+      <a class="brand" href="/">
+        <span class="brand-dot"></span>
+        <span>tomiweb.pro</span>
+      </a>
       <nav class="nav-links">
+        <a href="/">Home</a>
         <a href="/public/" aria-current="page">Projects</a>
         <a href="/private/about/">About</a>
         <a href="/private/blog/">Blog</a>
+        <a href="/private/contact/">Contact</a>
         <a href="https://github.com/TomiWebPro" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">☀️</button>
       </nav>
     </div>
   </header>
 
-  <main class="container">
-    <div class="pill-badge">
-      <span>Convention: /public/</span>
-      <span>•</span>
-      <span>7 Projects</span>
-    </div>
-    
-    <h1>Projects &amp; Open Source Work</h1>
-    <p class="lead">
-      Each project has a dedicated head page with technical architecture, design decisions, and source code links.
+  <main class="container-wide" style="padding-top: 3.5rem; padding-bottom: 5rem;">
+    <div class="editorial-eyebrow">Open-Source Registry • 8 Projects</div>
+    <h1 style="margin-bottom: 0.5rem;">Projects &amp; Architectures</h1>
+    <p class="lead" style="max-width: 44rem;">
+      A comprehensive index of open-source software, agent frameworks, networking protocols, and developer utilities. Each project functions as a standalone head repository.
     </p>
 
     <!-- Filter Buttons -->
     <div class="filter-bar">
-      <button class="filter-btn active" data-filter="all">All Projects (7)</button>
+      <button class="filter-btn active" data-filter="all">All (8)</button>
       <button class="filter-btn" data-filter="ai">AI &amp; Agents (3)</button>
-      <button class="filter-btn" data-filter="systems">Networking &amp; Systems (2)</button>
-      <button class="filter-btn" data-filter="tools">Research &amp; Tools (2)</button>
+      <button class="filter-btn" data-filter="systems">Systems &amp; Networking (2)</button>
+      <button class="filter-btn" data-filter="tools">Applied Software &amp; Tools (3)</button>
     </div>
 
-    <!-- Projects Grid -->
+    <!-- 8 Projects Grid -->
     <div class="cards-grid">
       <!-- 1. Cognithor -->
       <a class="card project-item" data-category="ai" href="/public/cognithor/">
         <div class="card-top">
           <div class="card-meta">
-            <span class="tag-badge tag-ai">AI Agents &amp; Harness</span>
+            <span class="card-tag">Autonomous Agents</span>
             <span class="card-date">Jan 2026</span>
           </div>
           <div class="card-title">
@@ -63,7 +55,7 @@
             <span class="card-arrow">→</span>
           </div>
           <p class="card-desc">
-            Modular multi-autonomous LLM agent platform exceeding 100,000 lines of code. Solved ~30% of ARC-AGI-3 benchmark tasks using Qwen 30B, beating Claude Opus 4.7 approaches. Features long-term memory, computer-use, and 150+ GitHub stars.
+            Modular multi-autonomous LLM agent harness (100k+ LoC). Solved ~30% of ARC-AGI-3 reasoning tasks using Qwen 30B, surpassing Claude Opus 4.7 baselines. 150★ on GitHub.
           </p>
         </div>
         <div class="card-bottom">
@@ -71,15 +63,37 @@
           <span class="tech-chip">Multi-Agent</span>
           <span class="tech-chip">ARC-AGI-3</span>
           <span class="tech-chip">Computer-Use</span>
-          <span class="tech-chip">150 Stars</span>
         </div>
       </a>
 
-      <!-- 2. Stealthscale -->
+      <!-- 2. OpenBMCUI -->
+      <a class="card project-item" data-category="systems" href="/public/openbmcui/">
+        <div class="card-top">
+          <div class="card-meta">
+            <span class="card-tag">Datacenter &amp; BMC</span>
+            <span class="card-date">Sep 2026</span>
+          </div>
+          <div class="card-title">
+            <span>OpenBMCUI</span>
+            <span class="card-arrow">→</span>
+          </div>
+          <p class="card-desc">
+            Next-gen Baseboard Management Controller interface with Redfish APIs and LLM automation. Automates server OS installs, driver compiling, and InfiniBand bandwidth qualification.
+          </p>
+        </div>
+        <div class="card-bottom">
+          <span class="tech-chip">Redfish</span>
+          <span class="tech-chip">OpenBMC</span>
+          <span class="tech-chip">InfiniBand</span>
+          <span class="tech-chip">Python</span>
+        </div>
+      </a>
+
+      <!-- 3. Stealthscale -->
       <a class="card project-item" data-category="systems" href="/public/stealthscale/">
         <div class="card-top">
           <div class="card-meta">
-            <span class="tag-badge tag-sys">Mesh Networking</span>
+            <span class="card-tag">Mesh Networking</span>
             <span class="card-date">Oct 2026</span>
           </div>
           <div class="card-title">
@@ -87,70 +101,22 @@
             <span class="card-arrow">→</span>
           </div>
           <p class="card-desc">
-            Undetectable self-hosted mesh networking system inspired by Tailscale and Headscale. Disguises encrypted peer-to-peer traffic as ordinary HTTPS web traffic, making it immune to deep packet inspection (DPI) and firewall throttling.
+            Undetectable self-hosted mesh networking based on Tailscale and Headscale primitives, disguising encrypted peer-to-peer tunnels as legitimate HTTPS web traffic against DPI.
           </p>
         </div>
         <div class="card-bottom">
           <span class="tech-chip">WireGuard</span>
-          <span class="tech-chip">Tailscale</span>
           <span class="tech-chip">Headscale</span>
-          <span class="tech-chip">DPI Bypass</span>
-          <span class="tech-chip">NAT Traversal</span>
+          <span class="tech-chip">TLS 1.3</span>
+          <span class="tech-chip">DPI Obfuscation</span>
         </div>
       </a>
 
-      <!-- 3. OpenBMCUI -->
-      <a class="card project-item" data-category="systems" href="/public/openbmcui/">
-        <div class="card-top">
-          <div class="card-meta">
-            <span class="tag-badge tag-infra">Datacenter &amp; BMC</span>
-            <span class="card-date">Sep 2026</span>
-          </div>
-          <div class="card-title">
-            <span>OpenBMCUI (RedfishOpenBMC)</span>
-            <span class="card-arrow">→</span>
-          </div>
-          <p class="card-desc">
-            Next-generation Baseboard Management Controller interface integrating Redfish APIs with LLM automation. Developed after visiting Compal's testing lab and Computex 2026 to automate server provisioning and InfiniBand bandwidth validation.
-          </p>
-        </div>
-        <div class="card-bottom">
-          <span class="tech-chip">Redfish API</span>
-          <span class="tech-chip">OpenBMC</span>
-          <span class="tech-chip">Python</span>
-          <span class="tech-chip">InfiniBand</span>
-          <span class="tech-chip">Hardware Automation</span>
-        </div>
-      </a>
-
-      <!-- 4. PChess -->
-      <a class="card project-item" data-category="ai" href="/public/pchess/">
-        <div class="card-top">
-          <div class="card-meta">
-            <span class="tag-badge tag-ai">Chess &amp; LLM</span>
-            <span class="card-date">Sep 2025</span>
-          </div>
-          <div class="card-title">
-            <span>PChess</span>
-            <span class="card-arrow">→</span>
-          </div>
-          <p class="card-desc">
-            Advanced chess training engine combining Stockfish tactical evaluation with LLM conversational tutoring. Extracts tactical puzzles from actual games and explains the strategic concepts behind moves. (IB CS Internal Assessment).
-          </p>
-        </div>
-        <div class="card-bottom">
-          <span class="tech-chip">Python</span>
-          <span class="tech-chip">Stockfish Engine</span>
-          <span class="tech-chip">LLM Explanations</span>
-          <span class="tech-chip">IB CS IA</span>
-        </div>
-      </a>
-
-      <!-- 5. StudyKing -->
+      <!-- 4. StudyKing -->
       <a class="card project-item" data-category="ai" href="/public/studyking/">
         <div class="card-top">
           <div class="card-meta">
-            <span class="tag-badge tag-ai">Adaptive EdTech</span>
+            <span class="card-tag">Adaptive Learning</span>
             <span class="card-date">Jun 2026</span>
           </div>
           <div class="card-title">
@@ -158,79 +124,149 @@
             <span class="card-arrow">→</span>
           </div>
           <p class="card-desc">
-            Adaptive AI learning assistant that creates structured personal curricula, interactive lessons, and tailored practice problems. Designed to assist university engineering studies with customized feedback and continuous progress tracking.
+            AI-powered adaptive learning assistant that maps university engineering syllabi into concept prerequisite graphs and generates step-by-step diagnostic practice sets.
           </p>
         </div>
         <div class="card-bottom">
           <span class="tech-chip">Python</span>
+          <span class="tech-chip">FastAPI</span>
           <span class="tech-chip">LLM Tutoring</span>
           <span class="tech-chip">Adaptive Curriculum</span>
-          <span class="tech-chip">Active Dev</span>
         </div>
       </a>
 
-      <!-- 6. NIQE Modernized Fork -->
-      <a class="card project-item" data-category="tools" href="/public/niqe/">
+      <!-- 5. ECTS Tracker -->
+      <a class="card project-item" data-category="tools" href="/public/ects-tracker/">
         <div class="card-top">
           <div class="card-meta">
-            <span class="tag-badge tag-tool">Computer Vision &amp; Research</span>
-            <span class="card-date">Mar 2025</span>
+            <span class="card-tag">Productivity &amp; Flutter</span>
+            <span class="card-date">Nov 2026</span>
           </div>
           <div class="card-title">
-            <span>NIQE Modernized Fork</span>
+            <span>ECTS Tracker</span>
             <span class="card-arrow">→</span>
           </div>
           <p class="card-desc">
-            Modernized Python implementation of the Natural Image Quality Evaluator (neural image fidelity assessment). Used in IB Extended Essay to evaluate visual quality and temporal artifacts in NVIDIA DLSS vs AMD FSR upscaling.
+            Local-first Flutter application (Riverpod + Drift/SQLite) converting university course ECTS credits into weekly and daily study-hour pacing targets.
           </p>
         </div>
         <div class="card-bottom">
+          <span class="tech-chip">Flutter</span>
+          <span class="tech-chip">Dart</span>
+          <span class="tech-chip">Drift / SQLite</span>
+          <span class="tech-chip">Riverpod</span>
+        </div>
+      </a>
+
+      <!-- 6. PChess -->
+      <a class="card project-item" data-category="ai" href="/public/pchess/">
+        <div class="card-top">
+          <div class="card-meta">
+            <span class="card-tag">Chess &amp; AI</span>
+            <span class="card-date">Sep 2025</span>
+          </div>
+          <div class="card-title">
+            <span>PChess</span>
+            <span class="card-arrow">→</span>
+          </div>
+          <p class="card-desc">
+            Chess training application combining Stockfish tactical swing evaluation with conversational LLM explanations of strategic motifs. (IB CS Internal Assessment, Grade 7).
+          </p>
+        </div>
+        <div class="card-bottom">
+          <span class="tech-chip">Stockfish</span>
           <span class="tech-chip">Python</span>
+          <span class="tech-chip">python-chess</span>
+          <span class="tech-chip">LLM Coach</span>
+        </div>
+      </a>
+
+      <!-- 7. NIQE Modernized Fork -->
+      <a class="card project-item" data-category="tools" href="/public/niqe/">
+        <div class="card-top">
+          <div class="card-meta">
+            <span class="card-tag">Computer Vision</span>
+            <span class="card-date">Mar 2025</span>
+          </div>
+          <div class="card-title">
+            <span>NIQE Fork</span>
+            <span class="card-arrow">→</span>
+          </div>
+          <p class="card-desc">
+            Modernized Python 3.11+ implementation of the Natural Image Quality Evaluator (NIQE), used in an IB Extended Essay comparing visual fidelity in NVIDIA DLSS vs AMD FSR.
+          </p>
+        </div>
+        <div class="card-bottom">
+          <span class="tech-chip">Python 3.11</span>
           <span class="tech-chip">OpenCV</span>
-          <span class="tech-chip">Image Quality (IQA)</span>
+          <span class="tech-chip">No-Reference IQA</span>
           <span class="tech-chip">DLSS vs FSR</span>
         </div>
       </a>
 
-      <!-- 7. ActiveLearn Bypass -->
+      <!-- 8. ActiveLearnBypass -->
       <a class="card project-item" data-category="tools" href="/public/activelearn-bypass/">
         <div class="card-top">
           <div class="card-meta">
-            <span class="tag-badge tag-tool">Automation &amp; Tooling</span>
+            <span class="card-tag">Scraping &amp; Tooling</span>
             <span class="card-date">Jun 2024</span>
           </div>
           <div class="card-title">
-            <span>ActiveLearn Bypass</span>
+            <span>ActiveLearnBypass</span>
             <span class="card-arrow">→</span>
           </div>
           <p class="card-desc">
-            High-throughput scraper and PDF compiler for Pearson ActiveLearn educational textbooks. Discovered unauthenticated asset delivery endpoints and automated parallel page fetching with PDF generation.
+            Concurrent Python image-retrieval pipeline and PDF compiler created to download offline copies of digital IGCSE textbooks from unauthenticated endpoints.
           </p>
         </div>
         <div class="card-bottom">
           <span class="tech-chip">Python</span>
-          <span class="tech-chip">Concurrent IO</span>
-          <span class="tech-chip">Pillow / PyPDF</span>
-          <span class="tech-chip">Scraping</span>
+          <span class="tech-chip">Async IO</span>
+          <span class="tech-chip">Pillow</span>
+          <span class="tech-chip">PyPDF</span>
         </div>
       </a>
     </div>
   </main>
 
+  <!-- Global Footer -->
   <footer>
-    <div class="container footer-inner">
+    <div class="container-wide footer-inner">
       <div>
-        <strong>tomiweb.pro</strong> — Zixuan (Tomi) Yang • Heilbronn, Germany
+        <strong>tomiweb.pro</strong> — Tomi Yang (TomiWebPro) • Heilbronn, Germany
       </div>
       <div class="footer-links">
         <a href="mailto:tomiwebpro@gmail.com">tomiwebpro@gmail.com</a>
         <a href="https://github.com/TomiWebPro" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="/public/">Projects</a>
         <a href="/private/about/">About</a>
+        <a href="/private/blog/">Blog</a>
+        <a href="/private/contact/">Contact</a>
+        <a href="/compatibility/">Compatibility Journey</a>
       </div>
     </div>
   </footer>
 
-  <script src="/assets/js/main.js"></script>
+  <script>
+    // Client-side filtering
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const items = document.querySelectorAll('.project-item');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.getAttribute('data-filter');
+        items.forEach(card => {
+          if (filter === 'all' || card.getAttribute('data-category') === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

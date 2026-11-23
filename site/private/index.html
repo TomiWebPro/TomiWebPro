@@ -3,64 +3,50 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Personal Hub (/private) — Tomi Yang (TomiWebPro)</title>
-  <meta name="description" content="Personal hub: background, academic qualifications, awards, homelab, and engineering logs.">
+  <title>Personal Hub — Tomi Yang (TomiWebPro)</title>
+  <meta name="description" content="Personal hub: About, Living Wikipedia, modular CV builder, blog, and contact.">
   <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 <body>
+  <!-- Navigation (Natural labels only) -->
   <header class="site-nav">
     <div class="container nav-inner">
-      <div class="brand-wrapper">
-        <a class="brand" href="/">
-          <span>tomiweb.pro</span>
-        </a>
-        <div class="brand-status">
-          <span class="status-dot"></span>
-          <span>TUM • Heilbronn</span>
-        </div>
-      </div>
+      <a class="brand" href="/">
+        <span class="brand-dot"></span>
+        <span>tomiweb.pro</span>
+      </a>
       <nav class="nav-links">
+        <a href="/">Home</a>
         <a href="/public/">Projects</a>
         <a href="/private/about/">About</a>
         <a href="/private/blog/">Blog</a>
+        <a href="/private/contact/">Contact</a>
         <a href="https://github.com/TomiWebPro" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">☀️</button>
       </nav>
     </div>
   </header>
 
-  <main class="container">
-    <div class="pill-badge">
-      <span>Convention: /private/</span>
-      <span>•</span>
-      <span>Personal Hub</span>
-    </div>
-
-    <h1>Personal Hub &amp; Archives</h1>
+  <main class="container" style="padding-top: 3.5rem; padding-bottom: 5rem;">
+    <div class="editorial-eyebrow">Personal Dossier • Profile &amp; Writing</div>
+    <h1 style="margin-bottom: 0.5rem;">Personal Hub</h1>
     <p class="lead">
-      Under the <code>/private/</code> convention, this section holds background info, academic qualifications, extracurricular achievements, and engineering logs.
+      Biographical archives, verified academic milestones, engineering postmortems, and direct contact details for Tomi Yang.
     </p>
 
-    <div class="cards-grid">
-      <!-- About -->
+    <div class="cards-grid cards-grid-single" style="margin-top: 2rem;">
+      <!-- About / Wikipedia -->
       <a class="card" href="/private/about/">
         <div class="card-top">
           <div class="card-meta">
-            <span class="tag-badge tag-tool">Curriculum Vitae</span>
+            <span class="card-tag">Living Wikipedia &amp; CV</span>
           </div>
           <div class="card-title">
-            <span>About &amp; Credentials</span>
+            <span>About &amp; Verified Biography</span>
             <span class="card-arrow">→</span>
           </div>
           <p class="card-desc">
-            Complete background: B.Sc. Information Engineering at TUM, IBDP (37/45), IPhO Bronze Award, NASA Hackathon 2nd Place, skills, homelab, and hardware interests.
+            Two-column encyclopedia biography covering TUM Information Engineering, IBDP (37/45), IPhO Bronze, NASA Hackathon 2nd Place, homelab cluster, and interactive modular CV builder.
           </p>
-        </div>
-        <div class="card-bottom">
-          <span class="tech-chip">TUM</span>
-          <span class="tech-chip">Education</span>
-          <span class="tech-chip">Olympiads</span>
-          <span class="tech-chip">Homelab</span>
         </div>
       </a>
 
@@ -68,40 +54,52 @@
       <a class="card" href="/private/blog/">
         <div class="card-top">
           <div class="card-meta">
-            <span class="tag-badge tag-ai">Writing</span>
+            <span class="card-tag">Engineering Logs</span>
           </div>
           <div class="card-title">
-            <span>Engineering Notes &amp; Blog</span>
+            <span>Blog &amp; Writing</span>
             <span class="card-arrow">→</span>
           </div>
           <p class="card-desc">
-            Technical write-ups and architecture deep-dives covering Cognithor (ARC-AGI-3), Stealthscale (mesh obfuscation), OpenBMCUI (datacenter automation), and Proxmox home infrastructure.
+            Technical teardowns and reflections on Cognithor (ARC-AGI-3), Stealthscale (mesh obfuscation), OpenBMCUI (datacenter automation), and Proxmox home infrastructure.
           </p>
         </div>
-        <div class="card-bottom">
-          <span class="tech-chip">LLM Agents</span>
-          <span class="tech-chip">Mesh Networking</span>
-          <span class="tech-chip">Datacenter</span>
-          <span class="tech-chip">Proxmox / K8s</span>
+      </a>
+
+      <!-- Contact -->
+      <a class="card" href="/private/contact/">
+        <div class="card-top">
+          <div class="card-meta">
+            <span class="card-tag">Direct Mail</span>
+          </div>
+          <div class="card-title">
+            <span>Contact &amp; Inquiries</span>
+            <span class="card-arrow">→</span>
+          </div>
+          <p class="card-desc">
+            Direct email reach-out guidelines and one-click copy for <code>tomiwebpro@gmail.com</code>.
+          </p>
         </div>
       </a>
     </div>
   </main>
 
+  <!-- Global Footer -->
   <footer>
     <div class="container footer-inner">
       <div>
-        <strong>tomiweb.pro</strong> — Zixuan (Tomi) Yang • Heilbronn, Germany
+        <strong>tomiweb.pro</strong> — Tomi Yang (TomiWebPro) • Heilbronn, Germany
       </div>
       <div class="footer-links">
         <a href="mailto:tomiwebpro@gmail.com">tomiwebpro@gmail.com</a>
         <a href="https://github.com/TomiWebPro" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="/public/">Projects</a>
         <a href="/private/about/">About</a>
+        <a href="/private/blog/">Blog</a>
+        <a href="/private/contact/">Contact</a>
+        <a href="/compatibility/">Compatibility Journey</a>
       </div>
     </div>
   </footer>
-
-  <script src="/assets/js/main.js"></script>
 </body>
 </html>

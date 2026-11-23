@@ -8,41 +8,38 @@
   <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 <body>
+  <!-- Navigation (Natural labels only) -->
   <header class="site-nav">
-    <div class="container nav-inner">
-      <div class="brand-wrapper">
-        <a class="brand" href="/">
-          <span>tomiweb.pro</span>
-        </a>
-        <div class="brand-status">
-          <span class="status-dot"></span>
-          <span>TUM • Heilbronn</span>
-        </div>
-      </div>
+    <div class="container-wide nav-inner">
+      <a class="brand" href="/">
+        <span class="brand-dot"></span>
+        <span>tomiweb.pro</span>
+      </a>
       <nav class="nav-links">
+        <a href="/">Home</a>
         <a href="/public/">Projects</a>
         <a href="/private/about/">About</a>
         <a href="/private/blog/" aria-current="page">Blog</a>
+        <a href="/private/contact/">Contact</a>
         <a href="https://github.com/TomiWebPro" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">☀️</button>
       </nav>
     </div>
   </header>
 
-  <main class="container">
-    <a class="back-link" href="/private/blog/">← Back to Notes (/private/blog)</a>
+  <main class="container" style="padding-top: 3.5rem; padding-bottom: 5rem;">
+    <div style="margin-bottom: 1rem;">
+      <a href="/private/blog/" style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--ink-secondary);">← Back to Blog</a>
+    </div>
 
     <article>
-      <h1>Building Cognithor: Lessons from a 100k-Line Agent Framework &amp; ARC-AGI-3</h1>
-      <div class="article-meta">
-        <span>Published: Jan 2026</span>
-        <span>•</span>
-        <span>By Tomi Yang</span>
-        <span>•</span>
-        <span>Tags: Autonomous Agents, ARC-AGI, Python</span>
+      <div class="card-meta" style="margin-bottom: 0.5rem;">
+        <span class="card-tag">AI Systems</span>
+        <span class="card-date">Jan 2026 • By Tomi Yang</span>
       </div>
 
-      <p>
+      <h1 style="margin: 0.5rem 0 1rem; font-size: 2.5rem;">Building Cognithor: Lessons from a 100k-Line Agent Framework &amp; ARC-AGI-3</h1>
+
+      <p class="lead">
         In January 2026, inspired by early agent frameworks like OpenClaw, my collaborator (a fellow developer based in Germany) and I asked a straightforward question: <em>What does an agent architecture need to look like to autonomously solve reasoning problems that trip up frontier closed models?</em>
       </p>
 
@@ -71,35 +68,38 @@
 
       <h2>Results &amp; Impact</h2>
       <p>
-        Equipped with this harness, open-weights <strong>Qwen 30B</strong> achieved approximately <strong>30% accuracy on ARC-AGI-3</strong>. Crucially, this outperformed public baselines achieved by Claude with Opus 4.7 operating under standard agent harnesses. It demonstrated a core truth of modern AI engineering: <em>deterministic verification and feedback loops matter as much as base model size</em>.
+        Equipped with this harness, open-weights <strong>Qwen 30B</strong> achieved approximately <strong>30% accuracy on ARC-AGI-3</strong>. Crucially, this outperformed published benchmark baselines achieved by Claude with Opus 4.7 operating under standard agent harnesses. It demonstrated a core truth of modern AI engineering: <em>deterministic verification and feedback loops matter as much as base model size</em>.
       </p>
 
       <p>
         The project gained organic traction, crossing <strong>150 GitHub stars</strong> without marketing, and its architectural lessons now form the foundation of our work on autonomous tool execution.
       </p>
 
-      <div class="highlight-box">
-        <div class="highlight-title">Explore the Source</div>
-        <p>
-          Check out the full repository on GitHub: <a href="https://github.com/Alex8791-cyber/cognithor" target="_blank" rel="noopener noreferrer">Alex8791-cyber/cognithor</a> or read the dedicated project overview at <a href="/public/cognithor/">/public/cognithor/</a>.
+      <div class="card" style="border-left: 3px solid var(--gold); margin: 2rem 0;">
+        <h3 style="margin-top: 0; font-size: 1.15rem;">Explore the Project</h3>
+        <p class="small" style="margin-bottom: 0;">
+          Check out the full repository on GitHub: <a href="https://github.com/Alex8791-cyber/cognithor" target="_blank" rel="noopener noreferrer">Alex8791-cyber/cognithor</a> or read the dedicated project overview at <a href="/public/cognithor/">Cognithor Project Head →</a>.
         </p>
       </div>
     </article>
   </main>
 
+  <!-- Global Footer -->
   <footer>
     <div class="container footer-inner">
       <div>
-        <strong>tomiweb.pro</strong> — Zixuan (Tomi) Yang • Heilbronn, Germany
+        <strong>tomiweb.pro</strong> — Tomi Yang (TomiWebPro) • Heilbronn, Germany
       </div>
       <div class="footer-links">
+        <a href="mailto:tomiwebpro@gmail.com">tomiwebpro@gmail.com</a>
+        <a href="https://github.com/TomiWebPro" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="/public/">Projects</a>
         <a href="/private/about/">About</a>
         <a href="/private/blog/">Blog</a>
+        <a href="/private/contact/">Contact</a>
+        <a href="/compatibility/">Compatibility Journey</a>
       </div>
     </div>
   </footer>
-
-  <script src="/assets/js/main.js"></script>
 </body>
 </html>

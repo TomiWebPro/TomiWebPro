@@ -8,57 +8,63 @@
   <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 <body>
+  <!-- Navigation (Natural labels only) -->
   <header class="site-nav">
-    <div class="container nav-inner">
-      <div class="brand-wrapper">
-        <a class="brand" href="/">
-          <span>tomiweb.pro</span>
-        </a>
-        <div class="brand-status">
-          <span class="status-dot"></span>
-          <span>TUM • Heilbronn</span>
-        </div>
-      </div>
+    <div class="container-wide nav-inner">
+      <a class="brand" href="/">
+        <span class="brand-dot"></span>
+        <span>tomiweb.pro</span>
+      </a>
       <nav class="nav-links">
+        <a href="/">Home</a>
         <a href="/public/" aria-current="page">Projects</a>
         <a href="/private/about/">About</a>
         <a href="/private/blog/">Blog</a>
+        <a href="/private/contact/">Contact</a>
         <a href="https://github.com/TomiWebPro" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">☀️</button>
       </nav>
     </div>
   </header>
 
   <main class="container">
-    <a class="back-link" href="/public/">← Back to Projects (/public)</a>
+    <div class="project-head-hero">
+      <div style="margin-bottom: 0.75rem;">
+        <a href="/public/" style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--ink-secondary);">← Back to Projects</a>
+      </div>
 
-    <div class="project-header">
-      <div class="card-meta">
-        <span class="tag-badge tag-ai">Adaptive EdTech</span>
+      <div class="origin-callout">
+        <span>📖 Context &amp; Origin:</span>
+        <a href="/private/about/#studyking-origin">Read biographical origin in About Wiki →</a>
+      </div>
+
+      <div class="card-meta" style="margin-top: 0.5rem;">
+        <span class="card-tag">Adaptive EdTech</span>
         <span class="card-date">Started Jun 2026 • Under Active Development</span>
       </div>
-      <h1 class="project-title">StudyKing</h1>
-      <p class="project-tagline">
+
+      <h1 style="margin: 0.5rem 0 0.75rem; font-size: 2.75rem;">StudyKing</h1>
+      <p class="lead" style="margin-bottom: 1.5rem;">
         An adaptive AI learning assistant that creates structured personal curricula, interactive lessons, and tailored practice problems. Built to accompany undergraduate university studies at TUM.
       </p>
 
-      <ul class="links-bar">
-        <li><a href="https://github.com/TomiWebPro/StudyKing" target="_blank" rel="noopener noreferrer">GitHub: TomiWebPro/StudyKing ↗</a></li>
-      </ul>
+      <div class="project-links-bar">
+        <a class="btn btn-primary" href="https://github.com/TomiWebPro/StudyKing" target="_blank" rel="noopener noreferrer">GitHub: TomiWebPro/StudyKing ↗</a>
+      </div>
     </div>
 
-    <div class="metrics-row">
-      <div class="metric-item">
-        <div class="metric-number">1-on-1</div>
-        <div class="metric-label">Personalized Adaptive Pedagogy</div>
+    <!-- Key Metrics Grid -->
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2.5rem;">
+      <div class="card" style="padding: 1.25rem; text-align: center;">
+        <div style="font-family: var(--font-mono); font-size: 1.85rem; font-weight: 800; color: var(--gold-hover);">1-on-1</div>
+        <div class="small muted">Adaptive Pedagogy Loop</div>
       </div>
-      <div class="metric-item">
-        <div class="metric-number">TUM</div>
-        <div class="metric-label">Engineered for Information Engineering</div>
+      <div class="card" style="padding: 1.25rem; text-align: center;">
+        <div style="font-family: var(--font-mono); font-size: 1.85rem; font-weight: 800; color: var(--gold-hover);">TUM</div>
+        <div class="small muted">Information Engineering Focus</div>
       </div>
-      <div class="metric-item">
-        <div class="metric-number">Active</div>
-        <div class="metric-label">Current Development Focus</div>
+      <div class="card" style="padding: 1.25rem; text-align: center;">
+        <div style="font-family: var(--font-mono); font-size: 1.85rem; font-weight: 800; color: var(--gold-hover);">Active</div>
+        <div class="small muted">Ongoing Development</div>
       </div>
     </div>
 
@@ -66,36 +72,27 @@
     <section>
       <h2>Genesis &amp; Concept</h2>
       <p>
-        After finishing the International Baccalaureate examinations in May 2026, I reflected on my experiences using online 1-on-1 language and subject tutoring platforms like Preply. While human tutors provide personalized guidance, they are costly and difficult to scale across demanding university STEM subjects.
+        After finishing the International Baccalaureate examinations in May 2026, Tomi Yang reflected on his experiences using online 1-on-1 tutoring platforms like Preply. While human tutors provide personalized guidance, they are costly and difficult to scale across demanding university STEM subjects.
       </p>
       <p>
-        I asked myself: can modern LLMs provide that exact interactive, responsive feedback loop at zero marginal cost? StudyKing was created to act as an autonomous learning companion tailored specifically for university-level engineering and computer science curricula.
+        StudyKing addresses this by exploring how modern LLMs can deliver interactive, diagnostic feedback at zero marginal cost. The platform acts as an autonomous learning companion tailored specifically for university-level engineering and computer science curricula.
       </p>
     </section>
 
-    <!-- Key Features -->
+    <!-- Key Capabilities -->
     <section>
       <h2>Key Capabilities</h2>
-
-      <div class="terminal-card">
-        <div class="terminal-header">
-          <div class="terminal-dots">
-            <span class="terminal-dot dot-red"></span>
-            <span class="terminal-dot dot-yellow"></span>
-            <span class="terminal-dot dot-green"></span>
-          </div>
-          <span>studyking-learning-loop.txt</span>
-        </div>
-        <pre class="terminal-body">
-[COURSE SYLLABUS / TOPIC GOAL] (e.g. Signals & Systems, Linear Algebra)
+      <div class="card" style="background: var(--canvas-subtle); font-family: var(--font-mono); font-size: 0.84rem; padding: 1.25rem; overflow-x: auto; margin: 1.5rem 0;">
+<pre style="margin: 0; line-height: 1.5;">
+[COURSE SYLLABUS / TOPIC GOAL] (e.g. Signals &amp; Systems, Linear Algebra)
                |
                v
 [CURRICULUM DECOMPOSITION ENGINE]
   - Breaks high-level course modules into micro-competencies
-  - Estimates prerequisite graphs & optimal study paths
+  - Estimates prerequisite graphs &amp; optimal study paths
                |
                v
-[ADAPTIVE PRACTICE & EVALUATION]
+[ADAPTIVE PRACTICE &amp; EVALUATION]
   - Dynamically synthesizes practice problems tailored to current skill level
   - Evaluates user responses with step-by-step diagnostic feedback
                |
@@ -103,56 +100,34 @@
 [KNOWLEDGE RETENTION ENGINE]
   - Spaced repetition scheduling based on error frequency
   - Generates synthetic quizzes right before key examination milestones
-        </pre>
+</pre>
       </div>
 
-      <div class="highlight-box">
-        <div class="highlight-title">Current Status</div>
-        <p>
-          StudyKing is under active development as I progress through my B.Sc. in Information Engineering at the Technical University of Munich. The core focus is currently on automated syllabus parsing, mathematical LaTeX question synthesis, and tracking student concept mastery graphs.
+      <div class="card" style="border-left: 3px solid var(--gold); margin: 1.75rem 0;">
+        <h3 style="margin-top: 0; font-size: 1.15rem;">Current Status</h3>
+        <p class="small" style="margin-bottom: 0;">
+          StudyKing is under active development as Yang progresses through his B.Sc. in Information Engineering at the Technical University of Munich. The core focus is automated syllabus parsing, mathematical LaTeX question synthesis, and tracking student concept mastery graphs.
         </p>
-      </div>
-    </section>
-
-    <!-- Technologies -->
-    <section>
-      <h2>Technical Stack</h2>
-      <div class="skills-grid">
-        <div class="skill-category">
-          <h4>Core Stack</h4>
-          <div class="skill-pills">
-            <span class="skill-pill">Python</span>
-            <span class="skill-pill">FastAPI</span>
-            <span class="skill-pill">PostgreSQL / SQLite</span>
-            <span class="skill-pill">LaTeX Formatting</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h4>AI &amp; Prompt Engineering</h4>
-          <div class="skill-pills">
-            <span class="skill-pill">Knowledge Graphs</span>
-            <span class="skill-pill">Structured LLM Output</span>
-            <span class="skill-pill">Spaced Repetition (SM-2)</span>
-            <span class="skill-pill">Adaptive Testing</span>
-          </div>
-        </div>
       </div>
     </section>
   </main>
 
+  <!-- Global Footer -->
   <footer>
     <div class="container footer-inner">
       <div>
-        <strong>tomiweb.pro</strong> — Zixuan (Tomi) Yang • Heilbronn, Germany
+        <strong>tomiweb.pro</strong> — Tomi Yang (TomiWebPro) • Heilbronn, Germany
       </div>
       <div class="footer-links">
+        <a href="mailto:tomiwebpro@gmail.com">tomiwebpro@gmail.com</a>
+        <a href="https://github.com/TomiWebPro" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="/public/">Projects</a>
         <a href="/private/about/">About</a>
-        <a href="https://github.com/TomiWebPro/StudyKing" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="/private/blog/">Blog</a>
+        <a href="/private/contact/">Contact</a>
+        <a href="/compatibility/">Compatibility Journey</a>
       </div>
     </div>
   </footer>
-
-  <script src="/assets/js/main.js"></script>
 </body>
 </html>

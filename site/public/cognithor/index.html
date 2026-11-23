@@ -4,91 +4,87 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Cognithor — Autonomous Agent Platform &amp; ARC-AGI-3 Harness — tomiweb.pro</title>
-  <meta name="description" content="Cognithor: Modular multi-agent LLM framework (100k+ LoC). Solved ~30% on ARC-AGI-3 with Qwen 30B, surpassing Opus 4.7 approaches. 150 stars on GitHub.">
+  <meta name="description" content="Cognithor: Modular multi-agent LLM framework (100k+ LoC). Solved ~30% on ARC-AGI-3 with Qwen 30B, surpassing Opus 4.7 baselines. 150 stars on GitHub.">
   <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 <body>
+  <!-- Navigation (Natural labels only) -->
   <header class="site-nav">
-    <div class="container nav-inner">
-      <div class="brand-wrapper">
-        <a class="brand" href="/">
-          <span>tomiweb.pro</span>
-        </a>
-        <div class="brand-status">
-          <span class="status-dot"></span>
-          <span>TUM • Heilbronn</span>
-        </div>
-      </div>
+    <div class="container-wide nav-inner">
+      <a class="brand" href="/">
+        <span class="brand-dot"></span>
+        <span>tomiweb.pro</span>
+      </a>
       <nav class="nav-links">
+        <a href="/">Home</a>
         <a href="/public/" aria-current="page">Projects</a>
         <a href="/private/about/">About</a>
         <a href="/private/blog/">Blog</a>
+        <a href="/private/contact/">Contact</a>
         <a href="https://github.com/TomiWebPro" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">☀️</button>
       </nav>
     </div>
   </header>
 
   <main class="container">
-    <a class="back-link" href="/public/">← Back to Projects (/public)</a>
+    <div class="project-head-hero">
+      <div style="margin-bottom: 0.75rem;">
+        <a href="/public/" style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--ink-secondary);">← Back to Projects</a>
+      </div>
 
-    <div class="project-header">
-      <div class="card-meta">
-        <span class="tag-badge tag-ai">Autonomous Agents &amp; Benchmarks</span>
+      <div class="origin-callout">
+        <span>📖 Context &amp; Origin:</span>
+        <a href="/private/about/#cognithor-origin">Read biographical origin in About Wiki →</a>
+      </div>
+
+      <div class="card-meta" style="margin-top: 0.5rem;">
+        <span class="card-tag">Autonomous Agents &amp; Benchmarks</span>
         <span class="card-date">Released Jan 2026 • 150★ GitHub</span>
       </div>
-      <h1 class="project-title">Cognithor</h1>
-      <p class="project-tagline">
+
+      <h1 style="margin: 0.5rem 0 0.75rem; font-size: 2.75rem;">Cognithor</h1>
+      <p class="lead" style="margin-bottom: 1.5rem;">
         A modular LLM harness and multi-autonomous agent platform exceeding 100,000 lines of code. Solved ~30% of ARC-AGI-3 benchmark tasks with Qwen 30B, outperforming Claude Opus 4.7 baselines.
       </p>
 
-      <ul class="links-bar">
-        <li><a href="https://github.com/Alex8791-cyber/cognithor" target="_blank" rel="noopener noreferrer">GitHub: Alex8791-cyber/cognithor ↗</a></li>
-        <li><a href="/private/blog/building-cognithor/">Technical Deep-Dive Blog →</a></li>
-      </ul>
-    </div>
-
-    <!-- Key Metrics -->
-    <div class="metrics-row">
-      <div class="metric-item">
-        <div class="metric-number">100k+</div>
-        <div class="metric-label">Lines of Python Code</div>
-      </div>
-      <div class="metric-item">
-        <div class="metric-number">~30%</div>
-        <div class="metric-label">ARC-AGI-3 Solved (Qwen 30B)</div>
-      </div>
-      <div class="metric-item">
-        <div class="metric-number">150★</div>
-        <div class="metric-label">Organic GitHub Stars</div>
+      <div class="project-links-bar">
+        <a class="btn btn-primary" href="https://github.com/Alex8791-cyber/cognithor" target="_blank" rel="noopener noreferrer">GitHub: Alex8791-cyber/cognithor ↗</a>
+        <a class="btn btn-secondary" href="/private/blog/building-cognithor/">Technical Deep-Dive Blog →</a>
       </div>
     </div>
 
-    <!-- Overview -->
+    <!-- Key Metrics Grid -->
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2.5rem;">
+      <div class="card" style="padding: 1.25rem; text-align: center;">
+        <div style="font-family: var(--font-mono); font-size: 1.85rem; font-weight: 800; color: var(--gold-hover);">100k+</div>
+        <div class="small muted">Lines of Modular Python</div>
+      </div>
+      <div class="card" style="padding: 1.25rem; text-align: center;">
+        <div style="font-family: var(--font-mono); font-size: 1.85rem; font-weight: 800; color: var(--gold-hover);">~30%</div>
+        <div class="small muted">ARC-AGI-3 Solved (Qwen 30B)</div>
+      </div>
+      <div class="card" style="padding: 1.25rem; text-align: center;">
+        <div style="font-family: var(--font-mono); font-size: 1.85rem; font-weight: 800; color: var(--gold-hover);">150★</div>
+        <div class="small muted">Organic GitHub Stars</div>
+      </div>
+    </div>
+
+    <!-- Executive Summary -->
     <section>
       <h2>Executive Summary</h2>
       <p>
         Inspired by early open agent releases such as OpenClaw, Cognithor was designed to explore how far autonomous agent architectures can go when equipped with structured reasoning, deep tool execution, and long-term memory. Developed in collaboration with a German software engineer under tight schedules leading up to the May 2026 IB examinations, the project was scaled rapidly through AI-assisted development workflows.
       </p>
       <p>
-        Cognithor is not just a chatbot wrapper: it is an enterprise-grade agent runtime with self-healing execution loops, computer-use capabilities (mouse, keyboard, terminal, browser), long-term vector memory, and strict GDPR security sandboxing.
+        Cognithor is an enterprise-grade agent runtime featuring self-healing execution loops, computer-use capabilities (mouse, keyboard, terminal, browser), long-term episodic vector memory, and strict GDPR security sandboxing.
       </p>
     </section>
 
-    <!-- Architecture -->
+    <!-- Architecture & Core Systems -->
     <section>
       <h2>Architecture &amp; Core Systems</h2>
-      
-      <div class="terminal-card">
-        <div class="terminal-header">
-          <div class="terminal-dots">
-            <span class="terminal-dot dot-red"></span>
-            <span class="terminal-dot dot-yellow"></span>
-            <span class="terminal-dot dot-green"></span>
-          </div>
-          <span>cognithor-system-architecture.txt</span>
-        </div>
-        <pre class="terminal-body">
+      <div class="card" style="background: var(--canvas-subtle); font-family: var(--font-mono); font-size: 0.84rem; padding: 1.25rem; overflow-x: auto; margin: 1.5rem 0;">
+<pre style="margin: 0; line-height: 1.5;">
 +--------------------------------------------------------------------------+
 |                            USER GOAL / PROMPT                            |
 +--------------------------------------------------------------------------+
@@ -97,79 +93,61 @@
 +--------------------------------------------------------------------------+
 |                     COGNITHOR REASONING ORCHESTRATOR                     |
 |  - Multi-agent coordination (Coordinator, Researcher, Coder, Verifier)    |
-|  - Dynamic task tree decomposition & rollback checkpoints                 |
+|  - Dynamic task tree decomposition &amp; rollback checkpoints                 |
 +--------------------------------------------------------------------------+
        |                             |                             |
        v                             v                             v
 +-------------------+      +-------------------+      +--------------------+
-|  EPISODIC MEMORY  |      |   COMPUTER-USE    |      |  GDPR & SECURITY   |
+|  EPISODIC MEMORY  |      |   COMPUTER-USE    |      |  GDPR &amp; SECURITY   |
 |  Vector retrieval |      | Mouse, keyboard,  |      | Strict token filter|
 |  Multi-turn cache |      | headless browser, |      | Sandboxed runtimes |
 |  Failure memories |      | bash execution    |      | Local model support|
 +-------------------+      +-------------------+      +--------------------+
-        </pre>
+</pre>
       </div>
 
-      <div class="highlight-box">
-        <div class="highlight-title">Key Engineering Innovations</div>
-        <p>
-          <strong>1. Autonomous Subagent Swarms:</strong> A hierarchical supervisor agent delegates subtasks to specialized worker agents with scoped permissions, isolating failures without crashing the entire run.<br><br>
-          <strong>2. Reasoning-Guided Hypothesis Generation:</strong> For abstract tasks like ARC-AGI-3, agents do not guess pixel answers directly. Instead, they formulate symbolic hypotheses, generate Python test programs, run them in sandboxes, and inspect the test grid output before committing.<br><br>
-          <strong>3. Long-Term Cross-Session Memory:</strong> An episodic memory store indexes previous task solutions and runtime errors, allowing agents to avoid repeating failed exploration paths.
+      <div class="card" style="border-left: 3px solid var(--gold); margin: 1.75rem 0;">
+        <h3 style="margin-top: 0; font-size: 1.15rem;">Key Engineering Innovations</h3>
+        <p class="small" style="margin-bottom: 0.5rem;">
+          <strong>1. Autonomous Subagent Swarms:</strong> A hierarchical supervisor agent delegates subtasks to specialized worker agents with scoped permissions, isolating failures without crashing the entire run.
+        </p>
+        <p class="small" style="margin-bottom: 0.5rem;">
+          <strong>2. Reasoning-Guided Code Synthesis:</strong> For abstract visual grid tasks (ARC-AGI-3), the agent deduces transformations into candidate Python functions, runs them in Docker sandboxes, and verifies the diffs before submitting.
+        </p>
+        <p class="small" style="margin-bottom: 0;">
+          <strong>3. Episodic Memory Store:</strong> Indexes previous task solutions and error traces in vector stores, preventing redundant or cyclic exploration paths.
         </p>
       </div>
     </section>
 
-    <!-- ARC-AGI-3 Results -->
+    <!-- ARC-AGI-3 Benchmark Breakthrough -->
     <section>
       <h2>ARC-AGI-3 Benchmark Breakthrough</h2>
       <p>
-        The ARC (Abstraction and Reasoning Corpus) benchmark is widely considered one of the hardest tests of general reasoning in AI. On the third generation of the benchmark (ARC-AGI-3), standard zero-shot LLMs perform poorly.
+        The ARC (Abstraction and Reasoning Corpus) benchmark is widely considered the gold standard for evaluating general reasoning in AI. On the third generation of the benchmark (ARC-AGI-3), standard zero-shot models perform poorly.
       </p>
       <p>
-        By plugging open-weights <strong>Qwen 30B</strong> into Cognithor's multi-agent code-generation and visual hypothesis verification pipeline, the framework successfully solved <strong>approximately 30% of ARC-AGI-3 tasks</strong>. This notably surpassed existing approaches from Claude with Opus 4.7, proving that an engineered agent harness and verification loop can dramatically amplify reasoning performance over raw model scale.
+        By plugging open-weights <strong>Qwen 30B</strong> into Cognithor's multi-agent code-generation and visual hypothesis verification pipeline, the framework successfully solved <strong>approximately 30% of ARC-AGI-3 tasks</strong>. This notably surpassed existing approaches from Claude with Opus 4.7, proving that an engineered agent harness and deterministic verification loop can dramatically amplify reasoning performance over raw model parameter scale.
       </p>
-    </section>
-
-    <!-- Tech Stack -->
-    <section>
-      <h2>Technical Specifications</h2>
-      <div class="skills-grid">
-        <div class="skill-category">
-          <h4>Core Runtime</h4>
-          <div class="skill-pills">
-            <span class="skill-pill">Python 3.11+</span>
-            <span class="skill-pill">Asyncio</span>
-            <span class="skill-pill">Pydantic v2</span>
-            <span class="skill-pill">FastAPI</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h4>Agent Infrastructure</h4>
-          <div class="skill-pills">
-            <span class="skill-pill">ChromaDB / Qdrant</span>
-            <span class="skill-pill">Playwright</span>
-            <span class="skill-pill">Docker Sandboxing</span>
-            <span class="skill-pill">Qwen 30B &amp; Claude 3.5</span>
-          </div>
-        </div>
-      </div>
     </section>
   </main>
 
+  <!-- Global Footer -->
   <footer>
     <div class="container footer-inner">
       <div>
-        <strong>tomiweb.pro</strong> — Zixuan (Tomi) Yang • Heilbronn, Germany
+        <strong>tomiweb.pro</strong> — Tomi Yang (TomiWebPro) • Heilbronn, Germany
       </div>
       <div class="footer-links">
+        <a href="mailto:tomiwebpro@gmail.com">tomiwebpro@gmail.com</a>
+        <a href="https://github.com/TomiWebPro" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="/public/">Projects</a>
         <a href="/private/about/">About</a>
-        <a href="https://github.com/Alex8791-cyber/cognithor" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="/private/blog/">Blog</a>
+        <a href="/private/contact/">Contact</a>
+        <a href="/compatibility/">Compatibility Journey</a>
       </div>
     </div>
   </footer>
-
-  <script src="/assets/js/main.js"></script>
 </body>
 </html>

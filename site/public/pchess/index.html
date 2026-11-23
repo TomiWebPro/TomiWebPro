@@ -3,62 +3,68 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PChess — Stockfish Puzzle Generator &amp; LLM Coach — tomiweb.pro</title>
+  <title>PChess — Stockfish Tactical Puzzle Generator &amp; LLM Coach — tomiweb.pro</title>
   <meta name="description" content="PChess: Stockfish-powered tactical chess puzzle extractor and conversational LLM training assistant. IB Computer Science Internal Assessment (Grade 7).">
   <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 <body>
+  <!-- Navigation (Natural labels only) -->
   <header class="site-nav">
-    <div class="container nav-inner">
-      <div class="brand-wrapper">
-        <a class="brand" href="/">
-          <span>tomiweb.pro</span>
-        </a>
-        <div class="brand-status">
-          <span class="status-dot"></span>
-          <span>TUM • Heilbronn</span>
-        </div>
-      </div>
+    <div class="container-wide nav-inner">
+      <a class="brand" href="/">
+        <span class="brand-dot"></span>
+        <span>tomiweb.pro</span>
+      </a>
       <nav class="nav-links">
+        <a href="/">Home</a>
         <a href="/public/" aria-current="page">Projects</a>
         <a href="/private/about/">About</a>
         <a href="/private/blog/">Blog</a>
+        <a href="/private/contact/">Contact</a>
         <a href="https://github.com/TomiWebPro" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">☀️</button>
       </nav>
     </div>
   </header>
 
   <main class="container">
-    <a class="back-link" href="/public/">← Back to Projects (/public)</a>
+    <div class="project-head-hero">
+      <div style="margin-bottom: 0.75rem;">
+        <a href="/public/" style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--ink-secondary);">← Back to Projects</a>
+      </div>
 
-    <div class="project-header">
-      <div class="card-meta">
-        <span class="tag-badge tag-tool">AI &amp; Game Theory</span>
+      <div class="origin-callout">
+        <span>📖 Context &amp; Origin:</span>
+        <a href="/private/about/#pchess-origin">Read biographical origin in About Wiki →</a>
+      </div>
+
+      <div class="card-meta" style="margin-top: 0.5rem;">
+        <span class="card-tag">Chess Engine &amp; AI</span>
         <span class="card-date">Sep 2025 • IB CS IA (Grade 7)</span>
       </div>
-      <h1 class="project-title">PChess</h1>
-      <p class="project-tagline">
-        Stockfish-powered tactical chess puzzle extraction combined with a conversational LLM tutor. Bridges the gap between numerical engine evaluations and human conceptual understanding.
+
+      <h1 style="margin: 0.5rem 0 0.75rem; font-size: 2.75rem;">PChess</h1>
+      <p class="lead" style="margin-bottom: 1.5rem;">
+        Stockfish-powered tactical puzzle extraction combined with a conversational LLM coach. Bridges the gap between numerical engine evaluations and human conceptual understanding.
       </p>
 
-      <ul class="links-bar">
-        <li><a href="https://github.com/TomiWebPro/PChess" target="_blank" rel="noopener noreferrer">GitHub: TomiWebPro/PChess ↗</a></li>
-      </ul>
+      <div class="project-links-bar">
+        <a class="btn btn-primary" href="https://github.com/TomiWebPro/PChess" target="_blank" rel="noopener noreferrer">GitHub: TomiWebPro/PChess ↗</a>
+      </div>
     </div>
 
-    <div class="metrics-row">
-      <div class="metric-item">
-        <div class="metric-number">Stockfish 16</div>
-        <div class="metric-label">Engine Position Analysis</div>
+    <!-- Key Metrics Grid -->
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2.5rem;">
+      <div class="card" style="padding: 1.25rem; text-align: center;">
+        <div style="font-family: var(--font-mono); font-size: 1.85rem; font-weight: 800; color: var(--gold-hover);">Stockfish 16</div>
+        <div class="small muted">Depth 18+ Tactical Analysis</div>
       </div>
-      <div class="metric-item">
-        <div class="metric-number">7 / 7</div>
-        <div class="metric-label">IB DP Computer Science Score</div>
+      <div class="card" style="padding: 1.25rem; text-align: center;">
+        <div style="font-family: var(--font-mono); font-size: 1.85rem; font-weight: 800; color: var(--gold-hover);">7 / 7</div>
+        <div class="small muted">IB DP Computer Science Score</div>
       </div>
-      <div class="metric-item">
-        <div class="metric-number">Zero Paywall</div>
-        <div class="metric-label">Tactics Extracted from Real Games</div>
+      <div class="card" style="padding: 1.25rem; text-align: center;">
+        <div style="font-family: var(--font-mono); font-size: 1.85rem; font-weight: 800; color: var(--gold-hover);">Zero Cost</div>
+        <div class="small muted">Puzzles Extracted from Real Games</div>
       </div>
     </div>
 
@@ -66,27 +72,18 @@
     <section>
       <h2>Problem &amp; Motivation</h2>
       <p>
-        While studying chess to improve competitive play, I grew frustrated with commercial platforms like Chess.com that restrict daily tactical puzzle access behind subscriptions. Furthermore, traditional chess software suffers from a major pedagogical flaw: engines give you a raw evaluation (e.g. <code>+3.2 (Nf3)</code>) without explaining <em>why</em> a candidate move is strong or what underlying tactical motif makes the opponent's reply ineffective.
+        While learning competitive chess, Tomi Yang grew frustrated with commercial platforms like Chess.com restricting daily puzzle access behind subscriptions. More critically, standard chess software suffers from a major pedagogical flaw: engines output raw numerical evaluations (e.g. <code>+3.2 (Nf3)</code>) without explaining <em>why</em> a candidate move is decisive or what underlying tactical motif makes the opponent's reply ineffective.
       </p>
       <p>
-        I created PChess to solve both problems: generating infinite tactical puzzles from my own game PGN records using a local Stockfish binary, followed by an interactive LLM coach that explains strategic concepts in plain English.
+        PChess was engineered to solve both problems: generating infinite tactical puzzles from raw PGN game records using a local Stockfish engine, paired with a conversational LLM coach that explains strategic motifs in plain English.
       </p>
     </section>
 
-    <!-- Implementation Details -->
+    <!-- Architecture -->
     <section>
-      <h2>Architecture &amp; Implementation</h2>
-
-      <div class="terminal-card">
-        <div class="terminal-header">
-          <div class="terminal-dots">
-            <span class="terminal-dot dot-red"></span>
-            <span class="terminal-dot dot-yellow"></span>
-            <span class="terminal-dot dot-green"></span>
-          </div>
-          <span>pchess-engine-loop.txt</span>
-        </div>
-        <pre class="terminal-body">
+      <h2>Architecture &amp; Evaluation</h2>
+      <div class="card" style="background: var(--canvas-subtle); font-family: var(--font-mono); font-size: 0.84rem; padding: 1.25rem; overflow-x: auto; margin: 1.5rem 0;">
+<pre style="margin: 0; line-height: 1.5;">
 [INPUT: USER PGN RECORD]
           |
           v
@@ -104,56 +101,34 @@
 [LLM CONVERSATIONAL COACH]
   - Context: FEN string + Engine variation tree + tactical theme tags
   - Generates human-like explanation: "White exploits the pinned f6-knight..."
-        </pre>
+</pre>
       </div>
 
-      <div class="highlight-box">
-        <div class="highlight-title">IB Computer Science Internal Assessment</div>
-        <p>
-          This project was expanded into my official IB Computer Science Internal Assessment. The documentation encompasses comprehensive user requirements gathering, iterative UML diagramming, algorithmic complexity analysis, test-driven validation, and user feedback evaluations. The assessment earned a maximum grade 7.
+      <div class="card" style="border-left: 3px solid var(--gold); margin: 1.75rem 0;">
+        <h3 style="margin-top: 0; font-size: 1.15rem;">IB Computer Science Internal Assessment</h3>
+        <p class="small" style="margin-bottom: 0;">
+          This application was produced as Yang's official IB Computer Science Internal Assessment, accompanied by extensive documentation of user requirements, iterative UML modeling, algorithmic complexity analysis, and automated test-driven validation, achieving a perfect Grade 7.
         </p>
-      </div>
-    </section>
-
-    <!-- Technologies -->
-    <section>
-      <h2>Technologies Used</h2>
-      <div class="skills-grid">
-        <div class="skill-category">
-          <h4>Chess &amp; Engine Integration</h4>
-          <div class="skill-pills">
-            <span class="skill-pill">Stockfish Engine</span>
-            <span class="skill-pill">python-chess</span>
-            <span class="skill-pill">UCI Protocol</span>
-            <span class="skill-pill">PGN / FEN Parsing</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h4>AI &amp; Interface</h4>
-          <div class="skill-pills">
-            <span class="skill-pill">Python 3.10</span>
-            <span class="skill-pill">LLM Context Prompting</span>
-            <span class="skill-pill">Tkinter GUI / Web</span>
-            <span class="skill-pill">Pytest</span>
-          </div>
-        </div>
       </div>
     </section>
   </main>
 
+  <!-- Global Footer -->
   <footer>
     <div class="container footer-inner">
       <div>
-        <strong>tomiweb.pro</strong> — Zixuan (Tomi) Yang • Heilbronn, Germany
+        <strong>tomiweb.pro</strong> — Tomi Yang (TomiWebPro) • Heilbronn, Germany
       </div>
       <div class="footer-links">
+        <a href="mailto:tomiwebpro@gmail.com">tomiwebpro@gmail.com</a>
+        <a href="https://github.com/TomiWebPro" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="/public/">Projects</a>
         <a href="/private/about/">About</a>
-        <a href="https://github.com/TomiWebPro/PChess" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="/private/blog/">Blog</a>
+        <a href="/private/contact/">Contact</a>
+        <a href="/compatibility/">Compatibility Journey</a>
       </div>
     </div>
   </footer>
-
-  <script src="/assets/js/main.js"></script>
 </body>
 </html>

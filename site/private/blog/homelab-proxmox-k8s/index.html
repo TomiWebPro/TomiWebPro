@@ -8,55 +8,52 @@
   <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 <body>
+  <!-- Navigation (Natural labels only) -->
   <header class="site-nav">
-    <div class="container nav-inner">
-      <div class="brand-wrapper">
-        <a class="brand" href="/">
-          <span>tomiweb.pro</span>
-        </a>
-        <div class="brand-status">
-          <span class="status-dot"></span>
-          <span>TUM • Heilbronn</span>
-        </div>
-      </div>
+    <div class="container-wide nav-inner">
+      <a class="brand" href="/">
+        <span class="brand-dot"></span>
+        <span>tomiweb.pro</span>
+      </a>
       <nav class="nav-links">
+        <a href="/">Home</a>
         <a href="/public/">Projects</a>
         <a href="/private/about/">About</a>
         <a href="/private/blog/" aria-current="page">Blog</a>
+        <a href="/private/contact/">Contact</a>
         <a href="https://github.com/TomiWebPro" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">☀️</button>
       </nav>
     </div>
   </header>
 
-  <main class="container">
-    <a class="back-link" href="/private/blog/">← Back to Notes (/private/blog)</a>
+  <main class="container" style="padding-top: 3.5rem; padding-bottom: 5rem;">
+    <div style="margin-bottom: 1rem;">
+      <a href="/private/blog/" style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--ink-secondary);">← Back to Blog</a>
+    </div>
 
     <article>
-      <h1>My Homelab Blueprint: Virtualization with Proxmox, K8s, and Local LLM Inference</h1>
-      <div class="article-meta">
-        <span>Published: Jun 2026</span>
-        <span>•</span>
-        <span>By Tomi Yang</span>
-        <span>•</span>
-        <span>Tags: Homelab, Proxmox, Kubernetes, LocalLLaMA</span>
+      <div class="card-meta" style="margin-bottom: 0.5rem;">
+        <span class="card-tag">Virtualization &amp; Infra</span>
+        <span class="card-date">Jun 2026 • By Tomi Yang</span>
       </div>
 
-      <p>
+      <h1 style="margin: 0.5rem 0 1rem; font-size: 2.5rem;">My Homelab Blueprint: Virtualization with Proxmox, K8s, and Local LLM Inference</h1>
+
+      <p class="lead">
         There is no better way to truly understand distributed computing, Linux systems administration, and computer networking than operating your own bare-metal home server cluster.
       </p>
 
       <p>
-        As an Information Engineering student at TUM and an avid follower of the <code>r/LocalLLaMA</code> community, my home lab is both a testbed for software development and a computational sandbox for training and inference experiments.
+        As an Information Engineering student at TUM and an active participant in local AI systems exploration, my home lab is both a testbed for software development and a computational sandbox for training and inference experiments.
       </p>
 
       <h2>The Hypervisor Layer: Proxmox VE</h2>
       <p>
-        The backbone of the lab is built on Proxmox VE. Proxmox allows granular allocation of CPU cores, memory limits, and PCIe passthrough devices.
+        The backbone of the lab is built on Proxmox VE. Proxmox allows granular allocation of CPU cores, memory limits, and PCIe passthrough devices:
       </p>
       <ul>
-        <li><strong>LXC Containers for Microservices:</strong> Lightweight Linux containers handle DNS resolution (Pi-hole / AdGuard Home), local Git mirrors, and reverse proxies (Caddy/Nginx) with negligible memory overhead.</li>
-        <li><strong>QEMU KVM for Isolated Testing:</strong> Full virtual machines are spun up on demand for evaluating bleeding-edge Linux distributions, testing OpenBMC emulators (QEMU aspeed), and validating custom kernel builds.</li>
+        <li><strong>LXC Containers for Microservices:</strong> Lightweight Linux containers handle local DNS resolution (Pi-hole), local Git mirrors, and reverse proxies (Caddy/Nginx) with negligible memory overhead.</li>
+        <li><strong>QEMU KVM for Isolated Testing:</strong> Full virtual machines are spun up on demand for evaluating Linux distributions, testing OpenBMC emulators (QEMU aspeed), and validating custom kernel builds.</li>
         <li><strong>PCIe GPU Passthrough:</strong> Discrete GPUs are passed directly into dedicated inference VMs running vLLM, llama.cpp, and Ollama, allowing high-throughput quantized model serving for local agent workflows.</li>
       </ul>
 
@@ -72,29 +69,25 @@
       <p>
         Realizing that indie AI researchers often struggle with compute limitations, I reached out to the author and configured secure, remote access to unused GPU compute slices on my home servers. Being able to contribute tangible hardware cycles to open research on parameter efficiency was deeply rewarding and reinforced my passion for self-hosted infrastructure.
       </p>
-
-      <div class="highlight-box">
-        <div class="highlight-title">Related Reading</div>
-        <p>
-          Read more about my background, education at TUM, and technical toolkit in the <a href="/private/about/">About section</a>.
-        </p>
-      </div>
     </article>
   </main>
 
+  <!-- Global Footer -->
   <footer>
     <div class="container footer-inner">
       <div>
-        <strong>tomiweb.pro</strong> — Zixuan (Tomi) Yang • Heilbronn, Germany
+        <strong>tomiweb.pro</strong> — Tomi Yang (TomiWebPro) • Heilbronn, Germany
       </div>
       <div class="footer-links">
+        <a href="mailto:tomiwebpro@gmail.com">tomiwebpro@gmail.com</a>
+        <a href="https://github.com/TomiWebPro" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="/public/">Projects</a>
         <a href="/private/about/">About</a>
         <a href="/private/blog/">Blog</a>
+        <a href="/private/contact/">Contact</a>
+        <a href="/compatibility/">Compatibility Journey</a>
       </div>
     </div>
   </footer>
-
-  <script src="/assets/js/main.js"></script>
 </body>
 </html>

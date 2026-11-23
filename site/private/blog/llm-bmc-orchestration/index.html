@@ -8,41 +8,38 @@
   <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 <body>
+  <!-- Navigation (Natural labels only) -->
   <header class="site-nav">
-    <div class="container nav-inner">
-      <div class="brand-wrapper">
-        <a class="brand" href="/">
-          <span>tomiweb.pro</span>
-        </a>
-        <div class="brand-status">
-          <span class="status-dot"></span>
-          <span>TUM • Heilbronn</span>
-        </div>
-      </div>
+    <div class="container-wide nav-inner">
+      <a class="brand" href="/">
+        <span class="brand-dot"></span>
+        <span>tomiweb.pro</span>
+      </a>
       <nav class="nav-links">
+        <a href="/">Home</a>
         <a href="/public/">Projects</a>
         <a href="/private/about/">About</a>
         <a href="/private/blog/" aria-current="page">Blog</a>
+        <a href="/private/contact/">Contact</a>
         <a href="https://github.com/TomiWebPro" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">☀️</button>
       </nav>
     </div>
   </header>
 
-  <main class="container">
-    <a class="back-link" href="/private/blog/">← Back to Notes (/private/blog)</a>
+  <main class="container" style="padding-top: 3.5rem; padding-bottom: 5rem;">
+    <div style="margin-bottom: 1rem;">
+      <a href="/private/blog/" style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--ink-secondary);">← Back to Blog</a>
+    </div>
 
     <article>
-      <h1>Autonomous Datacenters: Bringing LLM Orchestration to Server BMCs</h1>
-      <div class="article-meta">
-        <span>Published: Sep 2026</span>
-        <span>•</span>
-        <span>By Tomi Yang</span>
-        <span>•</span>
-        <span>Tags: OpenBMC, Redfish, Datacenter, InfiniBand</span>
+      <div class="card-meta" style="margin-bottom: 0.5rem;">
+        <span class="card-tag">Datacenter &amp; Hardware</span>
+        <span class="card-date">Sep 2026 • By Tomi Yang</span>
       </div>
 
-      <p>
+      <h1 style="margin: 0.5rem 0 1rem; font-size: 2.5rem;">Autonomous Datacenters: Bringing LLM Orchestration to Server BMCs</h1>
+
+      <p class="lead">
         In June 2026, while attending Computex in Taipei and the NVIDIA Global Developer Conference, I had the privilege of visiting Compal’s enterprise server testing facility. Walking through aisles of high-density AI servers running racks of GPUs connected by optical InfiniBand backplanes was awe-inspiring.
       </p>
 
@@ -91,19 +88,22 @@
     </article>
   </main>
 
+  <!-- Global Footer -->
   <footer>
     <div class="container footer-inner">
       <div>
-        <strong>tomiweb.pro</strong> — Zixuan (Tomi) Yang • Heilbronn, Germany
+        <strong>tomiweb.pro</strong> — Tomi Yang (TomiWebPro) • Heilbronn, Germany
       </div>
       <div class="footer-links">
+        <a href="mailto:tomiwebpro@gmail.com">tomiwebpro@gmail.com</a>
+        <a href="https://github.com/TomiWebPro" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="/public/">Projects</a>
         <a href="/private/about/">About</a>
         <a href="/private/blog/">Blog</a>
+        <a href="/private/contact/">Contact</a>
+        <a href="/compatibility/">Compatibility Journey</a>
       </div>
     </div>
   </footer>
-
-  <script src="/assets/js/main.js"></script>
 </body>
 </html>

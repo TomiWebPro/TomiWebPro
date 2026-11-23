@@ -58,10 +58,35 @@ function applyStaticText() {
 function showIntro() {
   const box = document.getElementById('card');
   box.innerHTML = '';
-  box.appendChild(el(`<div class="anim">${deco('hearts')}<h2>${I18N.t('ui.introTitle')}</h2>
+  box.appendChild(el(`<div class="anim">
+    ${deco('hearts')}
+    <h2>${I18N.t('ui.introTitle')}</h2>
+    
+    <div class="intro-profile-card">
+      <div class="intro-profile-title">
+        <span>Tomi Yang (TomiWebPro)</span>
+        <span>Heilbronn, Germany</span>
+      </div>
+      <p class="intro-profile-body">
+        <strong>Current Status: Single (Unmarried).</strong><br>
+        18 years old, studying B.Sc. Information Engineering at Technical University of Munich (TUM). Passionate about autonomous AI systems, mesh networking, datacenter infrastructure, and badminton.
+      </p>
+      <div class="intro-profile-grid">
+        <div><strong>Age / Marital:</strong> 18 • Single</div>
+        <div><strong>Campus:</strong> TUM Heilbronn</div>
+        <div><strong>Intent:</strong> Genuine compatibility</div>
+        <div><strong>Direct Contact:</strong> TomiWebPro@gmail.com</div>
+      </div>
+    </div>
+
     <p>${I18N.t('ui.introBody')}</p>
-    <p class="muted">🌈 ${flat.length} friendly questions in 4 parts. Your progress shows bottom-right. No scores shown until the end! 💛</p>
-    <button class="btn primary" id="startBtn">${I18N.t('ui.introOk')}</button></div>`));
+    <p class="muted">🌈 ${flat.length} candid questions in 4 parts (Basic, Lifestyle &amp; Wealth, Habits, Values). Your completion progress tracks at the bottom-right. No scores are revealed until the very end! 💛</p>
+    
+    <div style="display:flex; flex-direction:column; gap:10px; margin-top:20px;">
+      <button class="btn primary" id="startBtn">${I18N.t('ui.introOk')}</button>
+      <a class="btn secondary-outline" href="friend.html">${I18N.t('ui.friendButton')}</a>
+    </div>
+  </div>`));
   document.getElementById('startBtn').onclick = () => { started = true; idx = 0; renderQ(); };
 }
 

@@ -8,127 +8,114 @@
   <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 <body>
+  <!-- Navigation (Natural labels only) -->
   <header class="site-nav">
-    <div class="container nav-inner">
-      <div class="brand-wrapper">
-        <a class="brand" href="/">
-          <span>tomiweb.pro</span>
-        </a>
-        <div class="brand-status">
-          <span class="status-dot"></span>
-          <span>TUM • Heilbronn</span>
-        </div>
-      </div>
+    <div class="container-wide nav-inner">
+      <a class="brand" href="/">
+        <span class="brand-dot"></span>
+        <span>tomiweb.pro</span>
+      </a>
       <nav class="nav-links">
+        <a href="/">Home</a>
         <a href="/public/" aria-current="page">Projects</a>
         <a href="/private/about/">About</a>
         <a href="/private/blog/">Blog</a>
+        <a href="/private/contact/">Contact</a>
         <a href="https://github.com/TomiWebPro" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">☀️</button>
       </nav>
     </div>
   </header>
 
   <main class="container">
-    <a class="back-link" href="/public/">← Back to Projects (/public)</a>
+    <div class="project-head-hero">
+      <div style="margin-bottom: 0.75rem;">
+        <a href="/public/" style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--ink-secondary);">← Back to Projects</a>
+      </div>
 
-    <div class="project-header">
-      <div class="card-meta">
-        <span class="tag-badge tag-tool">Computer Vision &amp; Research</span>
+      <div class="origin-callout">
+        <span>📖 Context &amp; Origin:</span>
+        <a href="/private/about/#niqe-origin">Read biographical origin in About Wiki →</a>
+      </div>
+
+      <div class="card-meta" style="margin-top: 0.5rem;">
+        <span class="card-tag">Computer Vision &amp; Research</span>
         <span class="card-date">Mar 2025 • IB Extended Essay</span>
       </div>
-      <h1 class="project-title">NIQE Modernized Fork</h1>
-      <p class="project-tagline">
-        A modernized Python 3.11+ fork of the Natural Image Quality Evaluator (NIQE) algorithm. Used to evaluate visual fidelity and temporal reconstruction artifacts in real-time super-resolution upscalers (NVIDIA DLSS vs. AMD FSR).
+
+      <h1 style="margin: 0.5rem 0 0.75rem; font-size: 2.75rem;">NIQE Modernized Fork</h1>
+      <p class="lead" style="margin-bottom: 1.5rem;">
+        A modernized Python 3.11+ implementation of the Natural Image Quality Evaluator (NIQE) algorithm. Used to evaluate visual fidelity and temporal reconstruction artifacts in real-time super-resolution upscalers (NVIDIA DLSS vs. AMD FSR).
       </p>
 
-      <ul class="links-bar">
-        <li><a href="https://github.com/TomiWebPro/niqe" target="_blank" rel="noopener noreferrer">GitHub: TomiWebPro/niqe ↗</a></li>
-      </ul>
-    </div>
-
-    <div class="metrics-row">
-      <div class="metric-item">
-        <div class="metric-number">Python 3.11+</div>
-        <div class="metric-label">Modernized Dependency Tree</div>
-      </div>
-      <div class="metric-item">
-        <div class="metric-number">No-Reference</div>
-        <div class="metric-label">Natural Scene Statistics (NSS)</div>
-      </div>
-      <div class="metric-item">
-        <div class="metric-number">DLSS vs FSR</div>
-        <div class="metric-label">Research Benchmark Study</div>
+      <div class="project-links-bar">
+        <a class="btn btn-primary" href="https://github.com/TomiWebPro/niqe" target="_blank" rel="noopener noreferrer">GitHub: TomiWebPro/niqe ↗</a>
       </div>
     </div>
 
-    <!-- Background & Problem -->
+    <!-- Key Metrics Grid -->
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2.5rem;">
+      <div class="card" style="padding: 1.25rem; text-align: center;">
+        <div style="font-family: var(--font-mono); font-size: 1.85rem; font-weight: 800; color: var(--gold-hover);">Python 3.11+</div>
+        <div class="small muted">Modernized Dependencies</div>
+      </div>
+      <div class="card" style="padding: 1.25rem; text-align: center;">
+        <div style="font-family: var(--font-mono); font-size: 1.85rem; font-weight: 800; color: var(--gold-hover);">No-Reference</div>
+        <div class="small muted">Natural Scene Statistics</div>
+      </div>
+      <div class="card" style="padding: 1.25rem; text-align: center;">
+        <div style="font-family: var(--font-mono); font-size: 1.85rem; font-weight: 800; color: var(--gold-hover);">DLSS vs FSR</div>
+        <div class="small muted">Empirical Thesis Study</div>
+      </div>
+    </div>
+
+    <!-- Research Motivation -->
     <section>
       <h2>Research Motivation: Evaluating Upscaling Fidelity</h2>
       <p>
-        For my International Baccalaureate Extended Essay (EE), I conducted an empirical investigation into real-time neural upscaling technologies, contrasting the temporal feedback network of <strong>NVIDIA DLSS</strong> against the spatial/temporal filters of <strong>AMD FSR</strong>.
+        For his International Baccalaureate Extended Essay (EE), Tomi Yang conducted an empirical investigation into real-time neural upscaling technologies, contrasting the temporal feedback networks of <strong>NVIDIA DLSS</strong> against the spatial/temporal filters of <strong>AMD FSR</strong>.
       </p>
       <p>
-        Evaluating upscaled video games requires a no-reference image quality metric (since pristine native 4K ground truth rendered without temporal anti-aliasing can introduce its own artifacts). NIQE (Natural Image Quality Evaluator) is the academic benchmark for assessing naturalness using generalized Gaussian distributions of spatial domain features.
+        Evaluating upscaled gaming frames requires a no-reference image quality metric. NIQE is an established academic benchmark for assessing perceptual naturalness using generalized Gaussian distributions of spatial domain features.
       </p>
       <p>
-        However, the original MATLAB and legacy Python implementations from 2014 were broken: abandoned dependencies, broken matrix math on modern NumPy, and lack of batch GPU support made them unusable in modern automated test pipelines.
+        However, the original 2014 MATLAB and Python implementations were abandoned, incompatible with modern NumPy/SciPy, and lacked batch execution support. Yang modernized the entire library to support automated benchmark suites.
       </p>
     </section>
 
-    <!-- Engineering Work -->
+    <!-- Engineering Modernizations -->
     <section>
       <h2>Engineering Modernizations</h2>
-
-      <div class="highlight-box">
-        <div class="highlight-title">Modernized Codebase Improvements</div>
-        <p>
-          <strong>• Contemporary NumPy &amp; SciPy Compatibility:</strong> Refactored legacy deprecated calls, eliminating float conversion warnings and matrix dimensionality mismatches.<br><br>
-          <strong>• Accelerated Spatial Filtering:</strong> Reimplemented Mean Subtracted Contrast Normalized (MSCN) coefficient computations using modern OpenCV kernels for 5x faster batch evaluations.<br><br>
-          <strong>• Clean CLI &amp; Modular API:</strong> Packaged as a clean command-line utility and importable Python package for automated CI/CD and large-scale dataset benchmarking.
+      <div class="card" style="border-left: 3px solid var(--gold); margin: 1.75rem 0;">
+        <h3 style="margin-top: 0; font-size: 1.15rem;">Key Codebase Upgrades</h3>
+        <p class="small" style="margin-bottom: 0.5rem;">
+          <strong>• Contemporary NumPy Compatibility:</strong> Refactored deprecated matrix manipulation functions and resolved floating-point precision issues.
         </p>
-      </div>
-    </section>
-
-    <!-- Technologies -->
-    <section>
-      <h2>Technical Specifications</h2>
-      <div class="skills-grid">
-        <div class="skill-category">
-          <h4>Vision &amp; Statistics</h4>
-          <div class="skill-pills">
-            <span class="skill-pill">Natural Scene Statistics</span>
-            <span class="skill-pill">MSCN Coefficients</span>
-            <span class="skill-pill">Generalized Gaussian Distributions</span>
-            <span class="skill-pill">No-Reference IQA</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h4>Libraries</h4>
-          <div class="skill-pills">
-            <span class="skill-pill">Python 3.11</span>
-            <span class="skill-pill">NumPy</span>
-            <span class="skill-pill">SciPy</span>
-            <span class="skill-pill">OpenCV (cv2)</span>
-          </div>
-        </div>
+        <p class="small" style="margin-bottom: 0.5rem;">
+          <strong>• Accelerated MSCN Coefficient Extraction:</strong> Reimplemented Mean Subtracted Contrast Normalized coefficient computations using modern OpenCV kernels for 5x faster batch evaluations.
+        </p>
+        <p class="small" style="margin-bottom: 0;">
+          <strong>• Clean Modular CLI:</strong> Packaged as a clean CLI tool and importable Python module for continuous integration and large-scale dataset benchmarking.
+        </p>
       </div>
     </section>
   </main>
 
+  <!-- Global Footer -->
   <footer>
     <div class="container footer-inner">
       <div>
-        <strong>tomiweb.pro</strong> — Zixuan (Tomi) Yang • Heilbronn, Germany
+        <strong>tomiweb.pro</strong> — Tomi Yang (TomiWebPro) • Heilbronn, Germany
       </div>
       <div class="footer-links">
+        <a href="mailto:tomiwebpro@gmail.com">tomiwebpro@gmail.com</a>
+        <a href="https://github.com/TomiWebPro" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="/public/">Projects</a>
         <a href="/private/about/">About</a>
-        <a href="https://github.com/TomiWebPro/niqe" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="/private/blog/">Blog</a>
+        <a href="/private/contact/">Contact</a>
+        <a href="/compatibility/">Compatibility Journey</a>
       </div>
     </div>
   </footer>
-
-  <script src="/assets/js/main.js"></script>
 </body>
 </html>

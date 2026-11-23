@@ -8,41 +8,38 @@
   <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 <body>
+  <!-- Navigation (Natural labels only) -->
   <header class="site-nav">
-    <div class="container nav-inner">
-      <div class="brand-wrapper">
-        <a class="brand" href="/">
-          <span>tomiweb.pro</span>
-        </a>
-        <div class="brand-status">
-          <span class="status-dot"></span>
-          <span>TUM • Heilbronn</span>
-        </div>
-      </div>
+    <div class="container-wide nav-inner">
+      <a class="brand" href="/">
+        <span class="brand-dot"></span>
+        <span>tomiweb.pro</span>
+      </a>
       <nav class="nav-links">
+        <a href="/">Home</a>
         <a href="/public/">Projects</a>
         <a href="/private/about/">About</a>
         <a href="/private/blog/" aria-current="page">Blog</a>
+        <a href="/private/contact/">Contact</a>
         <a href="https://github.com/TomiWebPro" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">☀️</button>
       </nav>
     </div>
   </header>
 
-  <main class="container">
-    <a class="back-link" href="/private/blog/">← Back to Notes (/private/blog)</a>
+  <main class="container" style="padding-top: 3.5rem; padding-bottom: 5rem;">
+    <div style="margin-bottom: 1rem;">
+      <a href="/private/blog/" style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--ink-secondary);">← Back to Blog</a>
+    </div>
 
     <article>
-      <h1>Designing Stealthscale: Obfuscating Mesh Network Traffic Against DPI</h1>
-      <div class="article-meta">
-        <span>Published: Oct 2026</span>
-        <span>•</span>
-        <span>By Tomi Yang</span>
-        <span>•</span>
-        <span>Tags: Mesh Networking, DPI, WireGuard, Go</span>
+      <div class="card-meta" style="margin-bottom: 0.5rem;">
+        <span class="card-tag">Mesh Networking</span>
+        <span class="card-date">Oct 2026 • By Tomi Yang</span>
       </div>
 
-      <p>
+      <h1 style="margin: 0.5rem 0 1rem; font-size: 2.5rem;">Designing Stealthscale: Obfuscating Mesh Network Traffic Against DPI</h1>
+
+      <p class="lead">
         Modern mesh VPNs like Tailscale and WireGuard have transformed personal infrastructure. The ability to directly connect your laptop, smartphone, and home hypervisors over encrypted peer-to-peer links without opening insecure inbound firewall ports feels like magic.
       </p>
 
@@ -65,37 +62,40 @@
 
       <ul>
         <li><strong>True TLS 1.3 Handshake Mimicry:</strong> Rather than sending raw encrypted UDP packets, traffic is encapsulated in standard TLS 1.3 records terminating at a valid domain name with authentic SSL certificates. Middleboxes see normal HTTPS browser connections.</li>
-        <li><strong>Padding &amp; Packet Entropy Shaping:</strong> Encrypted payloads naturally have high Shannon entropy. Stealthscale injects randomized pseudo-random padding chunks and introduces subtle timing jitter to replicate the bursty signature of modern web browsing (e.g. streaming, web assets).</li>
+        <li><strong>Padding &amp; Packet Entropy Shaping:</strong> Encrypted payloads naturally have high Shannon entropy. Stealthscale injects randomized pseudo-random padding chunks and introduces subtle timing jitter to replicate the bursty signature of modern web browsing.</li>
         <li><strong>Multiplexed HTTP/2 &amp; WebSocket Framing:</strong> Connections use real HTTP/2 binary framing. If an active DPI probe tests the endpoint with a fake request, the server responds with a legitimate static website fallback.</li>
       </ul>
 
       <h2>Decentralized Headscale Control Plane</h2>
       <p>
-        To prevent central shutdown and eliminate telemetry leakage, Stealthscale is designed around a self-hosted Headscale control plane. Nodes register via public key cryptography, discover peers via a stealth STUN relay, and negotiate direct connections wherever possible.
+        To prevent central shutdown and eliminate telemetry leakage, Stealthscale is designed around a self-hosted Headscale control plane. Nodes register via asymmetric cryptographic keys, discover peers via a stealth STUN relay, and negotiate direct connections wherever possible.
       </p>
 
-      <div class="highlight-box">
-        <div class="highlight-title">Source Code &amp; Project Overview</div>
-        <p>
-          Learn more about the implementation at <a href="/public/stealthscale/">/public/stealthscale/</a> or inspect the repository at <a href="https://github.com/TomiWebPro/stealthscale" target="_blank" rel="noopener noreferrer">TomiWebPro/stealthscale</a>.
+      <div class="card" style="border-left: 3px solid var(--gold); margin: 2rem 0;">
+        <h3 style="margin-top: 0; font-size: 1.15rem;">Explore the Project</h3>
+        <p class="small" style="margin-bottom: 0;">
+          Learn more about the implementation at <a href="/public/stealthscale/">Stealthscale Project Head →</a> or inspect the repository at <a href="https://github.com/TomiWebPro/stealthscale" target="_blank" rel="noopener noreferrer">TomiWebPro/stealthscale</a>.
         </p>
       </div>
     </article>
   </main>
 
+  <!-- Global Footer -->
   <footer>
     <div class="container footer-inner">
       <div>
-        <strong>tomiweb.pro</strong> — Zixuan (Tomi) Yang • Heilbronn, Germany
+        <strong>tomiweb.pro</strong> — Tomi Yang (TomiWebPro) • Heilbronn, Germany
       </div>
       <div class="footer-links">
+        <a href="mailto:tomiwebpro@gmail.com">tomiwebpro@gmail.com</a>
+        <a href="https://github.com/TomiWebPro" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="/public/">Projects</a>
         <a href="/private/about/">About</a>
         <a href="/private/blog/">Blog</a>
+        <a href="/private/contact/">Contact</a>
+        <a href="/compatibility/">Compatibility Journey</a>
       </div>
     </div>
   </footer>
-
-  <script src="/assets/js/main.js"></script>
 </body>
 </html>
