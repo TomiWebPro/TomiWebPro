@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OpenBMCUI (RedfishOpenBMC) — Datacenter Hardware Automation — tomiweb.pro</title>
+  <meta name="description" content="OpenBMCUI: Next-generation Baseboard Management Controller interface integrating Redfish APIs with LLM automation for datacenter server provisioning.">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+  <header class="site-nav">
+    <div class="container nav-inner">
+      <div class="brand-wrapper">
+        <a class="brand" href="/">
+          <span>tomiweb.pro</span>
+        </a>
+        <div class="brand-status">
+          <span class="status-dot"></span>
+          <span>TUM • Heilbronn</span>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="/public/" aria-current="page">Projects</a>
+        <a href="/private/about/">About</a>
+        <a href="/private/blog/">Blog</a>
+        <a href="https://github.com/TomiWebPro" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">☀️</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <a class="back-link" href="/public/">← Back to Projects (/public)</a>
+
+    <div class="project-header">
+      <div class="card-meta">
+        <span class="tag-badge tag-infra">Hardware &amp; Datacenter</span>
+        <span class="card-date">Released Sep 2026</span>
+      </div>
+      <h1 class="project-title">OpenBMCUI (RedfishOpenBMC)</h1>
+      <p class="project-tagline">
+        Next-generation Baseboard Management Controller interface integrating Redfish APIs with LLM automation. Streamlines bare-metal server provisioning, BIOS configuration, and InfiniBand bandwidth validation.
+      </p>
+
+      <ul class="links-bar">
+        <li><a href="https://github.com/TomiWebPro/redfishopenbmc" target="_blank" rel="noopener noreferrer">GitHub: TomiWebPro/redfishopenbmc ↗</a></li>
+        <li><a href="/private/blog/llm-bmc-orchestration/">Lab Notes &amp; Story →</a></li>
+      </ul>
+    </div>
+
+    <div class="metrics-row">
+      <div class="metric-item">
+        <div class="metric-number">Redfish</div>
+        <div class="metric-label">DMTF Unified API Standard</div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-number">100%</div>
+        <div class="metric-label">Automated InfiniBand Bandwidth Loop</div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-number">Compal</div>
+        <div class="metric-label">Presented to VP at Lab Tour</div>
+      </div>
+    </div>
+
+    <!-- Background -->
+    <section>
+      <h2>Genesis at Computex &amp; Compal Hardware Labs</h2>
+      <p>
+        In June 2026, I traveled to Taiwan to attend Computex 2026 and the NVIDIA Global Developer Conference (GDC), where I was invited to tour Compal's enterprise hardware testing laboratory.
+      </p>
+      <p>
+        While touring the testing floor, I observed engineers conducting validation tests on high-density GPU server clusters. Although physical steps like plugging high-speed InfiniBand cables naturally require manual labor, the software validation workflow was surprisingly repetitive: setting up network boots, reinstalling operating systems, flashing BIOS configurations, applying Mellanox/NVIDIA driver stacks, and executing bandwidth scripts.
+      </p>
+      <p>
+        Having recently built the computer-use and autonomous workflow harnesses in Cognithor, I realized these exact automation primitives could be ported directly into the Baseboard Management Controller (BMC) interface via the Redfish API.
+      </p>
+    </section>
+
+    <!-- Architecture & Features -->
+    <section>
+      <h2>System Architecture &amp; Capabilities</h2>
+
+      <div class="terminal-card">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <span class="terminal-dot dot-red"></span>
+            <span class="terminal-dot dot-yellow"></span>
+            <span class="terminal-dot dot-green"></span>
+          </div>
+          <span>openbmc-redfish-pipeline.txt</span>
+        </div>
+        <pre class="terminal-body">
+[DATACENTER ENGINEER / LLM AGENT]
+         |
+         |  Natural language instruction or automated test matrix
+         v
+[OPENBMCUI ORCHESTRATION ENGINE]
+         |
+         +---> REST / Redfish API Endpoints
+         |       ├── /redfish/v1/Systems/System.Embedded.1
+         |       ├── /redfish/v1/Chassis/1/Thermal
+         |       └── /redfish/v1/Managers/BMC/VirtualMedia
+         |
+         +---> Out-of-band Serial-over-LAN (SOL) Console Monitor
+         |       └── Real-time kernel panic & boot log analysis
+         |
+         +---> Automated Test Suites
+                 ├── InfiniBand IB-Verbs bandwidth validation
+                 ├── Automated BIOS UEFI parameter adjustments
+                 └── Sensor telemetry & power budgeting
+        </pre>
+      </div>
+
+      <div class="highlight-box">
+        <div class="highlight-title">Industry Impact &amp; Independent Roadmap</div>
+        <p>
+          During the lab visit, I pitched this prototype directly to the Vice President of Compal. Recognizing its potential to drastically reduce human engineer overhead in validation labs, he offered me a paid internship to develop the system within Compal.
+        </p>
+        <p>
+          I respectfully declined the offer to maintain full independent ownership and release OpenBMCUI as an open-source platform, building a foundation for universal, autonomous server management.
+        </p>
+      </div>
+    </section>
+
+    <!-- Technologies -->
+    <section>
+      <h2>Technologies Used</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h4>Datacenter &amp; Protocols</h4>
+          <div class="skill-pills">
+            <span class="skill-pill">DMTF Redfish</span>
+            <span class="skill-pill">OpenBMC</span>
+            <span class="skill-pill">IPMI 2.0</span>
+            <span class="skill-pill">InfiniBand / RDMA</span>
+            <span class="skill-pill">Serial-over-LAN (SOL)</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h4>Software Stack</h4>
+          <div class="skill-pills">
+            <span class="skill-pill">Python 3.11</span>
+            <span class="skill-pill">FastAPI</span>
+            <span class="skill-pill">Linux Kernel Sysfs</span>
+            <span class="skill-pill">LLM Tool Calling</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <strong>tomiweb.pro</strong> — Zixuan (Tomi) Yang • Heilbronn, Germany
+      </div>
+      <div class="footer-links">
+        <a href="/public/">Projects</a>
+        <a href="/private/about/">About</a>
+        <a href="https://github.com/TomiWebPro/redfishopenbmc" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

@@ -3,37 +3,121 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Blog — tomiweb.pro</title>
-  <meta name="description" content="Blog — notes and growth logs.">
+  <title>Engineering Blog &amp; Notes (/private/blog) — tomiweb.pro</title>
+  <meta name="description" content="Engineering notes, system architecture teardowns, and research writeups by Tomi Yang (TomiWebPro).">
   <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 <body>
   <header class="site-nav">
     <div class="container nav-inner">
-      <a class="brand" href="/">tomiweb.pro</a>
-      <nav>
+      <div class="brand-wrapper">
+        <a class="brand" href="/">
+          <span>tomiweb.pro</span>
+        </a>
+        <div class="brand-status">
+          <span class="status-dot"></span>
+          <span>TUM • Heilbronn</span>
+        </div>
+      </div>
+      <nav class="nav-links">
         <a href="/public/">Projects</a>
-        <a href="/private/blog/" aria-current="page">Blog</a>
         <a href="/private/about/">About</a>
+        <a href="/private/blog/" aria-current="page">Blog</a>
+        <a href="https://github.com/TomiWebPro" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">☀️</button>
       </nav>
     </div>
   </header>
 
   <main class="container">
-    <h1>Blog</h1>
-    <p class="muted">[Placeholder] Notes and growth logs.</p>
-    <ul class="card-list">
-      <li>
-        <a class="card" href="/private/blog/first-post/">
-          <strong>First Post →</strong>
-          <span>[Placeholder] Post summary. <time datetime="2026-11-23">2026-11-23</time></span>
-        </a>
-      </li>
-    </ul>
+    <div class="pill-badge">
+      <span>Engineering Logs</span>
+      <span>•</span>
+      <span>Deep Dives &amp; Architecture</span>
+    </div>
+
+    <h1>Notes &amp; Writing</h1>
+    <p class="lead">
+      Technical postmortems, protocol teardowns, and reflections on autonomous agents, networking, and datacenter hardware.
+    </p>
+
+    <div class="cards-grid cards-grid-single">
+      <!-- Post 1 -->
+      <a class="card" href="/private/blog/building-cognithor/">
+        <div class="card-meta">
+          <span class="tag-badge tag-ai">AI Systems</span>
+          <span class="card-date">Jan 2026 • 8 min read</span>
+        </div>
+        <div class="card-title">
+          <span>Building Cognithor: Lessons from a 100k-Line Agent Framework &amp; ARC-AGI-3</span>
+          <span class="card-arrow">→</span>
+        </div>
+        <p class="card-desc">
+          How building a 100,000+ line Python agent harness enabled Qwen 30B to solve ~30% of ARC-AGI-3 tasks, outperforming Claude Opus 4.7 baselines, and what we learned about tool sandboxing and code synthesis.
+        </p>
+      </a>
+
+      <!-- Post 2 -->
+      <a class="card" href="/private/blog/stealthscale-mesh-networking/">
+        <div class="card-meta">
+          <span class="tag-badge tag-sys">Mesh Networking</span>
+          <span class="card-date">Oct 2026 • 6 min read</span>
+        </div>
+        <div class="card-title">
+          <span>Designing Stealthscale: Obfuscating Mesh Network Traffic Against DPI</span>
+          <span class="card-arrow">→</span>
+        </div>
+        <p class="card-desc">
+          Why standard WireGuard and Tailscale fail under state-level Deep Packet Inspection (DPI), and how wrapping encrypted mesh packets in real TLS 1.3 frames and randomized padding achieves total stealth.
+        </p>
+      </a>
+
+      <!-- Post 3 -->
+      <a class="card" href="/private/blog/llm-bmc-orchestration/">
+        <div class="card-meta">
+          <span class="tag-badge tag-infra">Datacenter &amp; Hardware</span>
+          <span class="card-date">Sep 2026 • 5 min read</span>
+        </div>
+        <div class="card-title">
+          <span>Autonomous Datacenters: Bringing LLM Orchestration to Server BMCs</span>
+          <span class="card-arrow">→</span>
+        </div>
+        <p class="card-desc">
+          Observations from Compal's server testing labs in Taiwan and Computex 2026. How integrating Redfish APIs with LLM agent harnesses automates InfiniBand validation, OS provisioning, and BIOS maintenance.
+        </p>
+      </a>
+
+      <!-- Post 4 -->
+      <a class="card" href="/private/blog/homelab-proxmox-k8s/">
+        <div class="card-meta">
+          <span class="tag-badge tag-sys">Virtualization &amp; Infra</span>
+          <span class="card-date">Jun 2026 • 7 min read</span>
+        </div>
+        <div class="card-title">
+          <span>My Homelab Blueprint: Virtualization with Proxmox, K8s, and Local LLM Inference</span>
+          <span class="card-arrow">→</span>
+        </div>
+        <p class="card-desc">
+          Architecture overview of my self-hosted home infrastructure: Proxmox VE hypervisors, k3s container clusters, private mesh routing, and contributing compute resources to the Silcia parameter-efficient AI architecture.
+        </p>
+      </a>
+    </div>
   </main>
 
   <footer>
-    <div class="container">tomiweb.pro — plain HTML/CSS, no tracking.</div>
+    <div class="container footer-inner">
+      <div>
+        <strong>tomiweb.pro</strong> — Zixuan (Tomi) Yang • Heilbronn, Germany
+      </div>
+      <div class="footer-links">
+        <a href="mailto:tomiwebpro@gmail.com">tomiwebpro@gmail.com</a>
+        <a href="https://github.com/TomiWebPro" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="/public/">Projects</a>
+        <a href="/private/about/">About</a>
+      </div>
+    </div>
   </footer>
+
+  <script src="/assets/js/main.js"></script>
 </body>
 </html>

@@ -3,29 +3,287 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>About — tomiweb.pro</title>
-  <meta name="description" content="About — [Placeholder] personal intro.">
+  <title>About Zixuan (Tomi) Yang — Background, Education &amp; Skills — tomiweb.pro</title>
+  <meta name="description" content="About Zixuan (Tomi) Yang: B.Sc. Information Engineering student at TUM, IPhO Bronze medalist, NASA Hackathon 2nd place, developer of Cognithor and Stealthscale.">
   <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 <body>
   <header class="site-nav">
     <div class="container nav-inner">
-      <a class="brand" href="/">tomiweb.pro</a>
-      <nav>
+      <div class="brand-wrapper">
+        <a class="brand" href="/">
+          <span>tomiweb.pro</span>
+        </a>
+        <div class="brand-status">
+          <span class="status-dot"></span>
+          <span>TUM • Heilbronn</span>
+        </div>
+      </div>
+      <nav class="nav-links">
         <a href="/public/">Projects</a>
-        <a href="/private/blog/">Blog</a>
         <a href="/private/about/" aria-current="page">About</a>
+        <a href="/private/blog/">Blog</a>
+        <a href="https://github.com/TomiWebPro" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">☀️</button>
       </nav>
     </div>
   </header>
 
   <main class="container">
-    <h1>About</h1>
-    <p class="muted">[Placeholder] One-paragraph about-me goes here.</p>
+    <div class="pill-badge">
+      <span>Zixuan Yang (Tomi) • TomiWebPro</span>
+      <span>•</span>
+      <span>Heilbronn, Germany</span>
+    </div>
+
+    <h1>About Me</h1>
+    <p class="lead">
+      I'm an 18-year-old developer and systems enthusiast currently pursuing a B.Sc. in Information Engineering at the Technical University of Munich (TUM), Heilbronn campus.
+    </p>
+
+    <!-- Personal Overview Card -->
+    <div class="highlight-box">
+      <div class="highlight-title">Profile Snapshot</div>
+      <p>
+        <strong>Name:</strong> Zixuan Yang (Tomi Yang / TomiWebPro)<br>
+        <strong>Age:</strong> 18<br>
+        <strong>Email:</strong> <a href="mailto:tomiwebpro@gmail.com">tomiwebpro@gmail.com</a><br>
+        <strong>Location:</strong> Heilbronn, Baden-Württemberg, Germany<br>
+        <strong>Nationality / Status:</strong> China / EU Permanent Resident<br>
+        <strong>Core Interests:</strong> Autonomous LLM harnesses, computer-use automation, DPI-resistant mesh networking, bare-metal server orchestration, and homelab virtualization.
+      </p>
+    </div>
+
+    <!-- Education Timeline -->
+    <section>
+      <h2>Education Journey</h2>
+      
+      <div class="timeline">
+        <!-- TUM -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">Sep 2026 – Jun 2029 (Expected)</div>
+          <div class="timeline-title">Technical University of Munich (TUM)</div>
+          <div class="timeline-sub">B.Sc. Information Engineering • Heilbronn, Germany</div>
+          <p class="timeline-desc">
+            Undergraduate studies focusing on distributed computing, systems architecture, signal processing, and engineering mathematics.
+          </p>
+        </div>
+
+        <!-- BISB (IBDP) -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">Sep 2023 – Jul 2026</div>
+          <div class="timeline-title">The British International School Budapest (BISB)</div>
+          <div class="timeline-sub">International Baccalaureate Diploma Programme (IBDP) • Budapest, Hungary</div>
+          <p class="timeline-desc">
+            <strong>IB Total Score: 37 / 45</strong><br>
+            • Physics (Higher Level): <strong>7 / 7</strong><br>
+            • Computer Science (Standard Level): <strong>7 / 7</strong><br>
+            • Economics (Higher Level): <strong>6 / 7</strong><br>
+            • Mathematics: Analysis &amp; Approaches (HL): 5<br>
+            • German B (SL): 5 | English A Literature (SL): 5<br>
+            • Extended Essay &amp; Theory of Knowledge: 2 points (EE on Image Quality Assessment comparing NVIDIA DLSS and AMD FSR).
+          </p>
+        </div>
+
+        <!-- Malvern College Chengdu -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">Jan 2022 – Jun 2023</div>
+          <div class="timeline-title">Malvern College Chengdu</div>
+          <div class="timeline-sub">IGCSE Curriculum • Chengdu, China</div>
+          <p class="timeline-desc">
+            Awarded the prestigious Academic Merit Scholarship (<strong>100,000 CNY/year</strong>).<br>
+            Grades: Mathematics (A*), Biology (9 / A*), Physics (9 / A*), Chemistry (9 / A*), Computer Science (9 / A*), Business (8 / A*), History (7 / A), English Literature (A), English Language (A), Further Mathematics (A).
+          </p>
+        </div>
+
+        <!-- Earlier schools -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2019 – 2022</div>
+          <div class="timeline-title">Early Secondary Education</div>
+          <div class="timeline-sub">BISB Budapest (2019–2021) &amp; Guandu Fifth Middle School, Kunming (2021–2022)</div>
+          <p class="timeline-desc">
+            Bilingual international and national middle school curricula establishing solid foundations in mathematics and science.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Awards & Honors -->
+    <section>
+      <h2>Awards &amp; Competitions</h2>
+
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-meta">
+            <span class="tag-badge tag-tool">Physics Olympiad</span>
+            <span class="card-date">International</span>
+          </div>
+          <div class="card-title">IPhO — Bronze Award</div>
+          <p class="card-desc">
+            Recognized at the International Physics Olympiad competition for advanced theoretical problem-solving in mechanics, thermodynamics, electromagnetism, and optics.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-meta">
+            <span class="tag-badge tag-ai">Hackathon</span>
+            <span class="card-date">Budapest</span>
+          </div>
+          <div class="card-title">NASA Space Apps Hackathon — 2nd Place</div>
+          <p class="card-desc">
+            Achieved 2nd place among 18 competing international teams in Budapest. Engineered an LLM-assisted knowledge retrieval system enabling NASA engineers to rapidly parse complex technical space documentation.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-meta">
+            <span class="tag-badge tag-sys">Aerospace / Embedded</span>
+            <span class="card-date">Hungary</span>
+          </div>
+          <div class="card-title">Hungarian CanSat Space Project</div>
+          <p class="card-desc">
+            Designed and built a can-sized atmospheric probe deployed via helium balloon. Configured Arduino microcontrollers, environmental sensors, radio telemetry, and sourced custom hardware components from Chinese suppliers.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-meta">
+            <span class="tag-badge tag-tool">Certification</span>
+            <span class="card-date">National</span>
+          </div>
+          <div class="card-title">National Youth Python Certificate</div>
+          <p class="card-desc">
+            Obtained Level 1, Level 2, and Level 3 official Chinese National Youth Python Programming certifications demonstrating algorithmic mastery and data structures proficiency.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Standardized Tests -->
+    <section>
+      <h2>Standardized Testing &amp; Languages</h2>
+      <div class="metrics-row">
+        <div class="metric-item">
+          <div class="metric-number">8.0</div>
+          <div class="metric-label">IELTS Academic (English)</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-number">720</div>
+          <div class="metric-label">SAT Mathematics</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-number">A2</div>
+          <div class="metric-label">ÖSD German Certificate</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Matrix -->
+    <section>
+      <h2>Technical Arsenal</h2>
+      
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h4>Programming Languages</h4>
+          <div class="skill-pills">
+            <span class="skill-pill">Python (Expert)</span>
+            <span class="skill-pill">Java</span>
+            <span class="skill-pill">Dart / Flutter</span>
+            <span class="skill-pill">C / C++ (Embedded)</span>
+            <span class="skill-pill">Bash / Shell</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h4>Infrastructure &amp; Systems</h4>
+          <div class="skill-pills">
+            <span class="skill-pill">Linux / SSH</span>
+            <span class="skill-pill">Proxmox VE</span>
+            <span class="skill-pill">Kubernetes</span>
+            <span class="skill-pill">Docker &amp; LXC</span>
+            <span class="skill-pill">ZFS Storage</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h4>Networking &amp; Security</h4>
+          <div class="skill-pills">
+            <span class="skill-pill">WireGuard Protocol</span>
+            <span class="skill-pill">Tailscale &amp; Headscale</span>
+            <span class="skill-pill">Deep Packet Inspection (DPI)</span>
+            <span class="skill-pill">TLS / HTTP/2 Transport</span>
+            <span class="skill-pill">DNS &amp; Routing</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h4>AI &amp; Datacenter Tooling</h4>
+          <div class="skill-pills">
+            <span class="skill-pill">LLM Multi-Agent Orchestration</span>
+            <span class="skill-pill">Computer-Use Automation</span>
+            <span class="skill-pill">DMTF Redfish APIs</span>
+            <span class="skill-pill">OpenBMC</span>
+            <span class="skill-pill">ARC-AGI Benchmark Harness</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Homelab, Research & Extracurriculars -->
+    <section>
+      <h2>Homelab, Research &amp; Beyond Code</h2>
+      <p>
+        Outside formal coursework, I love hands-on systems experimentation and tinkering:
+      </p>
+
+      <div class="highlight-box">
+        <div class="highlight-title">Home Virtualization &amp; Self-Hosted Infrastructure</div>
+        <p>
+          I operate my own multi-node home lab running Proxmox VE hypervisors and k3s Kubernetes clusters. I experiment with virtualized router operating systems, encrypted VLAN overlays, network-attached storage, and local LLM inference engines (frequently participating in the <code>r/LocalLLaMA</code> community).
+        </p>
+      </div>
+
+      <div class="highlight-box">
+        <div class="highlight-title">AI Research Contribution: Silcia Architecture</div>
+        <p>
+          In June 2026, I followed research on <em>Silcia</em>, a novel training paradigm targeting up to 85% parameter reductions compared to standard Transformers for sub-100M parameter models. Intrigued by the efficiency gains, I contacted the researcher and dedicated portions of my home compute resources to support experimental training runs and evaluations.
+        </p>
+      </div>
+
+      <div class="highlight-box">
+        <div class="highlight-title">Hardware Sourcing &amp; Demonstrations</div>
+        <p>
+          Drawing on supply chains in China, I assisted BISB teachers in sourcing microcontroller components and sensors for engineering clubs. Later, I coordinated the sourcing and logistics of Chinese humanoid robots for live school STEM exhibitions and marketing presentations.
+        </p>
+      </div>
+
+      <div class="highlight-box">
+        <div class="highlight-title">Badminton &amp; Community Organizing</div>
+        <p>
+          When I'm away from screens, I am an enthusiastic badminton player. In Budapest, I planned and promoted an amateur community badminton tournament, mastering WordPress web hosting, domain setups, and video marketing along the way.
+        </p>
+      </div>
+    </section>
   </main>
 
   <footer>
-    <div class="container">tomiweb.pro — plain HTML/CSS, no tracking.</div>
+    <div class="container footer-inner">
+      <div>
+        <strong>tomiweb.pro</strong> — Zixuan (Tomi) Yang • Heilbronn, Germany
+      </div>
+      <div class="footer-links">
+        <a href="mailto:tomiwebpro@gmail.com">tomiwebpro@gmail.com</a>
+        <a href="https://github.com/TomiWebPro" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="/public/">Projects</a>
+        <a href="/private/about/">About</a>
+      </div>
+    </div>
   </footer>
+
+  <script src="/assets/js/main.js"></script>
 </body>
 </html>

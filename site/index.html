@@ -3,62 +3,247 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>tomiweb.pro</title>
-  <meta name="description" content="tomiweb.pro — personal site. Projects, writing, and about.">
+  <title>Tomi Yang (TomiWebPro) — Systems &amp; AI Developer</title>
+  <meta name="description" content="Personal site of Zixuan (Tomi) Yang. Information Engineering student at TUM, creator of Cognithor, Stealthscale, and OpenBMCUI.">
   <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 <body>
   <header class="site-nav">
     <div class="container nav-inner">
-      <a class="brand" href="/">tomiweb.pro</a>
-      <nav>
-        <a href="/public/">Projects</a>
-        <a href="/private/blog/">Blog</a>
+      <div class="brand-wrapper">
+        <a class="brand" href="/">
+          <span>tomiweb.pro</span>
+        </a>
+        <div class="brand-status">
+          <span class="status-dot"></span>
+          <span>TUM • Heilbronn</span>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="/public/" aria-current="page">Projects</a>
         <a href="/private/about/">About</a>
+        <a href="/private/blog/">Blog</a>
+        <a href="https://github.com/TomiWebPro" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">☀️</button>
       </nav>
     </div>
   </header>
 
   <main class="container">
-    <h1>[Placeholder] Hi, I'm Tomi.</h1>
-    <p class="muted">[Placeholder] One-paragraph intro — what I do and what this site holds.</p>
-    <h2>Featured projects</h2>
-    <ul class="card-list">
-      <li>
-        <a class="card" href="/public/project-alpha/">
-          <strong>Project Alpha →</strong>
-          <span>[Placeholder] One-line tagline.</span>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="pill-badge">
+        <span>TUM '29</span>
+        <span>•</span>
+        <span>B.Sc. Information Engineering</span>
+        <span>•</span>
+        <span>Heilbronn, Germany</span>
+      </div>
+      <h1 class="hero-title">
+        Building <span class="gradient-text">autonomous agents</span>, undetectable mesh networks, and datacenter tooling.
+      </h1>
+      <p class="hero-bio">
+        Hi, I'm <strong>Zixuan (Tomi) Yang</strong> (TomiWebPro). I'm an 18-year-old developer studying Information Engineering at the Technical University of Munich (TUM). I explore high-leverage software: multi-agent LLM harnesses, computer-use automation, traffic-obfuscated mesh networks, and server BMC orchestration.
+      </p>
+      
+      <div class="action-row">
+        <a class="btn btn-primary" href="/public/">Explore Projects (/public) →</a>
+        <a class="btn btn-secondary" href="/private/about/">About &amp; Experience</a>
+        <a class="btn btn-secondary" href="https://github.com/TomiWebPro" target="_blank" rel="noopener noreferrer">GitHub Profile ↗</a>
+      </div>
+
+      <!-- Quick Metrics -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">150+</div>
+          <div class="stat-label">GitHub Stars on Cognithor</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">~30%</div>
+          <div class="stat-label">ARC-AGI-3 with Qwen 30B</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">IPhO</div>
+          <div class="stat-label">Physics Olympiad Bronze Award</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">TUM '29</div>
+          <div class="stat-label">B.Sc. Info Engineering</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section>
+      <h2>
+        <span>Featured Projects</span>
+        <a class="small" href="/public/">View all 7 projects →</a>
+      </h2>
+      <p class="muted">Following the <code>/public/</code> convention, all open-source projects have their own dedicated deep-dive page.</p>
+
+      <div class="cards-grid">
+        <!-- Cognithor -->
+        <a class="card" href="/public/cognithor/">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="tag-badge tag-ai">AI &amp; Agents</span>
+              <span class="card-date">2026.01</span>
+            </div>
+            <div class="card-title">
+              <span>Cognithor</span>
+              <span class="card-arrow">→</span>
+            </div>
+            <p class="card-desc">
+              Modular LLM harness &amp; multi-autonomous agent platform (100k+ LoC). Solved ~30% of ARC-AGI-3 tasks with Qwen 30B, surpassing Claude Opus 4.7 baselines. 150 stars on GitHub.
+            </p>
+          </div>
+          <div class="card-bottom">
+            <span class="tech-chip">Python</span>
+            <span class="tech-chip">Multi-Agent</span>
+            <span class="tech-chip">Computer-Use</span>
+            <span class="tech-chip">ARC-AGI-3</span>
+          </div>
         </a>
-      </li>
-      <li>
-        <a class="card" href="/public/project-beta/">
-          <strong>Project Beta →</strong>
-          <span>[Placeholder] One-line tagline.</span>
+
+        <!-- Stealthscale -->
+        <a class="card" href="/public/stealthscale/">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="tag-badge tag-sys">Networking</span>
+              <span class="card-date">2026.10</span>
+            </div>
+            <div class="card-title">
+              <span>Stealthscale</span>
+              <span class="card-arrow">→</span>
+            </div>
+            <p class="card-desc">
+              Undetectable self-hosted mesh networking based on Tailscale/Headscale primitives. Obfuscates encrypted peer-to-peer tunnels as ordinary internet HTTPS traffic against deep packet inspection.
+            </p>
+          </div>
+          <div class="card-bottom">
+            <span class="tech-chip">Go / Rust</span>
+            <span class="tech-chip">WireGuard</span>
+            <span class="tech-chip">Headscale</span>
+            <span class="tech-chip">DPI Obfuscation</span>
+          </div>
         </a>
-      </li>
-    </ul>
-    <h2>Writing</h2>
-    <ul class="card-list">
-      <li>
-        <a class="card" href="/private/blog/">
-          <strong>Blog →</strong>
-          <span>[Placeholder] Notes and growth logs.</span>
+
+        <!-- OpenBMCUI -->
+        <a class="card" href="/public/openbmcui/">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="tag-badge tag-infra">Hardware &amp; Infra</span>
+              <span class="card-date">2026.09</span>
+            </div>
+            <div class="card-title">
+              <span>OpenBMCUI</span>
+              <span class="card-arrow">→</span>
+            </div>
+            <p class="card-desc">
+              Next-generation Baseboard Management Controller interface with Redfish APIs and LLM automation. Inspired by testing at Compal Hardware Labs; automates OS/driver installations and InfiniBand bandwidth tests.
+            </p>
+          </div>
+          <div class="card-bottom">
+            <span class="tech-chip">Redfish</span>
+            <span class="tech-chip">OpenBMC</span>
+            <span class="tech-chip">Python</span>
+            <span class="tech-chip">Hardware Orchestration</span>
+          </div>
         </a>
-      </li>
-    </ul>
-    <h2>About</h2>
-    <ul class="card-list">
-      <li>
-        <a class="card" href="/private/about/">
-          <strong>About me →</strong>
-          <span>[Placeholder] Short intro and background.</span>
+
+        <!-- PChess -->
+        <a class="card" href="/public/pchess/">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="tag-badge tag-tool">Chess &amp; AI</span>
+              <span class="card-date">2025.09</span>
+            </div>
+            <div class="card-title">
+              <span>PChess</span>
+              <span class="card-arrow">→</span>
+            </div>
+            <p class="card-desc">
+              Stockfish-powered tactical puzzle extractor and interactive conversational LLM chess trainer. Explains deep positional motives rather than just showing moves. (IB CS Internal Assessment).
+            </p>
+          </div>
+          <div class="card-bottom">
+            <span class="tech-chip">Python</span>
+            <span class="tech-chip">Stockfish</span>
+            <span class="tech-chip">LLM Coach</span>
+            <span class="tech-chip">Full Documentation</span>
+          </div>
         </a>
-      </li>
-    </ul>
+      </div>
+    </section>
+
+    <!-- Engineering Notes & Blog -->
+    <section>
+      <h2>
+        <span>Recent Notes &amp; Writing</span>
+        <a class="small" href="/private/blog/">All articles (/private/blog) →</a>
+      </h2>
+      <p class="muted">Reflections on architecture, agent benchmarking, and self-hosted infrastructure.</p>
+
+      <div class="cards-grid cards-grid-single">
+        <a class="card" href="/private/blog/building-cognithor/">
+          <div class="card-meta">
+            <span class="tag-badge tag-ai">AI Systems</span>
+            <span class="card-date">2026.01</span>
+          </div>
+          <div class="card-title">
+            <span>Building Cognithor: Lessons from a 100k-Line Agent Framework &amp; ARC-AGI-3</span>
+            <span class="card-arrow">→</span>
+          </div>
+          <p class="card-desc">
+            How collaborating on a 100,000+ line Python codebase with automated coding agents led to solving 30% of ARC-AGI-3 tasks with Qwen 30B, outperforming Opus 4.7 baselines.
+          </p>
+        </a>
+
+        <a class="card" href="/private/blog/stealthscale-mesh-networking/">
+          <div class="card-meta">
+            <span class="tag-badge tag-sys">Mesh Networking</span>
+            <span class="card-date">2026.10</span>
+          </div>
+          <div class="card-title">
+            <span>Designing Stealthscale: Obfuscating Mesh Network Traffic Against DPI</span>
+            <span class="card-arrow">→</span>
+          </div>
+          <p class="card-desc">
+            Overcoming strict network filtering and DPI inspection by blending WireGuard-style mesh tunnels into innocuous HTTPS web traffic.
+          </p>
+        </a>
+      </div>
+    </section>
+
+    <!-- About Teaser -->
+    <section>
+      <h2>Personal Background &amp; Honors</h2>
+      <div class="highlight-box">
+        <div class="highlight-title">Technical University of Munich (TUM) — B.Sc. Information Engineering</div>
+        <p>
+          Currently based in Heilbronn, Germany. I hold an IB Diploma from BISB (37/45 with HL Physics 7, CS 7), an IPhO Bronze Award, 2nd Place at the NASA Space Apps Hackathon Budapest, and extensive experience deploying Proxmox/Kubernetes home virtualization clusters.
+        </p>
+        <div style="margin-top: 1rem;">
+          <a class="btn btn-secondary" href="/private/about/">Read full CV &amp; background (/private/about) →</a>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>
-    <div class="container">tomiweb.pro — plain HTML/CSS, no tracking.</div>
+    <div class="container footer-inner">
+      <div>
+        <strong>tomiweb.pro</strong> — Zixuan (Tomi) Yang • Heilbronn, Germany
+      </div>
+      <div class="footer-links">
+        <a href="mailto:tomiwebpro@gmail.com">tomiwebpro@gmail.com</a>
+        <a href="https://github.com/TomiWebPro" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="/public/">Projects</a>
+        <a href="/private/about/">About</a>
+      </div>
+    </div>
   </footer>
+
+  <script src="/assets/js/main.js"></script>
 </body>
 </html>

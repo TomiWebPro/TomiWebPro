@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ActiveLearn Bypass — Concurrent Asset Scraper &amp; PDF Compiler — tomiweb.pro</title>
+  <meta name="description" content="ActiveLearn Bypass: High-throughput concurrent Python script to retrieve and assemble digital textbook images into complete offline PDF documents.">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+  <header class="site-nav">
+    <div class="container nav-inner">
+      <div class="brand-wrapper">
+        <a class="brand" href="/">
+          <span>tomiweb.pro</span>
+        </a>
+        <div class="brand-status">
+          <span class="status-dot"></span>
+          <span>TUM • Heilbronn</span>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="/public/" aria-current="page">Projects</a>
+        <a href="/private/about/">About</a>
+        <a href="/private/blog/">Blog</a>
+        <a href="https://github.com/TomiWebPro" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">☀️</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <a class="back-link" href="/public/">← Back to Projects (/public)</a>
+
+    <div class="project-header">
+      <div class="card-meta">
+        <span class="tag-badge tag-tool">Automation &amp; Tooling</span>
+        <span class="card-date">Jun 2024</span>
+      </div>
+      <h1 class="project-title">ActiveLearn Bypass</h1>
+      <p class="project-tagline">
+        Automated concurrent scraping pipeline and PDF compilation utility for Pearson ActiveLearn educational textbooks. Retrieves high-resolution textbook pages in parallel and synthesizes standardized offline PDF documents.
+      </p>
+
+      <ul class="links-bar">
+        <li><a href="https://github.com/TomiWebPro/ActiveLearn_bypass" target="_blank" rel="noopener noreferrer">GitHub: TomiWebPro/ActiveLearn_bypass ↗</a></li>
+      </ul>
+    </div>
+
+    <div class="metrics-row">
+      <div class="metric-item">
+        <div class="metric-number">Async</div>
+        <div class="metric-label">Concurrent Parallel Worker Pool</div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-number">100%</div>
+        <div class="metric-label">High-Resolution PDF Synthesis</div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-number">Offline</div>
+        <div class="metric-label">Unlocks Local Study Materials</div>
+      </div>
+    </div>
+
+    <!-- Motivation -->
+    <section>
+      <h2>Problem &amp; Discovery</h2>
+      <p>
+        While preparing for IGCSE examinations, students were provided Pearson ActiveLearn digital textbooks locked behind a clunky web viewer with no native option to export or download offline copies for note-taking on tablets or offline study.
+      </p>
+      <p>
+        Inspecting the browser network traffic during page flipping revealed that individual high-resolution textbook pages were served directly from static CDN URLs using predictable naming patterns without authentication tokens or DRM encryption.
+      </p>
+    </section>
+
+    <!-- Implementation -->
+    <section>
+      <h2>Engineering Solution</h2>
+      <p>
+        To automate what would otherwise be hundreds of manual browser clicks, I wrote a Python script utilizing a multi-threaded request pool. The pipeline:
+      </p>
+      <ul>
+        <li>Discovers book metadata and page counts from initial document manifest payloads.</li>
+        <li>Dispatches concurrent asynchronous workers to download page images in parallel with retry backoffs.</li>
+        <li>Validates image dimensions and byte streams for missing or corrupted chunks.</li>
+        <li>Merges sorted image buffers directly into a lossless, bookmarked PDF document using Pillow and PyPDF.</li>
+      </ul>
+
+      <div class="highlight-box">
+        <div class="highlight-title">Early Engineering Journey</div>
+        <p>
+          This project served as an early practical exploration into network inspection, reverse-engineering web endpoints, concurrency management in Python, and handling binary image streams.
+        </p>
+      </div>
+    </section>
+
+    <!-- Technologies -->
+    <section>
+      <h2>Technologies Used</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h4>Networking &amp; Scraper</h4>
+          <div class="skill-pills">
+            <span class="skill-pill">Python</span>
+            <span class="skill-pill">Requests / ThreadPool</span>
+            <span class="skill-pill">HTTP Network Inspection</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h4>Media Processing</h4>
+          <div class="skill-pills">
+            <span class="skill-pill">Pillow (PIL)</span>
+            <span class="skill-pill">PyPDF / PDF Assembly</span>
+            <span class="skill-pill">Image Optimization</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <strong>tomiweb.pro</strong> — Zixuan (Tomi) Yang • Heilbronn, Germany
+      </div>
+      <div class="footer-links">
+        <a href="/public/">Projects</a>
+        <a href="/private/about/">About</a>
+        <a href="https://github.com/TomiWebPro/ActiveLearn_bypass" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
