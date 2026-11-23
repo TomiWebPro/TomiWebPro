@@ -57,49 +57,84 @@ function applyStaticText() {
 
 function showIntro() {
   const box = document.getElementById('card');
+  const heroDossier = document.getElementById('heroDossier');
+  const prog = document.getElementById('progress');
+  if (heroDossier) heroDossier.style.display = 'block';
+  if (prog) prog.style.display = 'none';
+
   box.innerHTML = '';
   box.appendChild(el(`<div class="anim">
-    ${deco('hearts')}
-    <h2>${I18N.t('ui.introTitle')}</h2>
-    
+    <div class="dossier-pill-header">
+      <span class="dossier-badge-pill">Marital Status Fact Sheet</span>
+      <span class="dossier-verified-tag">✓ Verified Record</span>
+    </div>
+
+    <h2 class="dossier-main-title">Tomi is Untaken — Are You the Love of His Life? 💛</h2>
+
     <div class="intro-profile-card">
-      <div class="intro-profile-title">
-        <span>Tomi Yang (TomiWebPro)</span>
-        <span>Heilbronn, Germany</span>
+      <div class="dossier-stats-grid">
+        <div class="dossier-stat-box">
+          <div class="stat-big-val">Untaken</div>
+          <div class="stat-small-label">Marital Status (Single)</div>
+        </div>
+        <div class="dossier-stat-box highlight">
+          <div class="stat-big-val">0</div>
+          <div class="stat-small-label">Past Relationships (Clean Slate)</div>
+        </div>
+        <div class="dossier-stat-box">
+          <div class="stat-big-val">100%</div>
+          <div class="stat-small-label">Genuine Intent</div>
+        </div>
       </div>
-      <p class="intro-profile-body">
-        <strong>Current Status: Single (Unmarried).</strong><br>
-        18 years old, studying B.Sc. Information Engineering at Technical University of Munich (TUM). Passionate about autonomous AI systems, mesh networking, datacenter infrastructure, and badminton.
-      </p>
+
       <div class="intro-profile-grid">
-        <div><strong>Age / Marital:</strong> 18 • Single</div>
-        <div><strong>Campus:</strong> TUM Heilbronn</div>
-        <div><strong>Intent:</strong> Genuine compatibility</div>
-        <div><strong>Direct Contact:</strong> TomiWebPro@gmail.com</div>
+        <div><strong>Current Status:</strong> Single &amp; Untaken</div>
+        <div><strong>Romantic History:</strong> No past relationships (0)</div>
+        <div><strong>Looking For:</strong> Long-term partner, deep mutual spark &amp; trust</div>
+        <div><strong>Communication:</strong> Direct, low-drama, affectionate, honest</div>
       </div>
     </div>
 
-    <p>${I18N.t('ui.introBody')}</p>
-    <p class="muted">🌈 ${flat.length} candid questions in 4 parts (Basic, Lifestyle &amp; Wealth, Habits, Values). Your completion progress tracks at the bottom-right. No scores are revealed until the very end! 💛</p>
-    
-    <div style="display:flex; flex-direction:column; gap:10px; margin-top:20px;">
-      <button class="btn primary" id="startBtn">${I18N.t('ui.introOk')}</button>
-      <a class="btn secondary-outline" href="friend.html">${I18N.t('ui.friendButton')}</a>
+    <p class="intro-note">
+      Tomi is currently untaken and curious whether genuine chemistry exists. This questionnaire evaluates day-to-day rhythms, lifestyle expectations, communication styles, and shared values. Answer honestly — no trick questions!
+    </p>
+
+    <div class="dossier-actions-row">
+      <button class="btn primary" id="startBtn">See How Compatible You Are With Tomi →</button>
+      <a class="btn secondary-outline" href="friend.html">Connect as Friends Instead 🤝</a>
     </div>
   </div>`));
-  document.getElementById('startBtn').onclick = () => { started = true; idx = 0; renderQ(); };
+
+  document.getElementById('startBtn').onclick = () => {
+    started = true;
+    idx = 0;
+    renderQ();
+  };
 }
 
 function renderQ() {
+  const heroDossier = document.getElementById('heroDossier');
+  const prog = document.getElementById('progress');
+  if (heroDossier) heroDossier.style.display = 'none';
+  if (prog) prog.style.display = 'flex';
+
   const { sec, q } = flat[idx];
   const box = document.getElementById('card');
   box.innerHTML = '';
   const secLabel = `${sec.emoji} Part ${flat[idx].si + 1}/4 · ${sec.title} · Q${idx + 1}/${flat.length}`;
-  const wrap = el(`<div class="anim"><div class="secLabel">${secLabel}</div>${deco(q.svg)}
-    <h2>${q.emoji} ${q.title}</h2><p class="desc">${q.desc}</p><div class="inputs" id="inputs"></div>
-    <div class="nav"><button class="btn ghost" id="backBtn">${I18N.t('ui.back')}</button>
-    <button class="btn linklike" id="skipBtn">${I18N.t('ui.skip')}</button>
-    <button class="btn primary" id="nextBtn">${I18N.t('ui.next')}</button></div></div>`);
+  const wrap = el(`<div class="anim q-container">
+    <div class="q-header-row">
+      <div class="secLabel">${secLabel}</div>
+    </div>
+    <h2 class="q-title">${q.emoji} ${q.title}</h2>
+    <p class="desc">${q.desc}</p>
+    <div class="inputs" id="inputs"></div>
+    <div class="nav">
+      <button class="btn ghost" id="backBtn">${I18N.t('ui.back')}</button>
+      <button class="btn linklike" id="skipBtn">${I18N.t('ui.skip')}</button>
+      <button class="btn primary" id="nextBtn">${I18N.t('ui.next')}</button>
+    </div>
+  </div>`);
   box.appendChild(wrap);
   renderInputs(document.getElementById('inputs'), q);
   document.getElementById('backBtn').onclick = () => { if (idx > 0) { idx--; renderQ(); } else showIntro(); updateProgress(); };

@@ -242,7 +242,7 @@ def build_to(dest, cards):
         rel = page.relative_to(SRC)
         out = dest / rel
         out.parent.mkdir(parents=True, exist_ok=True)
-        out.write_text(render_page(rel, page.read_text(), cards))
+        out.write_bytes(render_page(rel, page.read_text(encoding='utf-8'), cards).encode('utf-8'))
     for d in ('assets', 'compatibility'):
         src_d = SRC / d
         if src_d.exists():
@@ -253,8 +253,8 @@ def build_to(dest, cards):
     # sitemap.xml is regenerated from the page inventory every build.
     robots_src = SRC / 'robots.txt'
     if robots_src.is_file():
-        (dest / 'robots.txt').write_text(robots_src.read_text())
-    (dest / 'sitemap.xml').write_text(render_sitemap())
+        (dest / 'robots.txt').write_bytes(robots_src.read_bytes())
+    (dest / 'sitemap.xml').write_bytes(render_sitemap().encode('utf-8'))
 
 
 def main():

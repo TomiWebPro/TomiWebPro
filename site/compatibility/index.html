@@ -3,37 +3,43 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Compatibility Journey — Tomi Yang (Single • TUM Heilbronn)</title>
+<title>Marital Status &amp; Compatibility Dossier — Tomi Yang</title>
 <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-<header class="hero">
-  <div class="status-badge">
-    <span class="status-dot"></span>
-    <span id="statusBadgeText">Status: Single (Unmarried) • Tomi Yang (18, TUM)</span>
-  </div>
-  <h1 id="siteTitle">Compatibility Journey</h1>
-  <p id="siteSubtitle">A candid compatibility questionnaire for romantic connection &amp; friendship</p>
-</header>
+<div class="page-wrap">
+  <header class="compat-top-nav">
+    <a class="compat-back" href="/">← tomiweb.pro</a>
+    <div class="status-badge">
+      <span class="status-dot"></span>
+      <span id="statusBadgeText">Status: Untaken • 0 Past Relationships</span>
+    </div>
+  </header>
 
-<main>
-  <div class="card" id="card">
-    <p>Loading journey… 🌷</p>
+  <div class="hero-dossier" id="heroDossier">
+    <h1 id="siteTitle">Marital Status &amp; Compatibility</h1>
+    <p id="siteSubtitle">A candid look at Tomi's relationship status and lifestyle compatibility.</p>
   </div>
-</main>
 
-<div id="progress" title="Completion">
-  <div id="progressBar">
-    <div id="progressFill"></div>
+  <main>
+    <div class="card" id="card">
+      <p style="text-align:center; color:var(--ink-muted);">Loading dossier… 💛</p>
+    </div>
+  </main>
+
+  <div id="progress" title="Completion Progress" style="display: none;">
+    <div id="progressBar">
+      <div id="progressFill"></div>
+    </div>
+    <span id="progressText">0% completed</span>
   </div>
-  <span id="progressText">0% completed</span>
+
+  <div id="modal"></div>
+
+  <footer>
+    <p>Honest dossier by <a href="/">Tomi Yang (TomiWebPro)</a> • Contact: <b>tomiwebpro@gmail.com</b></p>
+  </footer>
 </div>
-
-<div id="modal"></div>
-
-<footer>
-  <p>Created with honesty by <a href="/" target="_blank">Tomi Yang (TomiWebPro)</a> • Contact: <b>TomiWebPro@gmail.com</b></p>
-</footer>
 
 <script src="js/i18n.js"></script>
 <script src="js/questions.js"></script>
