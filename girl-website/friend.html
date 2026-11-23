@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>🤝 Friends (beta)</title><link rel="stylesheet" href="css/style.css"/></head>
+<body>
+<header class="hero"><h1>🤝 Friends page (beta) 🌱</h1><p>This page is for friendship only — the quiz is for romantic connection. 💛</p></header>
+<main><div class="card">
+<h2>Send a friend request 💌</h2>
+<p class="muted">Beta: this form opens your mail app to <b>TomiWebPro@gmail.com</b>. Nothing is stored on the site. 🔒</p>
+<input type="text" id="fname" placeholder="Your name 🌸" style="margin-bottom:10px"/>
+<textarea id="fmsg" rows="5" placeholder="Say hi! Why friends? ✍️"></textarea>
+<p><button class="btn primary" id="fSend">Send friend request 🤝</button> <a class="btn ghost" href="index.html">⬅ Back to quiz</a></p>
+<p id="fOut"></p>
+<script>
+document.getElementById('fSend').onclick = () => {
+  const n = document.getElementById('fname').value.trim(), m = document.getElementById('fmsg').value.trim();
+  if (!n || !m) { document.getElementById('fOut').textContent = '⚠️ Please add name + message! 💛'; return; }
+  location.href = 'mailto:TomiWebPro@gmail.com?subject=' + encodeURIComponent('Friend request (beta) from ' + n) + '&body=' + encodeURIComponent(m);
+  document.getElementById('fOut').textContent = '✅ Opening mail to TomiWebPro@gmail.com… 💌';
+};
+</script>
+</div></main>
+</body>
+</html>
