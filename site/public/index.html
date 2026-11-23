@@ -33,16 +33,24 @@
       A comprehensive index of open-source software, agent frameworks, networking protocols, and developer utilities. Each project functions as a standalone head repository.
     </p>
 
-    <!-- Filter Buttons -->
-    <div class="filter-bar">
-      <button class="filter-btn active" data-filter="all">All (8)</button>
-      <button class="filter-btn" data-filter="ai">AI &amp; Agents (3)</button>
-      <button class="filter-btn" data-filter="systems">Systems &amp; Networking (2)</button>
-      <button class="filter-btn" data-filter="tools">Applied Software &amp; Tools (3)</button>
+    <!-- Filter & View Switcher Bar -->
+    <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem;">
+      <div class="filter-bar" style="margin-bottom: 0;">
+        <button class="filter-btn active" data-filter="all">All (8)</button>
+        <button class="filter-btn" data-filter="ai">AI &amp; Agents (3)</button>
+        <button class="filter-btn" data-filter="systems">Systems &amp; Networking (2)</button>
+        <button class="filter-btn" data-filter="tools">Applied Software &amp; Tools (3)</button>
+      </div>
+
+      <div class="spatial-mode-bar no-print" style="margin-top: 0;">
+        <span class="spatial-mode-label">View:</span>
+        <button class="spatial-mode-btn active" id="btn-view-grid">Cards Grid</button>
+        <button class="spatial-mode-btn" id="btn-view-graph">Interactive Link Graph</button>
+      </div>
     </div>
 
-    <!-- 8 Projects Grid -->
-    <div class="cards-grid">
+    <!-- View A: 8 Projects Grid -->
+    <div class="cards-grid" id="projects-grid-view">
       <!-- 1. Cognithor -->
       <a class="card project-item" data-category="ai" href="/public/cognithor/">
         <div class="card-top">
@@ -227,6 +235,37 @@
         </div>
       </a>
     </div>
+
+    <!-- View B: Interactive Systems & Link Graph -->
+    <div id="projects-graph-view" class="visual-graph-section" style="display: none; margin-top: 1rem;">
+      <div class="graph-header">
+        <div>
+          <div class="editorial-eyebrow" style="margin-bottom: 0.5rem;">Visual Link Map</div>
+          <h2 style="margin: 0 0 0.35rem;">Repository &amp; Knowledge Graph</h2>
+          <p class="muted" style="margin: 0; font-size: 0.92rem;">
+            Explore connections between open-source repositories, domain hubs, and testing laboratories. Hover to isolate edges, drag nodes to manipulate the physics lattice, or click to open.
+          </p>
+        </div>
+
+        <div class="graph-filter-bar no-print">
+          <button class="graph-filter-btn active" data-graph-filter="all">All Links</button>
+          <button class="graph-filter-btn" data-graph-filter="projects">Repositories</button>
+          <button class="graph-filter-btn" data-graph-filter="domains">Domain Hubs</button>
+          <button class="graph-filter-btn" data-graph-filter="origins">Origins &amp; Honors</button>
+        </div>
+      </div>
+
+      <div class="link-graph-canvas-container" id="public-link-graph-container">
+        <canvas id="public-link-graph-canvas" class="link-graph-canvas"></canvas>
+      </div>
+
+      <div class="graph-legend no-print">
+        <span class="legend-item"><span class="legend-dot legend-dot-domain"></span> Domain Hub</span>
+        <span class="legend-item"><span class="legend-dot legend-dot-project"></span> Repository (Click to open)</span>
+        <span class="legend-item"><span class="legend-dot legend-dot-origin"></span> Origin &amp; Lab</span>
+        <span style="margin-left: auto; font-style: italic;">Hover to isolate • Drag nodes to reposition</span>
+      </div>
+    </div>
   </main>
 
   <!-- Global Footer -->
@@ -247,6 +286,7 @@
     </div>
   </footer>
 
+  <script src="/assets/js/link-visualizer.js"></script>
   <script>
     // Client-side filtering
     const filterBtns = document.querySelectorAll('.filter-btn');
@@ -267,6 +307,35 @@
         });
       });
     });
+
+    // View Switching: Grid vs Visual Link Graph
+    const btnGrid = document.getElementById('btn-view-grid');
+    const btnGraph = document.getElementById('btn-view-graph');
+    const gridView = document.getElementById('projects-grid-view');
+    const graphView = document.getElementById('projects-graph-view');
+    let publicGraphInstance = null;
+
+    if (btnGrid && btnGraph && gridView && graphView) {
+      btnGrid.addEventListener('click', () => {
+        btnGrid.classList.add('active');
+        btnGraph.classList.remove('active');
+        gridView.style.display = 'grid';
+        graphView.style.display = 'none';
+      });
+
+      btnGraph.addEventListener('click', () => {
+        btnGraph.classList.add('active');
+        btnGrid.classList.remove('active');
+        gridView.style.display = 'none';
+        graphView.style.display = 'block';
+
+        if (!publicGraphInstance && typeof LinkVisualizer !== 'undefined') {
+          publicGraphInstance = new LinkVisualizer('public-link-graph-canvas', 'public-link-graph-container');
+        } else if (publicGraphInstance) {
+          publicGraphInstance.resize();
+        }
+      });
+    }
   </script>
 </body>
 </html>

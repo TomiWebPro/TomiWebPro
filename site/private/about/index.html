@@ -45,6 +45,7 @@
         <li><a href="#engineering">Systems, AI &amp; Engineering Work</a></li>
         <li><a href="#hardware">Hardware, Competitions &amp; Field Notes</a></li>
         <li><a href="#homelab">Infrastructure &amp; Homelab</a></li>
+        <li><a href="#timeline">Chronological Systems &amp; Milestones Timeline</a></li>
         <li><a href="#cv-builder">Modular CV Self-Checkout</a></li>
       </ol>
     </nav>
@@ -227,10 +228,19 @@
           </ul>
         </section>
 
-        <!-- Section 6: Modular CV Builder ("Self-Checkout") -->
+        <!-- Section 6: Chronological Systems & Milestones Timeline -->
+        <section id="timeline">
+          <h2>6. Chronological Systems &amp; Milestones Timeline</h2>
+          <p>
+            An interactive timeline tracing software releases, laboratory visits, academic milestones, and international competitions:
+          </p>
+          <div id="interactive-timeline"></div>
+        </section>
+
+        <!-- Section 7: Modular CV Builder ("Self-Checkout") -->
         <section id="cv-builder" class="cv-builder-container">
           <div class="cv-builder-header">
-            <h3>6. Modular CV Self-Checkout Builder</h3>
+            <h3>7. Modular CV Self-Checkout Builder</h3>
             <p class="muted small" style="margin-bottom: 0;">
               Customize which modules appear in the generated resume below. Check or uncheck sections to generate a tailored, professional single- or two-page CV, then export directly to vector PDF.
             </p>
@@ -513,7 +523,13 @@
           }
         });
       });
+
+      // Boot Interactive Timeline
+      if (document.getElementById('interactive-timeline') && typeof TimelineComponent !== 'undefined') {
+        new TimelineComponent('interactive-timeline');
+      }
     })();
   </script>
+  <script src="/assets/js/timeline.js"></script>
 </body>
 </html>

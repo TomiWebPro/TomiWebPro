@@ -65,6 +65,14 @@
           <a class="btn btn-secondary" href="/private/about/">Biography &amp; Wiki</a>
           <a class="btn btn-secondary" href="/private/contact/">Get in Touch</a>
         </div>
+
+        <!-- 3D Spatial Visual Engine Mode Switcher -->
+        <div class="spatial-mode-bar no-print">
+          <span class="spatial-mode-label">Spatial Engine:</span>
+          <button class="spatial-mode-btn active" data-spatial-mode="lattice">Orbital Lattice</button>
+          <button class="spatial-mode-btn" data-spatial-mode="gyroscope">Gyroscope</button>
+          <button class="spatial-mode-btn" data-spatial-mode="field">Wave Field</button>
+        </div>
       </div>
     </section>
 
@@ -317,7 +325,54 @@
         </div>
       </section>
 
-      <!-- 3. Recent Logs & Diary Notes -->
+      <!-- 3. Interactive Systems & Link Graph Visualizer -->
+      <section class="visual-graph-section" id="link-graph-container">
+        <div class="graph-header">
+          <div>
+            <div class="editorial-eyebrow" style="margin-bottom: 0.5rem;">Visual Systems Map</div>
+            <h2 style="margin: 0 0 0.35rem;">Interactive Link &amp; Architecture Graph</h2>
+            <p class="muted" style="margin: 0; font-size: 0.92rem;">
+              Physics-directed visual graph connecting Tomi's software repositories, core engineering domains, hardware field labs, and academic milestones. Drag nodes, filter categories, or hover to inspect connections.
+            </p>
+          </div>
+
+          <div class="graph-filter-bar no-print">
+            <button class="graph-filter-btn active" data-graph-filter="all">All Links</button>
+            <button class="graph-filter-btn" data-graph-filter="projects">Repositories</button>
+            <button class="graph-filter-btn" data-graph-filter="domains">Domain Hubs</button>
+            <button class="graph-filter-btn" data-graph-filter="origins">Origins &amp; Honors</button>
+          </div>
+        </div>
+
+        <div class="link-graph-canvas-container">
+          <canvas id="link-graph-canvas" class="link-graph-canvas"></canvas>
+        </div>
+
+        <div class="graph-legend no-print">
+          <span class="legend-item"><span class="legend-dot legend-dot-domain"></span> Domain Hub</span>
+          <span class="legend-item"><span class="legend-dot legend-dot-project"></span> Software Repository (Click to open)</span>
+          <span class="legend-item"><span class="legend-dot legend-dot-origin"></span> Academic &amp; Field Origin</span>
+          <span style="margin-left: auto; font-style: italic;">Hover to highlight links • Drag to re-balance</span>
+        </div>
+      </section>
+
+      <!-- 4. Chronological Systems & Milestones Timeline -->
+      <section class="timeline-section">
+        <div class="section-header">
+          <div>
+            <div class="editorial-eyebrow" style="margin-bottom: 0.5rem;">Chronology • 2021–2026</div>
+            <h2>Chronological Systems &amp; Research Timeline</h2>
+          </div>
+          <a class="small" href="/private/about/">Full biography &amp; wiki dossier →</a>
+        </div>
+        <p class="muted">
+          Interactive timeline tracing open-source releases, hardware testing milestones, academic benchmarks, and international competitions.
+        </p>
+
+        <div id="interactive-timeline"></div>
+      </section>
+
+      <!-- 5. Recent Logs & Diary Notes -->
       <section style="margin-top: 4.5rem;">
         <div class="section-header">
           <h2>Recent Logs &amp; Writing</h2>
@@ -376,6 +431,21 @@
     </div>
   </footer>
 
+  <script src="/assets/js/spatial-engine.js"></script>
   <script src="/assets/js/spatial-3d.js"></script>
+  <script src="/assets/js/link-visualizer.js"></script>
+  <script src="/assets/js/timeline.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Boot Link Visualizer
+      if (document.getElementById('link-graph-canvas')) {
+        window.linkVisualizerInstance = new LinkVisualizer('link-graph-canvas', 'link-graph-container');
+      }
+      // Boot Interactive Timeline
+      if (document.getElementById('interactive-timeline')) {
+        window.timelineInstance = new TimelineComponent('interactive-timeline');
+      }
+    });
+  </script>
 </body>
 </html>
