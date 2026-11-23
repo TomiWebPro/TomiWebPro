@@ -1,0 +1,39 @@
+{
+  "_meta": {
+    "locale": "en",
+    "note": "English locale for Tomi's Compatibility Journey."
+  },
+  "ui": {
+    "siteTitle": "Compatibility Journey",
+    "siteSubtitle": "A candid compatibility questionnaire by Tomi Yang 💛",
+    "statusBadge": "Relationship Status: Single (Unmarried) • 18 • TUM Heilbronn",
+    "startButton": "Begin Compatibility Journey 🌷",
+    "friendStartButton": "Friendship Only Route 🤝",
+    "introTitle": "Tomi is Single — How Suitable Are You? 💌",
+    "introBody": "Tomi is an 18-year-old developer studying Information Engineering at the Technical University of Munich (TUM) in Heilbronn, Germany. This interactive journey evaluates genuine day-to-day, lifestyle, and values compatibility. Please answer as truthfully as possible — there are no trick questions, just honest chemistry!",
+    "introOk": "Let's Find Out! 🚀",
+    "friendNote": "Looking only for friendship? 🤝 This quiz is designed for romantic alignment. If you simply want to connect as friends, study partners, or fellow builders, head over to the friends page!",
+    "friendButton": "Go to friends page 🤝",
+    "next": "Next ➜",
+    "back": "⬅ Back",
+    "skip": "I don't feel comfortable answering this 🤍",
+    "progressLabel": "completed",
+    "sectionGateTitle": "Thank you for sharing openly 💛",
+    "sectionGateBody": "Based on our core criteria, we might not be the most compatible romantic match at this time. We truly appreciate your time and wish you the best!",
+    "resultHighTitle": "💖 Wonderful Compatibility Match! 💖",
+    "resultHighBody": "You achieved an exceptionally high compatibility score! If you'd like to get to know Tomi better or become his girlfriend, leave a note below.",
+    "resultLowTitle": "🌷 Thank you for completing the journey! 🌷",
+    "resultLowBody": "Life is full of wonderful surprises. If you still feel a strong spark, feel free to send a note with your result PDF!",
+    "contactEmailLabel": "Tomi's Direct Email",
+    "downloadPdf": "Download My Result (PDF) 📄",
+    "gdprNotice": "Privacy notice (GDPR): By sending, your answers and attached PDF will be sent directly to TomiWebPro@gmail.com. Your data is never sold or shared.",
+    "gdprConfirm": "I understand and agree ✅",
+    "sendButton": "Send Note to Tomi 💌",
+    "messagePlaceholder": "Introduce yourself! What made you curious, and what are you passionate about? (up to 1000 words) 💭",
+    "namePlaceholder": "Your name 🌸",
+    "contactPlaceholder": "Your contact (email / WeChat / Telegram) 📧",
+    "includeAnswers": "Include all my quiz answers with the message (recommended) 📋",
+    "attachLabel": "Attach a file if you like (PDF only, up to 25MB) 📎",
+    "wordsLeft": "words left"
+  }
+}

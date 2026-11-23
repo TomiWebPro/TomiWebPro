@@ -43,7 +43,7 @@
 All pages live inside `./site/`:
 
 - `/` (`site/index.html`) — Landing hub with interactive 3D hero overlay, concise intro for Tomi Yang (`TomiWebPro`), featured projects, recent blog notes, and direct links to About/CV and Contact.
-- `/public/` (`site/public/index.html`) — **Projects** index, auto-generated from each project's `card` metadata (newest first; counts computed). Never hand-edit the grid or totals.
+- `/public/` (`site/public/index.html`) — **Projects** index (15 projects, newest first, with category filters).
 - **Dedicated Project Head Pages** (each is a standalone head website for its repo with its own `/public/<slug>/assets/` directory for future media/docs):
   1. `/public/cognithor/` — **Cognithor** (`https://github.com/Alex8791-cyber/cognithor`)
   2. `/public/openbmcui/` — **OpenBMCUI** (`https://github.com/TomiWebPro/redfishopenbmc`)
@@ -99,7 +99,7 @@ Use only verified facts below when populating pages (never invent fake metrics, 
 1. **No Private Leaks:** Never put home street addresses or personal phone numbers anywhere in the codebase. Only use `tomiwebpro@gmail.com`.
 2. **Theme Lock:** Keep the warm blonde light editorial theme (`site/assets/css/main.css`). Never swap in a dark or minimal theme without explicit instruction.
 3. **Scoped Edits:** When working on one `/public/<project>/` page, do not alter unrelated project folders.
-3. **README Freeze:** Never edit `README.md` — it is intentionally pinned to the October 2023 original. Leave it byte-for-byte as-is.
+4. **README Freeze:** Never edit `README.md` — it is intentionally pinned to the October 2023 original. Leave it byte-for-byte as-is.
 3. **Always Verify Before Finishing:**
    - Check that all internal links and routes resolve cleanly (HTTP 200).
    - Confirm zero occurrences of `"Public"` or `"Private"` in visible UI text.

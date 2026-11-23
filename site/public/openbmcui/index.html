@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OpenBMCUI (RedfishOpenBMC) — Datacenter Hardware Automation — tomiweb.pro</title>
+  <meta name="description" content="OpenBMCUI: Next-generation Baseboard Management Controller interface integrating Redfish APIs with LLM automation for datacenter server provisioning.">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+  <!-- Navigation (Natural labels only) -->
+  <header class="site-nav">
+    <div class="container-wide nav-inner">
+      <a class="brand" href="/">
+        <span class="brand-dot"></span>
+        <span>tomiweb.pro</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/">Home</a>
+        <a href="/public/" aria-current="page">Projects</a>
+        <a href="/private/about/">About</a>
+        <a href="/private/blog/">Blog</a>
+        <a href="/private/contact/">Contact</a>
+        <a href="https://github.com/TomiWebPro" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="project-head-hero">
+      <div style="margin-bottom: 0.75rem;">
+        <a href="/public/" style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--ink-secondary);">← Back to Projects</a>
+      </div>
+
+      <div class="origin-callout">
+        <span>📖 Context &amp; Origin:</span>
+        <a href="/private/about/#compal-taiwan">Read biographical origin in About Wiki →</a>
+      </div>
+
+      <div class="card-meta" style="margin-top: 0.5rem;">
+        <span class="card-tag">Datacenter &amp; Hardware</span>
+        <span class="card-date">Released Sep 2026</span>
+      </div>
+
+      <h1 style="margin: 0.5rem 0 0.75rem; font-size: 2.75rem;">OpenBMCUI</h1>
+      <p class="lead" style="margin-bottom: 1.5rem;">
+        Next-generation Baseboard Management Controller interface integrating Redfish APIs with LLM automation. Streamlines bare-metal server provisioning, BIOS configuration, and InfiniBand bandwidth qualification.
+      </p>
+
+      <div class="project-links-bar">
+        <a class="btn btn-primary" href="https://github.com/TomiWebPro/redfishopenbmc" target="_blank" rel="noopener noreferrer">GitHub: TomiWebPro/redfishopenbmc ↗</a>
+        <a class="btn btn-secondary" href="/private/blog/llm-bmc-orchestration/">Lab Notes &amp; Story →</a>
+      </div>
+    </div>
+
+    <!-- Key Metrics Grid -->
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2.5rem;">
+      <div class="card" style="padding: 1.25rem; text-align: center;">
+        <div style="font-family: var(--font-mono); font-size: 1.85rem; font-weight: 800; color: var(--gold-hover);">Redfish</div>
+        <div class="small muted">DMTF REST API Standard</div>
+      </div>
+      <div class="card" style="padding: 1.25rem; text-align: center;">
+        <div style="font-family: var(--font-mono); font-size: 1.85rem; font-weight: 800; color: var(--gold-hover);">100%</div>
+        <div class="small muted">InfiniBand Validation Loop</div>
+      </div>
+      <div class="card" style="padding: 1.25rem; text-align: center;">
+        <div style="font-family: var(--font-mono); font-size: 1.85rem; font-weight: 800; color: var(--gold-hover);">Compal</div>
+        <div class="small muted">Presented to VP in Taiwan Lab</div>
+      </div>
+    </div>
+
+    <!-- Genesis Section -->
+    <section>
+      <h2>Genesis at Computex &amp; Compal Hardware Labs</h2>
+      <p>
+        In June 2026, Tomi traveled to Taiwan to attend Computex 2026 and the NVIDIA Global Developer Conference (GDC), where he was invited to tour Compal's enterprise hardware testing laboratory.
+      </p>
+      <p>
+        While touring the testing floor, Tomi observed engineers conducting validation tests on high-density GPU server clusters. Although physical steps like plugging high-speed InfiniBand cables naturally require manual labor, the software validation workflow was surprisingly repetitive: setting up network boots, reinstalling operating systems, flashing BIOS configurations, applying Mellanox/NVIDIA driver stacks, and executing bandwidth scripts.
+      </p>
+      <p>
+        Having recently built the computer-use and autonomous workflow harnesses in Cognithor, Tomi realized these exact automation primitives could be ported directly into the Baseboard Management Controller (BMC) interface via the Redfish API.
+      </p>
+    </section>
+
+    <!-- Architecture -->
+    <section>
+      <h2>System Architecture &amp; Capabilities</h2>
+      <div class="card" style="background: var(--canvas-subtle); font-family: var(--font-mono); font-size: 0.84rem; padding: 1.25rem; overflow-x: auto; margin: 1.5rem 0;">
+<pre style="margin: 0; line-height: 1.5;">
+[DATACENTER ENGINEER / LLM AGENT]
+         |
+         |  Natural language instruction or automated test matrix
+         v
+[OPENBMCUI ORCHESTRATION ENGINE]
+         |
+         +---> REST / Redfish API Endpoints
+         |       ├── /redfish/v1/Systems/System.Embedded.1
+         |       ├── /redfish/v1/Chassis/1/Thermal
+         |       └── /redfish/v1/Managers/BMC/VirtualMedia
+         |
+         +---> Out-of-band Serial-over-LAN (SOL) Console Monitor
+         |       └── Real-time kernel panic &amp; boot log analysis
+         |
+         +---> Automated Test Suites
+                 ├── InfiniBand IB-Verbs bandwidth validation
+                 ├── Automated BIOS UEFI parameter adjustments
+                 └── Sensor telemetry &amp; power budgeting
+</pre>
+      </div>
+
+      <div class="card" style="border-left: 3px solid var(--gold); margin: 1.75rem 0;">
+        <h3 style="margin-top: 0; font-size: 1.15rem;">Industry Impact &amp; Open Source Roadmap</h3>
+        <p class="small" style="margin-bottom: 0.5rem;">
+          During the lab visit, Tomi pitched this prototype directly to the Vice President of Compal. Recognizing its potential to drastically reduce human engineer overhead in validation labs, he offered Tomi a paid internship on the spot.
+        </p>
+        <p class="small" style="margin-bottom: 0;">
+          Tomi respectfully declined the offer to maintain full independent ownership and release OpenBMCUI as an open-source platform, building a foundation for universal, autonomous server management.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Footer -->
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <strong>tomiweb.pro</strong> — Tomi Yang (TomiWebPro) • Heilbronn, Germany
+      </div>
+      <div class="footer-links">
+        <a href="mailto:tomiwebpro@gmail.com">tomiwebpro@gmail.com</a>
+        <a href="https://github.com/TomiWebPro" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="/public/">Projects</a>
+        <a href="/private/about/">About</a>
+        <a href="/private/blog/">Blog</a>
+        <a href="/private/contact/">Contact</a>
+        <a href="/compatibility/">Compatibility Journey</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

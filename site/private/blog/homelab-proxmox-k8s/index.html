@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Homelab Blueprint: Virtualization with Proxmox, K8s, and Local LLM Inference — tomiweb.pro</title>
+  <meta name="description" content="Architecture breakdown of my home server cluster: Proxmox VE hypervisors, k3s Kubernetes, local LLM inference, and contributing to AI research.">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+  <!-- Navigation (Natural labels only) -->
+  <header class="site-nav">
+    <div class="container-wide nav-inner">
+      <a class="brand" href="/">
+        <span class="brand-dot"></span>
+        <span>tomiweb.pro</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/">Home</a>
+        <a href="/public/">Projects</a>
+        <a href="/private/about/">About</a>
+        <a href="/private/blog/" aria-current="page">Blog</a>
+        <a href="/private/contact/">Contact</a>
+        <a href="https://github.com/TomiWebPro" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" style="padding-top: 3.5rem; padding-bottom: 5rem;">
+    <div style="margin-bottom: 1rem;">
+      <a href="/private/blog/" style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--ink-secondary);">← Back to Blog</a>
+    </div>
+
+    <article>
+      <div class="card-meta" style="margin-bottom: 0.5rem;">
+        <span class="card-tag">Virtualization &amp; Infra</span>
+        <span class="card-date">Jun 2026 • By Tomi Yang</span>
+      </div>
+
+      <h1 style="margin: 0.5rem 0 1rem; font-size: 2.5rem;">My Homelab Blueprint: Virtualization with Proxmox, K8s, and Local LLM Inference</h1>
+
+      <p class="lead">
+        There is no better way to truly understand distributed computing, Linux systems administration, and computer networking than operating your own bare-metal home server cluster.
+      </p>
+
+      <p>
+        As an Information Engineering student at TUM and an active participant in local AI systems exploration, my home lab is both a testbed for software development and a computational sandbox for training and inference experiments.
+      </p>
+
+      <h2>The Hypervisor Layer: Proxmox VE</h2>
+      <p>
+        The backbone of the lab is built on Proxmox VE. Proxmox allows granular allocation of CPU cores, memory limits, and PCIe passthrough devices:
+      </p>
+      <ul>
+        <li><strong>LXC Containers for Microservices:</strong> Lightweight Linux containers handle local DNS resolution (Pi-hole), local Git mirrors, and reverse proxies (Caddy/Nginx) with negligible memory overhead.</li>
+        <li><strong>QEMU KVM for Isolated Testing:</strong> Full virtual machines are spun up on demand for evaluating Linux distributions, testing OpenBMC emulators (QEMU aspeed), and validating custom kernel builds.</li>
+        <li><strong>PCIe GPU Passthrough:</strong> Discrete GPUs are passed directly into dedicated inference VMs running vLLM, llama.cpp, and Ollama, allowing high-throughput quantized model serving for local agent workflows.</li>
+      </ul>
+
+      <h2>Container Orchestration with k3s</h2>
+      <p>
+        To mirror cloud-native production environments, I run a lightweight k3s Kubernetes cluster across the nodes. This allows declarative GitOps deployments for internal tools, automated Let's Encrypt TLS certificate provisioning, and persistent storage management over local ZFS pools.
+      </p>
+
+      <h2>Contributing Compute to Open AI Research (Silcia)</h2>
+      <p>
+        In June 2026, I noticed discussions around <strong>Silcia</strong>, an intriguing research effort that claimed to achieve up to an 85% reduction in parameter requirements for language models under 100M parameters compared to conventional Transformer architectures.
+      </p>
+      <p>
+        Realizing that indie AI researchers often struggle with compute limitations, I reached out to the author and configured secure, remote access to unused GPU compute slices on my home servers. Being able to contribute tangible hardware cycles to open research on parameter efficiency was deeply rewarding and reinforced my passion for self-hosted infrastructure.
+      </p>
+    </article>
+  </main>
+
+  <!-- Global Footer -->
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <strong>tomiweb.pro</strong> — Tomi Yang (TomiWebPro) • Heilbronn, Germany
+      </div>
+      <div class="footer-links">
+        <a href="mailto:tomiwebpro@gmail.com">tomiwebpro@gmail.com</a>
+        <a href="https://github.com/TomiWebPro" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="/public/">Projects</a>
+        <a href="/private/about/">About</a>
+        <a href="/private/blog/">Blog</a>
+        <a href="/private/contact/">Contact</a>
+        <a href="/compatibility/">Compatibility Journey</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

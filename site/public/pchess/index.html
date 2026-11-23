@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PChess — Stockfish Tactical Puzzle Generator &amp; LLM Coach — tomiweb.pro</title>
+  <meta name="description" content="PChess: Stockfish-powered tactical chess puzzle extractor and conversational LLM training assistant. IB Computer Science Internal Assessment (Grade 7).">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+  <!-- Navigation (Natural labels only) -->
+  <header class="site-nav">
+    <div class="container-wide nav-inner">
+      <a class="brand" href="/">
+        <span class="brand-dot"></span>
+        <span>tomiweb.pro</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/">Home</a>
+        <a href="/public/" aria-current="page">Projects</a>
+        <a href="/private/about/">About</a>
+        <a href="/private/blog/">Blog</a>
+        <a href="/private/contact/">Contact</a>
+        <a href="https://github.com/TomiWebPro" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="project-head-hero">
+      <div style="margin-bottom: 0.75rem;">
+        <a href="/public/" style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--ink-secondary);">← Back to Projects</a>
+      </div>
+
+      <div class="origin-callout">
+        <span>📖 Context &amp; Origin:</span>
+        <a href="/private/about/#pchess-origin">Read biographical origin in About Wiki →</a>
+      </div>
+
+      <div class="card-meta" style="margin-top: 0.5rem;">
+        <span class="card-tag">Chess Engine &amp; AI</span>
+        <span class="card-date">Sep 2025 • IB CS IA (Grade 7)</span>
+      </div>
+
+      <h1 style="margin: 0.5rem 0 0.75rem; font-size: 2.75rem;">PChess</h1>
+      <p class="lead" style="margin-bottom: 1.5rem;">
+        Stockfish-powered tactical puzzle extraction combined with a conversational LLM coach. Bridges the gap between numerical engine evaluations and human conceptual understanding.
+      </p>
+
+      <div class="project-links-bar">
+        <a class="btn btn-primary" href="https://github.com/TomiWebPro/PChess" target="_blank" rel="noopener noreferrer">GitHub: TomiWebPro/PChess ↗</a>
+      </div>
+    </div>
+
+    <!-- Key Metrics Grid -->
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2.5rem;">
+      <div class="card" style="padding: 1.25rem; text-align: center;">
+        <div style="font-family: var(--font-mono); font-size: 1.85rem; font-weight: 800; color: var(--gold-hover);">Stockfish 16</div>
+        <div class="small muted">Depth 18+ Tactical Analysis</div>
+      </div>
+      <div class="card" style="padding: 1.25rem; text-align: center;">
+        <div style="font-family: var(--font-mono); font-size: 1.85rem; font-weight: 800; color: var(--gold-hover);">7 / 7</div>
+        <div class="small muted">IB DP Computer Science Score</div>
+      </div>
+      <div class="card" style="padding: 1.25rem; text-align: center;">
+        <div style="font-family: var(--font-mono); font-size: 1.85rem; font-weight: 800; color: var(--gold-hover);">Zero Cost</div>
+        <div class="small muted">Puzzles Extracted from Real Games</div>
+      </div>
+    </div>
+
+    <!-- Motivation -->
+    <section>
+      <h2>Problem &amp; Motivation</h2>
+      <p>
+        While learning competitive chess, Tomi grew frustrated with commercial platforms like Chess.com restricting daily puzzle access behind subscriptions. More critically, standard chess software suffers from a major pedagogical flaw: engines output raw numerical evaluations (e.g. <code>+3.2 (Nf3)</code>) without explaining <em>why</em> a candidate move is decisive or what underlying tactical motif makes the opponent's reply ineffective.
+      </p>
+      <p>
+        PChess was engineered to solve both problems: generating infinite tactical puzzles from raw PGN game records using a local Stockfish engine, paired with a conversational LLM coach that explains strategic motifs in plain English.
+      </p>
+    </section>
+
+    <!-- Architecture -->
+    <section>
+      <h2>Architecture &amp; Evaluation</h2>
+      <div class="card" style="background: var(--canvas-subtle); font-family: var(--font-mono); font-size: 0.84rem; padding: 1.25rem; overflow-x: auto; margin: 1.5rem 0;">
+<pre style="margin: 0; line-height: 1.5;">
+[INPUT: USER PGN RECORD]
+          |
+          v
+[STOCKFISH ENGINE PARSER (depth: 18+)]
+  - Evaluates centipawn swings (|Δeval| > 180)
+  - Filters out unforced trivial blunders
+  - Extracts only positions with unique tactical solutions
+          |
+          v
+[INTERACTIVE PUZZLE BOARD]
+  - User plays candidate moves
+  - If incorrect: allows retrying without revealing the solution
+          |
+          v
+[LLM CONVERSATIONAL COACH]
+  - Context: FEN string + Engine variation tree + tactical theme tags
+  - Generates human-like explanation: "White exploits the pinned f6-knight..."
+</pre>
+      </div>
+
+      <div class="card" style="border-left: 3px solid var(--gold); margin: 1.75rem 0;">
+        <h3 style="margin-top: 0; font-size: 1.15rem;">IB Computer Science Internal Assessment</h3>
+        <p class="small" style="margin-bottom: 0;">
+          This application was produced as Tomi's official IB Computer Science Internal Assessment, accompanied by extensive documentation of user requirements, iterative UML modeling, algorithmic complexity analysis, and automated test-driven validation, achieving a perfect Grade 7.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Footer -->
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <strong>tomiweb.pro</strong> — Tomi Yang (TomiWebPro) • Heilbronn, Germany
+      </div>
+      <div class="footer-links">
+        <a href="mailto:tomiwebpro@gmail.com">tomiwebpro@gmail.com</a>
+        <a href="https://github.com/TomiWebPro" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="/public/">Projects</a>
+        <a href="/private/about/">About</a>
+        <a href="/private/blog/">Blog</a>
+        <a href="/private/contact/">Contact</a>
+        <a href="/compatibility/">Compatibility Journey</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
