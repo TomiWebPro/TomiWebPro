@@ -11,24 +11,14 @@
     if (!canvas) return;
 
     if (typeof SpatialEngine !== 'undefined') {
+      const modes = ['lattice', 'gyroscope', 'field'];
+      const startMode = modes[Math.floor(Math.random() * modes.length)];
       window.spatialInstance = new SpatialEngine('spatial-canvas', {
-        mode: 'lattice',
+        mode: startMode,
         numNodes: 42,
         numDust: 36,
         accentColor: '184, 134, 59',
         inkColor: '28, 27, 24'
-      });
-
-      // Bind mode switcher buttons
-      const modeButtons = document.querySelectorAll('[data-spatial-mode]');
-      modeButtons.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          e.preventDefault();
-          const targetMode = btn.getAttribute('data-spatial-mode');
-          if (window.spatialInstance) {
-            window.spatialInstance.setMode(targetMode);
-          }
-        });
       });
     }
   }
