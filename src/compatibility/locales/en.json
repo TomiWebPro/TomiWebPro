@@ -1,17 +1,17 @@
 {
   "_meta": {
     "locale": "en",
-    "note": "English locale for Tomi's Marital Status & Compatibility Dossier."
+    "note": "English locale for Tomi's Personal Life & Compatibility."
   },
   "ui": {
-    "siteTitle": "Marital Status & Compatibility",
-    "siteSubtitle": "A candid dossier on Tomi's relationship status and lifestyle compatibility.",
-    "statusBadge": "Status: Untaken • 0 Past Relationships",
-    "startButton": "See How Compatible You Are With Tomi →",
+    "siteTitle": "Personal Life",
+    "siteSubtitle": "A candid look at Tomi's everyday rhythm, values, and relationship status.",
+    "statusBadge": "Untaken • 0 Past Relationships",
+    "startButton": "Explore Compatibility Match →",
     "friendStartButton": "Friendship Only Route 🤝",
-    "introTitle": "Tomi is Untaken — Are You the Love of His Life? 💛",
-    "introBody": "Currently single with zero past relationships. This questionnaire evaluates genuine daily rhythms, lifestyle expectations, communication styles, and shared values. Answer honestly — no trick questions, just transparent chemistry!",
-    "introOk": "See How Compatible You Are With Tomi →",
+    "introTitle": "Personal Life & Everyday Rhythms",
+    "introBody": "A transparent snapshot of daily rhythms, values, and relationship status outside of software engineering and hardware labs.",
+    "introOk": "Explore Compatibility Match →",
     "friendNote": "Looking only for friendship? 🤝 If you simply want to connect as friends, study partners, or fellow builders, head over to the friends page!",
     "friendButton": "Connect as Friends 🤝",
     "next": "Next ➜",

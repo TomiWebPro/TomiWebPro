@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tomi Respects Your Privacy — Takedown & Factual Corrections</title>
+  <meta name="description" content="Tomi respects your privacy. If you find any content violating your privacy, incorrect, or misleading, file a takedown or correction request here.">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+  <!-- Navigation (Natural labels only) -->
+  <header class="site-nav">
+    <div class="container nav-inner">
+      <a class="brand" href="/">
+        <span class="brand-dot"></span>
+        <span>tomiweb.pro</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/">Home</a>
+        <a href="/public/">Projects</a>
+        <a href="/private/about/">About</a>
+        <a href="/private/blog/">Blog</a>
+        <a href="/private/contact/">Contact</a>
+        <a href="https://github.com/TomiWebPro" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" style="padding-top: 3.5rem; padding-bottom: 5rem; max-width: 760px;">
+    <div class="editorial-eyebrow">Editorial Policy • Privacy &amp; Corrections</div>
+    <h1 style="margin-bottom: 0.75rem;">Tomi Respects Your Privacy</h1>
+    <p class="lead">
+      If you find any of the content violating your right to privacy, wrong, or misleading, please file a takedown request here.
+    </p>
+
+    <!-- Request Card -->
+    <div class="card" style="margin-top: 2rem; margin-bottom: 2.5rem;">
+      <h2 style="margin-top: 0; font-size: 1.35rem;">File a Request</h2>
+      <p>
+        Whether you are requesting the removal of personal information, a factual correction to a project log or biographical note, or a formal copyright/DMCA takedown notice, requests are processed promptly, respectfully, and directly:
+      </p>
+
+      <div style="background: var(--surface-raised); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; margin: 1.25rem 0;">
+        <h3 style="margin-top: 0; font-size: 1.05rem; color: var(--ink);">Please Include the Following in Your Message:</h3>
+        <ol style="margin: 0.5rem 0 0 1.25rem; padding: 0; font-size: 0.94rem; line-height: 1.7; color: var(--ink-secondary);">
+          <li><strong>Target URL:</strong> The exact page on <code>tomiweb.pro</code> (e.g., <code>https://tomiweb.pro/public/...</code> or <code>https://tomiweb.pro/private/...</code>).</li>
+          <li><strong>Nature of Request:</strong> Right to privacy / personal redaction, factual error or misleading statement, or copyright/DMCA notice.</li>
+          <li><strong>Specific Details:</strong> The exact text, image, or reference in question and the reason for removal or revision.</li>
+          <li><strong>Desired Resolution:</strong> Complete takedown, redaction, or replacement with corrected text.</li>
+        </ol>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin-top: 1.5rem;">
+        <a class="btn btn-primary" href="mailto:tomiwebpro@gmail.com?subject=Takedown%20%2F%20Privacy%20Request%20%E2%80%94%20tomiweb.pro">
+          Email Takedown Request →
+        </a>
+        <button class="copy-pill" id="copy-email-takedown" title="Click to copy email address">
+          <span>📬</span>
+          <strong id="takedown-email">tomiwebpro@gmail.com</strong>
+          <span id="takedown-copy-status" style="font-size: 0.78rem; color: var(--gold-hover); margin-left: 4px;">(Copy)</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Guiding Principles -->
+    <section>
+      <h2>Editorial &amp; Privacy Principles</h2>
+      <div style="display: grid; gap: 1.25rem; margin-top: 1rem;">
+        <div style="padding: 1rem 1.25rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm);">
+          <strong>Direct &amp; Responsive:</strong>
+          <p class="muted small" style="margin: 0.35rem 0 0;">
+            There are no bureaucratic ticket queues or automated denials. Tomi reviews submissions personally and makes requested corrections or removals swiftly upon verification.
+          </p>
+        </div>
+        <div style="padding: 1rem 1.25rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm);">
+          <strong>Zero Friction:</strong>
+          <p class="muted small" style="margin: 0.35rem 0 0;">
+            If you are mentioned anywhere on this site and would prefer not to be, let Tomi know and your mention will be removed or pseudonymized immediately without argument.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Footer -->
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <strong>tomiweb.pro</strong> — Tomi Yang
+      </div>
+      <div class="footer-links">
+        <a href="/public/">Projects</a>
+        <a href="/private/about/">About</a>
+        <a href="/private/blog/">Blog</a>
+        <a href="/private/contact/">Contact</a>
+        <a href="/compatibility/">Personal Life</a>
+        <a href="/private/takedown/">Takedown &amp; Privacy</a>
+        <a href="https://github.com/TomiWebPro" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('copy-email-takedown').addEventListener('click', () => {
+      const email = document.getElementById('takedown-email').textContent;
+      navigator.clipboard.writeText(email).then(() => {
+        const status = document.getElementById('takedown-copy-status');
+        status.textContent = '✓ Copied!';
+        setTimeout(() => { status.textContent = '(Copy)'; }, 2500);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -65,43 +65,61 @@ function showIntro() {
   box.innerHTML = '';
   box.appendChild(el(`<div class="anim">
     <div class="dossier-pill-header">
-      <span class="dossier-badge-pill">Marital Status Fact Sheet</span>
-      <span class="dossier-verified-tag">✓ Verified Record</span>
+      <span class="dossier-badge-pill">Personal Snapshot</span>
+      <span class="dossier-verified-tag">✓ Authentic &amp; Grounded</span>
     </div>
 
-    <h2 class="dossier-main-title">Tomi is Untaken — Are You the Love of His Life? 💛</h2>
+    <h2 class="dossier-main-title">Personal Life &amp; Everyday Rhythms</h2>
 
     <div class="intro-profile-card">
       <div class="dossier-stats-grid">
         <div class="dossier-stat-box">
           <div class="stat-big-val">Untaken</div>
-          <div class="stat-small-label">Marital Status (Single)</div>
+          <div class="stat-small-label">Relationship Status</div>
         </div>
         <div class="dossier-stat-box highlight">
           <div class="stat-big-val">0</div>
-          <div class="stat-small-label">Past Relationships (Clean Slate)</div>
+          <div class="stat-small-label">Past Relationships</div>
         </div>
         <div class="dossier-stat-box">
-          <div class="stat-big-val">100%</div>
-          <div class="stat-small-label">Genuine Intent</div>
+          <div class="stat-big-val">Calm</div>
+          <div class="stat-small-label">Daily Rhythm</div>
         </div>
       </div>
 
       <div class="intro-profile-grid">
-        <div><strong>Current Status:</strong> Single &amp; Untaken</div>
-        <div><strong>Romantic History:</strong> No past relationships (0)</div>
-        <div><strong>Looking For:</strong> Long-term partner, deep mutual spark &amp; trust</div>
-        <div><strong>Communication:</strong> Direct, low-drama, affectionate, honest</div>
+        <div><strong>Status:</strong> Single (0 Past Relationships)</div>
+        <div><strong>Time Split:</strong> Heilbronn &amp; Budapest</div>
+        <div><strong>Outside Code:</strong> Cooking, long walks, badminton, reading</div>
+        <div><strong>Communication:</strong> Honest, affectionate, low-drama, direct</div>
       </div>
     </div>
 
-    <p class="intro-note">
-      Tomi is currently untaken and curious whether genuine chemistry exists. This questionnaire evaluates day-to-day rhythms, lifestyle expectations, communication styles, and shared values. Answer honestly — no trick questions!
-    </p>
+    <div class="personal-bio-prose">
+      <p style="margin: 0 0 12px; font-size: 0.94rem; line-height: 1.6; color: var(--ink-secondary);">
+        When away from terminal screens and server racks, Tomi values a quiet, grounded daily rhythm: home-cooked meals, long walks to decompress and think, consistent routines, and calm, honest conversations over social media noise.
+      </p>
+      <p style="margin: 0 0 16px; font-size: 0.94rem; line-height: 1.6; color: var(--ink-secondary);">
+        Whether you arrived here out of curiosity, shared interests, or to see if daily rhythms align, there are two simple, unpresumptuous paths:
+      </p>
+    </div>
 
-    <div class="dossier-actions-row">
-      <button class="btn primary" id="startBtn">See How Compatible You Are With Tomi →</button>
-      <a class="btn secondary-outline" href="friend.html">Connect as Friends Instead 🤝</a>
+    <div class="personal-paths-grid" style="display: grid; gap: 12px; margin-bottom: 8px;">
+      <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px;">
+        <div style="font-weight: 600; font-size: 0.95rem; color: var(--ink); margin-bottom: 4px;">Curious About Chemistry &amp; Lifestyle Fit?</div>
+        <p style="font-size: 0.86rem; color: var(--ink-secondary); margin: 0 0 10px; line-height: 1.5;">
+          A transparent questionnaire exploring values, everyday habits, and communication styles — without taking anyone's interest for granted.
+        </p>
+        <button class="btn primary" id="startBtn" style="width: 100%; text-align: center;">Explore Compatibility Match →</button>
+      </div>
+
+      <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px;">
+        <div style="font-weight: 600; font-size: 0.95rem; color: var(--ink); margin-bottom: 4px;">Connect as Friends or Collaborators 🤝</div>
+        <p style="font-size: 0.86rem; color: var(--ink-secondary); margin: 0 0 10px; line-height: 1.5;">
+          Interested in study partnerships, badminton, or discussing distributed systems and homelab hardware?
+        </p>
+        <a class="btn secondary-outline" href="friend.html" style="width: 100%; display: block; text-align: center; text-decoration: none;">Say Hello as Friends 🤝</a>
+      </div>
     </div>
   </div>`));
 

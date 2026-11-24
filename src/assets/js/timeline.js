@@ -144,9 +144,9 @@ class TimelineComponent {
         title: 'NASA Space Apps Hackathon — 2nd Place Regional',
         category: 'honors',
         categoryLabel: 'Honors & Field',
-        summary: 'Awarded 2nd Place out of 18 teams in the Budapest regional division of NASA Space Apps Hackathon.',
-        details: 'Constructed an LLM-powered technical knowledge retrieval assistant engineered to search and synthesize complex NASA aerospace engineering documentation and mission reports.',
-        tags: ['NASA Space Apps', '2nd Place / 18 Teams', 'LLM Retrieval', 'Budapest'],
+        summary: 'Awarded 2nd Place out of 18 teams in the Budapest regional division of NASA Space Apps Hackathon for an AI agentic mission log retrieval system.',
+        details: 'Constructed an LLM-powered technical knowledge retrieval assistant engineered to search, index, and synthesize complex NASA aerospace engineering documentation and historical mission logs.',
+        tags: ['NASA Space Apps', '2nd Place / 18 Teams', 'LLM Mission Retrieval', 'Budapest'],
         links: [
           { text: 'Wiki Field Notes →', url: '/private/about/#hardware' }
         ]
@@ -194,12 +194,12 @@ class TimelineComponent {
       {
         id: 'ipho-bronze',
         date: '2021.08',
-        title: 'IPhO Physics Olympiad Bronze & Youth Python Certs',
+        title: 'Youth Physics Olympiad Bronze & Youth Python Certs',
         category: 'honors',
         categoryLabel: 'Honors & Field',
-        summary: 'Bronze Award at the International Physics Olympiad (IPhO) and Chinese National Youth Python Programming Certificates (Levels 1, 2, 3).',
-        details: 'Recognized for theoretical physics problem solving in relativistic mechanics, thermodynamics, and electromagnetism. Also obtained official National Youth Python certification across all three progressive tiers.',
-        tags: ['IPhO Bronze', 'Theoretical Physics', 'Python Tier 1-3'],
+        summary: 'Early youth competition Bronze Award at the International Physics Olympiad (IPhO) and Chinese National Youth Python Programming Certificates (Levels 1, 2, 3).',
+        details: 'Recognized at age 13 for theoretical physics problem solving in relativistic mechanics, thermodynamics, and electromagnetism. Also obtained official National Youth Python certification across all three progressive tiers.',
+        tags: ['Youth Physics Bronze', 'Theoretical Physics', 'Python Tier 1-3'],
         links: [
           { text: 'Certifications & Honors →', url: '/private/about/#hardware' }
         ]
