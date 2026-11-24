@@ -167,11 +167,11 @@ class TimelineComponent {
       },
       {
         id: 'bisb-ibdp',
-        date: '2023.09',
-        title: 'BISB Budapest — IB Diploma Programme (37/45)',
+        date: '2026.06',
+        title: 'BISB Budapest — IB Diploma Awarded (37/45)',
         category: 'academic',
         categoryLabel: 'Education',
-        summary: 'International Baccalaureate Diploma Programme at The British International School Budapest.',
+        summary: 'International Baccalaureate Diploma awarded June 2026 at The British International School Budapest.',
         details: 'Achieved 37 / 45 points overall: Physics HL (7/7), Computer Science SL (7/7), Economics HL (6/7), Math AA HL (5), German B (5), English A (5), Core & Extended Essay (2).',
         tags: ['IBDP 37/45', 'Physics HL 7', 'CS SL 7', 'Budapest'],
         links: [

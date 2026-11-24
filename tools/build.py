@@ -167,6 +167,7 @@ def render_page(rel, text, cards):
                 'footer_container', 'footer_extra'):
         if key not in meta:
             raise ValueError(f'{rel}: directive missing key {key!r}')
+    unlisted = meta.get('unlisted') is True
     if meta['nav'] not in (*NAV_KEYS, 'none'):
         raise ValueError(f"{rel}: bad nav={meta['nav']!r}")
     if meta['footer_extra'] not in ('', 'connections'):
@@ -192,6 +193,11 @@ def render_page(rel, text, cards):
     footer = footer.replace('{{footer-container}}', meta['footer_container'])
     footer = footer.replace('{{footer-extra}}',
                             FOOTER_EXTRA_LINK if meta['footer_extra'] == 'connections' else '')
+    if unlisted:
+        # Link-only pages: keep crawlers from indexing/listing them.
+        # (Deliberately a meta tag, not robots.txt — robots.txt would advertise the URL.)
+        top = top.replace('</head>',
+                          '  <meta name="robots" content="noindex, nofollow">\n</head>')
     for token in ('{{title}}', '{{description}}', '{{header-container}}',
                   '{{footer-container}}', '{{footer-extra}}', '{{nav-'):
         assert token not in top + header + footer, f'{rel}: unexpanded {token}'
@@ -228,6 +234,9 @@ def render_sitemap():
         rel = page.relative_to(SRC)
         if rel.name != 'index.html' or rel == pathlib.Path('404.html'):
             continue  # only canonical routes; never list the 404 page
+        m = DIRECTIVE_RE.match(page.read_text(encoding='utf-8'))
+        if m and json.loads(m.group(1)).get('unlisted') is True:
+            continue  # link-only pages stay out of the sitemap
         urls.append(page_url(rel))
     lines = ['<?xml version="1.0" encoding="UTF-8"?>',
              '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/2.0">']

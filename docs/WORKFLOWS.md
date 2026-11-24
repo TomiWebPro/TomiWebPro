@@ -101,6 +101,13 @@ Optional tail block for page scripts, placed after content:
 3. Add the person to `src/public/connection/index.html` and link them from the wiki.
 4. Rebuild + checks.
 
+### E. Unlisted (link-only) person — no index card, no sitemap, no inbound links except one mention
+1. Copy `docs/templates/private-person.html` → `src/public/connection/<slug>/index.html` (slug = lowercase kebab-case handle or `first-last`).
+2. Fill every `<...>` placeholder with verified facts only; delete unused sections. Third person throughout.
+3. Mention them once in natural prose where they come up (wiki/blog), e.g. `<a href="/public/connection/<slug>/">Firstname</a>` — that inline mention is the ONLY inbound link.
+4. Do NOT add a card to `src/public/connection/index.html`. Do NOT use `footer_extra: connections` on the page.
+5. Rebuild + checks. `"unlisted": true` keeps the route out of `sitemap.xml` and adds `noindex, nofollow`.
+
 ## 5. Current known state (Nov 2026 — update as things change)
 
 - 28 pages; projects index lists 15 (auto-generated from per-page `card`

@@ -49,7 +49,7 @@ src/
 - `/` — `src/index.html`
 - `/public/` — `src/public/index.html` (15 cards: lmchess, pixelquest, ects-tracker, stealthscale, opencode-scheduler, openbmcui, ducklingbrowser, studyking, cognithor, pchess, niqe, activelearn-bypass, taskmanager-image, german-noun-chooser, audioeq)
 - Project heads — `src/public/<slug>/index.html`: `cognithor`, `openbmcui`, `stealthscale`, `studyking`, `ects-tracker`, `pchess`, `niqe`, `activelearn-bypass`, `pixelquest`, plus `lmchess`, `opencode-scheduler`, `ducklingbrowser`, `taskmanager-image`, `german-noun-chooser`, `audioeq`
-- `/public/connection/` + `/public/connection/<slug>/` — people registry (`alex8791-cyber` = Cognithor co-dev). Visible label must read "Connections".
+- `/public/connection/` + `/public/connection/<slug>/` — people registry (`alex8791-cyber` = Cognithor co-dev). Visible label must read "Connections". Unlisted variant (link-only, no index card, no sitemap entry, `"unlisted": true` + `noindex`): see WORKFLOWS §4E, template `docs/templates/private-person.html`.
 - `/private/` — `src/private/index.html`
 - `/private/about/` — `src/private/about/index.html` (the wiki; see anchors below)
 - `/private/blog/` — `src/private/blog/index.html` + posts: `building-cognithor`, `stealthscale-mesh-networking`, `llm-bmc-orchestration`, `homelab-proxmox-k8s`

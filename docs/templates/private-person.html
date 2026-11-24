@@ -1,0 +1,51 @@
+<!-- TEMPLATE: unlisted (link-only) person page — Tomi, third person throughout.
+  HOW TO USE:
+  1. Copy this file to src/public/connection/<slug>/index.html
+     (<slug> = lowercase kebab-case handle or first-last, e.g. jane-doe).
+  2. Fill in ALL <...> placeholders with verified facts only. Delete any
+     section that does not apply — never invent details.
+  3. Mention the person ONCE in natural prose where they come up
+     (wiki section, blog post): <a href="/public/connection/<slug>/">Firstname</a>
+     That inline mention is the ONLY inbound link — the only way to reach this page.
+  4. Do NOT add a card to src/public/connection/index.html.
+  5. Rebuild + verify: python3 tools/build.py &&
+     python3 tools/build.py --check && python3 tools/check-links.py
+  EFFECT of "unlisted": true: page is excluded from site/sitemap.xml and ships
+  a noindex,nofollow meta tag. No index, no nav, no footer link points at it.
+-->
+<!-- page {"title": "<Name> — tomiweb.pro", "description": "<One-line third-person summary, e.g. Jane Doe: robotics engineer Tomi met at the Budapest hackathon.>", "nav": "none", "header_container": "container", "footer_container": "container", "footer_extra": "", "unlisted": true} -->
+
+  <main class="container">
+    <div class="project-head-hero">
+      <div class="card-meta">
+        <span class="card-tag">Connection</span>
+        <span class="card-date">Since <Month Year></span>
+      </div>
+
+      <h1 style="margin: 0.5rem 0 0.75rem; font-size: 2.75rem;"><Name></h1>
+      <p class="lead" style="margin-bottom: 1.5rem;">
+        <One or two sentences, third person: who they are and how Tomi knows them.>
+      </p>
+    </div>
+
+    <section>
+      <h2>Context</h2>
+      <p>
+        <Where and when Tomi met them, shared context, what they work on. Third person.>
+      </p>
+    </section>
+
+    <section>
+      <h2>Links</h2>
+      <ul>
+        <li><a href="<https://...>" target="_blank" rel="noopener noreferrer"><Label> ↗</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Mentioned in</h2>
+      <ul>
+        <li><a href="/private/about/#<anchor>">About Wiki — <section></a></li>
+      </ul>
+    </section>
+  </main>
